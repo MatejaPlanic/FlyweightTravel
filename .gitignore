@@ -1,0 +1,79 @@
+# Build folders
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.cachefile
+
+# Build results
+*.dll
+*.exe
+*.pdb
+*.appx
+*.appxupload
+*.appxrecipe
+
+# NuGet packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+.nuget/
+.nuget/packages/
+
+# Logs
+*.log
+
+# Configuration
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Test results
+TestResult*/
+*.TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Publish output
+publish/
+wwwroot/dist/
+node_modules/
+
+# Mac / Linux
+.DS_Store
+*.swp
+*.lock
+*.tmp
+
+# Backup files
+*.bak
+*.orig
+
+# Others
+*.dbmdl
+*.jfm
+*.pfx
+*.snk
