@@ -1,6 +1,10 @@
-﻿namespace BackEnd.Data.Factories
+﻿using BackEnd.Config;
+using System.Data;
+
+namespace BackEnd.Data.Factories
 {
-    public class DatabaseFactory
+    public abstract class DatabaseFactory
     {
+        public abstract IBroker CreateConnection(string con);
     }
 }

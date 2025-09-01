@@ -7,17 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.4.0" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Config\" />
-    <Folder Include="Data\" />
-    <Folder Include="Facade\" />
-    <Folder Include="Observers\" />
-    <Folder Include="States\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
