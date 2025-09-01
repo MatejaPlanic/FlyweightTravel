@@ -51,9 +51,10 @@ namespace Front
 
         private void button_izlaz_Click(object sender, EventArgs e)
         {
-            Start start=new Start();
-            this.Hide();
-            start.Show();
+            //Start start=new Start();
+            //this.Hide();
+            //start.Show();
+            Application.Exit();
         }
 
         private void Main_Load(object sender, EventArgs e)

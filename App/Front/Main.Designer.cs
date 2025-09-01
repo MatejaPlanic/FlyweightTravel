@@ -158,9 +158,10 @@
             this.ClientSize = new System.Drawing.Size(1134, 617);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GAS";
+            this.Text = "Turistička agencija";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

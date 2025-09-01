@@ -62,6 +62,7 @@
             this.Controls.Add(this.button_start);
             this.Controls.Add(this.comboBox_file);
             this.Name = "Start";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start";
             this.ResumeLayout(false);
 
