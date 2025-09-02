@@ -1,24 +1,26 @@
-﻿using Npgsql;
+﻿using Microsoft.Data.Sqlite;
 using System.Data;
+using SQLitePCL;
 
 namespace BackEnd.Config
 {
-    public class PostgreBroker : IBroker
+    public class SqliteBroker : IBroker
     {
-        private static PostgreBroker? instance = null;
+        private static SqliteBroker? instance = null;
         private static readonly object padlock = new object();
         private string agencyName;
         private string connectionString;
-        private readonly NpgsqlConnection db;
+        private readonly SqliteConnection db;
 
-        private PostgreBroker(string configFilePath)
+        private SqliteBroker(string configFilePath)
         {
+            SQLitePCL.Batteries_V2.Init();
             string[] lines = System.IO.File.ReadAllLines(configFilePath);
             if (lines.Length >= 2)
             {
                 this.agencyName = lines[0];
                 this.connectionString = lines[1];
-                this.db = new NpgsqlConnection(this.connectionString);
+                this.db = new SqliteConnection(this.connectionString);
             }
             else
             {
@@ -32,7 +34,7 @@ namespace BackEnd.Config
             {
                 if (instance == null)
                 {
-                    instance = new PostgreBroker(configFilePath);
+                    instance = new SqliteBroker(configFilePath);
                 }
                 return instance;
             }
@@ -48,7 +50,7 @@ namespace BackEnd.Config
             return this.connectionString;
         }
 
-        public NpgsqlConnection getDB()
+        public SqliteConnection getDB()
         { return this.db; }
     }
 }

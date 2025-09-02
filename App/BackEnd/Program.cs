@@ -1,4 +1,6 @@
 using BackEnd.Config;
+using Microsoft.Data.Sqlite;
+using MySqlConnector;
 using Npgsql;
 
 namespace BackEnd
@@ -8,32 +10,38 @@ namespace BackEnd
         public static void Main(string[] args)
         {
 
-            PostgreBroker db = (PostgreBroker)PostgreBroker.GetInstance("./Config/config1.txt");
+            MySqlBroker db = (MySqlBroker)MySqlBroker.GetInstance("./Config/config2.txt");
 
             Console.WriteLine(db.GetConnectionString());
-
             Console.WriteLine(db.GetAgencyName());
-
             Console.WriteLine(db.getDB());
 
-            var result = new List<(int, string, string)>();
+            var result = new List<(long Id, string Username)>();
 
             db.getDB().Open();
-            string sql = "SELECT UserId, Username, Email FROM public.Users";
 
-            using (var cmd = new NpgsqlCommand(sql, db.getDB()))
+            const string sql = "SELECT id, username FROM korisnik;";
+
+            using (var cmd = new MySqlCommand(sql, (MySqlConnection)db.getDB()))
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    result.Add((reader.GetInt32(0), reader.GetString(1), reader.GetString(2)));
+                    // SQLite INTEGER je Int64
+                    long id = reader.GetInt64(0);
+                    string username = reader.GetString(1);
+                    result.Add((id, username));
                 }
-                Console.WriteLine(result);
             }
 
             db.getDB().Close();
-        
-        var builder = WebApplication.CreateBuilder(args);
+
+            // primer ispisa
+            if (result.Count > 0)
+                Console.WriteLine($"{result[0].Id} - {result[0].Username}");
+
+
+            var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
 
