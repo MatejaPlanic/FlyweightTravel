@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_izlaz = new System.Windows.Forms.Button();
-            this.button_dodavanje_klijenta = new System.Windows.Forms.Button();
+            this.button_rezervacije = new System.Windows.Forms.Button();
             this.button_paketi = new System.Windows.Forms.Button();
             this.button_klijenti = new System.Windows.Forms.Button();
             this.label_naziv = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.button_izlaz);
-            this.panel3.Controls.Add(this.button_dodavanje_klijenta);
+            this.panel3.Controls.Add(this.button_rezervacije);
             this.panel3.Controls.Add(this.button_paketi);
             this.panel3.Controls.Add(this.button_klijenti);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -80,22 +80,22 @@
             this.button_izlaz.UseVisualStyleBackColor = true;
             this.button_izlaz.Click += new System.EventHandler(this.button_izlaz_Click);
             // 
-            // button_dodavanje_klijenta
+            // button_rezervacije
             // 
-            this.button_dodavanje_klijenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_dodavanje_klijenta.FlatAppearance.BorderSize = 0;
-            this.button_dodavanje_klijenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_dodavanje_klijenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dodavanje_klijenta.ForeColor = System.Drawing.Color.White;
-            this.button_dodavanje_klijenta.Location = new System.Drawing.Point(0, 170);
-            this.button_dodavanje_klijenta.Name = "button_dodavanje_klijenta";
-            this.button_dodavanje_klijenta.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button_dodavanje_klijenta.Size = new System.Drawing.Size(200, 85);
-            this.button_dodavanje_klijenta.TabIndex = 2;
-            this.button_dodavanje_klijenta.Text = "Novi Klijent";
-            this.button_dodavanje_klijenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_dodavanje_klijenta.UseVisualStyleBackColor = true;
-            this.button_dodavanje_klijenta.Click += new System.EventHandler(this.button_dodavanje_klijenta_Click);
+            this.button_rezervacije.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_rezervacije.FlatAppearance.BorderSize = 0;
+            this.button_rezervacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_rezervacije.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_rezervacije.ForeColor = System.Drawing.Color.White;
+            this.button_rezervacije.Location = new System.Drawing.Point(0, 170);
+            this.button_rezervacije.Name = "button_rezervacije";
+            this.button_rezervacije.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button_rezervacije.Size = new System.Drawing.Size(200, 85);
+            this.button_rezervacije.TabIndex = 2;
+            this.button_rezervacije.Text = "Rezervacije";
+            this.button_rezervacije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_rezervacije.UseVisualStyleBackColor = true;
+            this.button_rezervacije.Click += new System.EventHandler(this.button_rezervacije_Click);
             // 
             // button_paketi
             // 
@@ -175,7 +175,7 @@
         private System.Windows.Forms.Label label_naziv;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_klijenti;
-        private System.Windows.Forms.Button button_dodavanje_klijenta;
+        private System.Windows.Forms.Button button_rezervacije;
         private System.Windows.Forms.Button button_paketi;
         private System.Windows.Forms.Button button_izlaz;
         private System.Windows.Forms.Panel panel_main;

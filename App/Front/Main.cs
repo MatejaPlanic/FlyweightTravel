@@ -34,7 +34,7 @@ namespace Front
             childForm.Show();
         }
 
-        private void button_dodavanje_klijenta_Click(object sender, EventArgs e)
+        private void button_rezervacije_Click(object sender, EventArgs e)
         {
             openChildForm(new RegisterForm());
         }

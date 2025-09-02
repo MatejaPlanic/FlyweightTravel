@@ -21,5 +21,11 @@ namespace Front
         {
 
         }
+
+        private void button_dodaj_Click(object sender, EventArgs e)
+        {
+            Novi_Paket noviPaket = new Novi_Paket();
+            noviPaket.ShowDialog();
+        }
     }
 }

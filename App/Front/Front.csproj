@@ -64,6 +64,30 @@
     <Compile Include="Klijenti.Designer.cs">
       <DependentUpon>Klijenti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Novi Paket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novi Paket.Designer.cs">
+      <DependentUpon>Novi Paket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaketAranzmanZaMore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketAranzmanZaMore.Designer.cs">
+      <DependentUpon>PaketAranzmanZaMore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaketAranzmanZaPlanine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketAranzmanZaPlanine.Designer.cs">
+      <DependentUpon>PaketAranzmanZaPlanine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaketEkskurzije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketEkskurzije.Designer.cs">
+      <DependentUpon>PaketEkskurzije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paketi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +99,12 @@
     </Compile>
     <Compile Include="PaketiKlijenta.Designer.cs">
       <DependentUpon>PaketiKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaketKrstarenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketKrstarenje.Designer.cs">
+      <DependentUpon>PaketKrstarenje.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
@@ -102,11 +132,26 @@
     <EmbeddedResource Include="Klijenti.resx">
       <DependentUpon>Klijenti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Novi Paket.resx">
+      <DependentUpon>Novi Paket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketAranzmanZaMore.resx">
+      <DependentUpon>PaketAranzmanZaMore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketAranzmanZaPlanine.resx">
+      <DependentUpon>PaketAranzmanZaPlanine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketEkskurzije.resx">
+      <DependentUpon>PaketEkskurzije.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Paketi.resx">
       <DependentUpon>Paketi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaketiKlijenta.resx">
       <DependentUpon>PaketiKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketKrstarenje.resx">
+      <DependentUpon>PaketKrstarenje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
