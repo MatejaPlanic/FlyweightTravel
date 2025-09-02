@@ -1,6 +1,10 @@
 ﻿namespace BackEnd.Data.Proxies
 {
-    public class RealDatabaseService
+    public class RealDatabaseService : IDatabaseService
     {
+        public void ExecuteQuery(string query)
+        {
+            // Logika za izvršavanje upita nad bazom
+        }
     }
 }
