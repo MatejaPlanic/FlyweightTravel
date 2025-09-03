@@ -19,7 +19,6 @@ namespace BackEnd.Facade
         public void AddNewClient(string ime, string prezime, 
             string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
-            Console.WriteLine("USO U FASADU");
             clientService.AddClient(ime,prezime,brojPasosa,datumRodjenja,emailAdresa,brojTelefona);
         }
 
@@ -34,6 +33,5 @@ namespace BackEnd.Facade
             //reservationService.CreateReservation(clientId, packageId);
         }
 
-        // ... ostale metode za rad sa podacima
     }
 }
