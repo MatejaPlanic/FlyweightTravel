@@ -11,20 +11,12 @@ namespace BackEnd.Config
         private string agencyName;
         private string connectionString;
         private readonly IDbConnection db;
-
         private MySqlBroker(string configFilePath)
         {
             string[] lines = System.IO.File.ReadAllLines(configFilePath);
-            if (lines.Length >= 2)
-            {
-                this.agencyName = lines[0];
-                this.connectionString = lines[1];
-                this.db = new MySqlConnection(this.connectionString);
-            }
-            else
-            {
-                throw new InvalidOperationException("config2.txt fajl nije validan.");
-            }
+            this.agencyName = lines[0];
+            this.connectionString = lines[1];
+            this.db = new MySqlConnection(this.connectionString);
         }
 
         public static IBroker GetInstance(string configFilePath)
@@ -38,18 +30,9 @@ namespace BackEnd.Config
                 return instance;
             }
         }
-
-        public string GetAgencyName()
-        {
-            return this.agencyName;
-        }
-
-        public string GetConnectionString()
-        {
-            return this.connectionString;
-        }
-
-        public IDbConnection getDB()
-             { return this.db; }
+        public string GetAgencyName() { return this.agencyName; }
+        public string GetConnectionString() { return this.connectionString; }
+        public IDbConnection GetDB() { return this.db; }
+        public IDbCommand CreateCommand() { return new MySqlCommand(); }
     }
 }

@@ -1,32 +1,58 @@
 ﻿using BackEnd.Config;
 using Microsoft.Data.Sqlite;
 using MySqlConnector;
+using System.Data;
 
 namespace BackEnd.Data.Proxies
 {
     public class RealDatabaseService
     {
+        private DatabaseManager? _databaseManager = DatabaseManager.GetInstance("./Config/config2.txt");
+
         public void AddClient(string ime, string prezime,
         string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
-            string query = "INSERT INTO client (Ime, Prezime, BrojPasosa, DatumRodjenja, EmailAdresa, BrojTelefona) " +
-                           "VALUES (@ime, @prezime, @brojPasosa, @datumRodjenja, @emailAdresa, @brojTelefona);";
-
-            SqliteBroker ker = (SqliteBroker)SqliteBroker.GetInstance("./Config/config1.txt");
-            ker.getDB().Open();
-                using (var command = new SqliteCommand(query, (SqliteConnection)ker.getDB()))
+                string query = "INSERT INTO client (Ime, Prezime, BrojPasosa, DatumRodjenja, EmailAdresa, BrojTelefona) " +
+                               "VALUES (@ime, @prezime, @brojPasosa, @datumRodjenja, @emailAdresa, @brojTelefona);";
+                _databaseManager.GetConnection().Open();
+                using (var command = _databaseManager.CreateCommand())
                 {
-                    command.Parameters.AddWithValue("@ime", ime);
-                    command.Parameters.AddWithValue("@prezime", prezime);
-                    command.Parameters.AddWithValue("@brojPasosa", brojPasosa);
-                    command.Parameters.AddWithValue("@datumRodjenja", datumRodjenja);
-                    command.Parameters.AddWithValue("@emailAdresa", emailAdresa);
-                    command.Parameters.AddWithValue("@brojTelefona", brojTelefona);
+                command.CommandText = query;
+                command.Connection = _databaseManager.GetConnection();
+                IDbDataParameter paramIme = command.CreateParameter();
+                paramIme.ParameterName = "@ime";
+                paramIme.Value = ime;
+                command.Parameters.Add(paramIme);
 
-                    command.ExecuteNonQuery();
+                IDbDataParameter paramPrezime = command.CreateParameter();
+                paramPrezime.ParameterName = "@prezime";
+                paramPrezime.Value = prezime;
+                command.Parameters.Add(paramPrezime);
+
+                IDbDataParameter paramBrojPasosa = command.CreateParameter();
+                paramBrojPasosa.ParameterName = "@brojPasosa";
+                paramBrojPasosa.Value = brojPasosa;
+                command.Parameters.Add(paramBrojPasosa);
+
+                IDbDataParameter paramDatumRodjenja = command.CreateParameter();
+                paramDatumRodjenja.ParameterName = "@datumRodjenja";
+                paramDatumRodjenja.Value = datumRodjenja;
+                command.Parameters.Add(paramDatumRodjenja);
+
+                IDbDataParameter paramEmailAdresa = command.CreateParameter();
+                paramEmailAdresa.ParameterName = "@emailAdresa";
+                paramEmailAdresa.Value = emailAdresa;
+                command.Parameters.Add(paramEmailAdresa);
+
+                IDbDataParameter paramBrojTelefona = command.CreateParameter();
+                paramBrojTelefona.ParameterName = "@brojTelefona";
+                paramBrojTelefona.Value = brojTelefona;
+                command.Parameters.Add(paramBrojTelefona);
+
+                command.ExecuteNonQuery();
                 }
-            ker.getDB().Close();
-            
+            _databaseManager.GetConnection().Close();
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
-using System.Data;
+using MySqlConnector;
 using SQLitePCL;
+using System.Data;
 
 namespace BackEnd.Config
 {
@@ -10,22 +11,14 @@ namespace BackEnd.Config
         private static readonly object padlock = new object();
         private string agencyName;
         private string connectionString;
-        private readonly SqliteConnection db;
-
+        private readonly IDbConnection db;
         private SqliteBroker(string configFilePath)
         {
             SQLitePCL.Batteries_V2.Init();
             string[] lines = System.IO.File.ReadAllLines(configFilePath);
-            if (lines.Length >= 2)
-            {
-                this.agencyName = lines[0];
-                this.connectionString = lines[1];
-                this.db = new SqliteConnection(this.connectionString);
-            }
-            else
-            {
-                throw new InvalidOperationException("config1.txt fajl nije validan.");
-            }
+            this.agencyName = lines[0];
+            this.connectionString = lines[1];
+            this.db = new SqliteConnection(this.connectionString);
         }
 
         public static IBroker GetInstance(string configFilePath)
@@ -39,18 +32,9 @@ namespace BackEnd.Config
                 return instance;
             }
         }
-
-        public string GetAgencyName()
-        {
-            return this.agencyName;
-        }
-
-        public string GetConnectionString()
-        {
-            return this.connectionString;
-        }
-
-        public IDbConnection getDB()
-        { return this.db; }
+        public string GetAgencyName() { return this.agencyName; }
+        public string GetConnectionString() { return this.connectionString; }
+        public IDbConnection GetDB() { return this.db; }
+        public IDbCommand CreateCommand() { return new SqliteCommand(); }
     }
 }
