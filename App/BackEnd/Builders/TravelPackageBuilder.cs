@@ -12,7 +12,7 @@
         public abstract void BuildDuration(double duration);
         public abstract void BuildBoat(string boat);
         public abstract void BuildRoute(string route);
-        public abstract void BuildDateOfDeparture(DateTime dod);
+        public abstract void BuildDateOfDeparture(string dod);
         public abstract void BuildCabinType(string cabin);
 
         public void BuildCommonDetails(int id, string name, double price, string packageType)

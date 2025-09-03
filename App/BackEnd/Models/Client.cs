@@ -9,12 +9,12 @@
         public string Prezime { get; set; }
 
         public string BrojPasosa { get; set; }
-        public DateOnly DatumRodjenja { get; set; }
+        public string DatumRodjenja { get; set; }
 
         public string EmailAdresa { get; set; }
         public string BrojTelefona { get; set; }
 
-        public Client(int id, string ime, string prezime, string brojPasosa, DateOnly datumRodjenja, string emailAdresa, string brojTelefona)
+        public Client(int id, string ime, string prezime, string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
             this.ID = id;
             this.Ime = ime;

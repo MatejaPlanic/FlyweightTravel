@@ -17,7 +17,7 @@
 
         public string Route { get; set; }
 
-        public DateTime DateOfDeparture { get; set; }
+        public string DateOfDeparture { get; set; }
 
         public string CabinType { get; set; }
         public string PackageType { get; set; }

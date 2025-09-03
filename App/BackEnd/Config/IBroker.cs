@@ -7,5 +7,7 @@ namespace BackEnd.Config
         public abstract static IBroker GetInstance(string configFilePath);
         public string GetConnectionString();
         public string GetAgencyName();
+
+        public IDbConnection getDB();
     }
 }

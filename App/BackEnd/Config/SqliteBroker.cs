@@ -50,7 +50,7 @@ namespace BackEnd.Config
             return this.connectionString;
         }
 
-        public SqliteConnection getDB()
+        public IDbConnection getDB()
         { return this.db; }
     }
 }

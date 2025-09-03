@@ -16,9 +16,11 @@ namespace BackEnd.Facade
             reservationService = new ReservationService();
         }
 
-        public void AddNewClient(string name, string passportNumber)
+        public void AddNewClient(string ime, string prezime, 
+            string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
-            //clientService.AddClient(name, passportNumber);
+            Console.WriteLine("USO U FASADU");
+            clientService.AddClient(ime,prezime,brojPasosa,datumRodjenja,emailAdresa,brojTelefona);
         }
 
         public List<Client> GetAllClients()

@@ -22,7 +22,7 @@
             package.CabinType = cabin;
         }
 
-        public override void BuildDateOfDeparture(DateTime dod)
+        public override void BuildDateOfDeparture(string dod)
         {
             package.DateOfDeparture = dod;
         }
