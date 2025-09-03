@@ -21,5 +21,16 @@ namespace Front
         {
 
         }
+
+        private void button_dodaj_Click(object sender, EventArgs e)
+        {
+            RezervacijaPaketa noviPaket = new RezervacijaPaketa();
+            noviPaket.ShowDialog();
+        }
+
+        private void button_otkazi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

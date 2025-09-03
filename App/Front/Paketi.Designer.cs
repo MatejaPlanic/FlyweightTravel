@@ -119,18 +119,18 @@
             // 
             this.panel_info.Controls.Add(this.button_dodaj);
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_info.Location = new System.Drawing.Point(0, 526);
+            this.panel_info.Location = new System.Drawing.Point(0, 518);
             this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(934, 85);
+            this.panel_info.Size = new System.Drawing.Size(934, 93);
             this.panel_info.TabIndex = 19;
             // 
             // button_dodaj
             // 
-            this.button_dodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_dodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_dodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(31)))));
             this.button_dodaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_dodaj.ForeColor = System.Drawing.Color.White;
-            this.button_dodaj.Location = new System.Drawing.Point(727, 29);
+            this.button_dodaj.Location = new System.Drawing.Point(788, 37);
             this.button_dodaj.Name = "button_dodaj";
             this.button_dodaj.Size = new System.Drawing.Size(134, 44);
             this.button_dodaj.TabIndex = 28;

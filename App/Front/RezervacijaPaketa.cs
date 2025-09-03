@@ -33,5 +33,10 @@ namespace Front
         {
 
         }
+
+        private void label_tip_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,16 +37,22 @@ namespace Front
 
         }
 
-        private void button_test_Click(object sender, EventArgs e)
-        {
-            // Pronađi glavnu formu (Main)
-            Main mainForm = (Main)Application.OpenForms["Main"];
+        
 
-            // Ako je glavna forma otvorena, pozovi openChildForm metodu
-            if (mainForm != null)
-            {
-                mainForm.openChildForm(new PaketiKlijenta());
-            }
+        private void button_dodaj_Click(object sender, EventArgs e)
+        {
+            DodajKlijenta noviKlijent = new DodajKlijenta();
+            noviKlijent.ShowDialog();
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

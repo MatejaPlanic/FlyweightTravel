@@ -28,209 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel_info = new System.Windows.Forms.Panel();
-            this.button_rezervisi = new System.Windows.Forms.Button();
-            this.textBox_destinacija = new System.Windows.Forms.TextBox();
-            this.label_pasos = new System.Windows.Forms.Label();
-            this.textBox_tip_prevoza = new System.Windows.Forms.TextBox();
-            this.label_tip_prevoza = new System.Windows.Forms.Label();
-            this.textBox_cena = new System.Windows.Forms.TextBox();
-            this.label_ime = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label_cena = new System.Windows.Forms.Label();
+            this.textBox_naziv = new System.Windows.Forms.TextBox();
+            this.label_naziv = new System.Windows.Forms.Label();
+            this.comboBox_tip = new System.Windows.Forms.ComboBox();
+            this.label_tip = new System.Windows.Forms.Label();
+            this.button_dodaj_rezervaciju = new System.Windows.Forms.Button();
+            this.panel_bottom = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.panel_info.SuspendLayout();
+            this.panel_bottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label_cena);
+            this.panel1.Controls.Add(this.textBox_naziv);
+            this.panel1.Controls.Add(this.label_naziv);
+            this.panel1.Controls.Add(this.comboBox_tip);
+            this.panel1.Controls.Add(this.label_tip);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 55);
-            this.panel1.TabIndex = 19;
+            this.panel1.Size = new System.Drawing.Size(334, 276);
+            this.panel1.TabIndex = 0;
             // 
-            // label5
+            // textBox2
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(422, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Rezervacija Paketa";
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(15, 28);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(250, 23);
+            this.textBox2.TabIndex = 11;
             // 
-            // guna2DataGridView1
+            // label_cena
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(0, 52);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(934, 309);
-            this.guna2DataGridView1.TabIndex = 20;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.label_cena.AutoSize = true;
+            this.label_cena.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label_cena.Location = new System.Drawing.Point(12, 9);
+            this.label_cena.Name = "label_cena";
+            this.label_cena.Size = new System.Drawing.Size(83, 16);
+            this.label_cena.TabIndex = 10;
+            this.label_cena.Text = "Broj Osoba:";
             // 
-            // panel_info
+            // textBox_naziv
             // 
-            this.panel_info.BackColor = System.Drawing.Color.White;
-            this.panel_info.Controls.Add(this.button_rezervisi);
-            this.panel_info.Controls.Add(this.textBox_destinacija);
-            this.panel_info.Controls.Add(this.label_pasos);
-            this.panel_info.Controls.Add(this.textBox_tip_prevoza);
-            this.panel_info.Controls.Add(this.label_tip_prevoza);
-            this.panel_info.Controls.Add(this.textBox_cena);
-            this.panel_info.Controls.Add(this.label_ime);
-            this.panel_info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_info.Location = new System.Drawing.Point(0, 355);
-            this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(934, 256);
-            this.panel_info.TabIndex = 21;
+            this.textBox_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_naziv.Location = new System.Drawing.Point(15, 88);
+            this.textBox_naziv.Name = "textBox_naziv";
+            this.textBox_naziv.Size = new System.Drawing.Size(250, 23);
+            this.textBox_naziv.TabIndex = 9;
             // 
-            // button_rezervisi
+            // label_naziv
             // 
-            this.button_rezervisi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_rezervisi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(31)))));
-            this.button_rezervisi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_rezervisi.ForeColor = System.Drawing.Color.White;
-            this.button_rezervisi.Location = new System.Drawing.Point(771, 181);
-            this.button_rezervisi.Name = "button_rezervisi";
-            this.button_rezervisi.Size = new System.Drawing.Size(111, 44);
-            this.button_rezervisi.TabIndex = 28;
-            this.button_rezervisi.Text = "Rezerviši";
-            this.button_rezervisi.UseVisualStyleBackColor = false;
-            this.button_rezervisi.Click += new System.EventHandler(this.button_rezervisi_Click);
+            this.label_naziv.AutoSize = true;
+            this.label_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_naziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label_naziv.Location = new System.Drawing.Point(12, 70);
+            this.label_naziv.Name = "label_naziv";
+            this.label_naziv.Size = new System.Drawing.Size(84, 16);
+            this.label_naziv.TabIndex = 8;
+            this.label_naziv.Text = "Destinacija:";
             // 
-            // textBox_destinacija
+            // comboBox_tip
             // 
-            this.textBox_destinacija.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_destinacija.Location = new System.Drawing.Point(154, 120);
-            this.textBox_destinacija.Name = "textBox_destinacija";
-            this.textBox_destinacija.Size = new System.Drawing.Size(166, 27);
-            this.textBox_destinacija.TabIndex = 21;
+            this.comboBox_tip.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_tip.FormattingEnabled = true;
+            this.comboBox_tip.Location = new System.Drawing.Point(15, 145);
+            this.comboBox_tip.Name = "comboBox_tip";
+            this.comboBox_tip.Size = new System.Drawing.Size(250, 25);
+            this.comboBox_tip.TabIndex = 7;
             // 
-            // label_pasos
+            // label_tip
             // 
-            this.label_pasos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_pasos.AutoSize = true;
-            this.label_pasos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_pasos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_pasos.Location = new System.Drawing.Point(50, 124);
-            this.label_pasos.Name = "label_pasos";
-            this.label_pasos.Size = new System.Drawing.Size(98, 19);
-            this.label_pasos.TabIndex = 20;
-            this.label_pasos.Text = "Broj Pasoša:";
+            this.label_tip.AutoSize = true;
+            this.label_tip.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label_tip.Location = new System.Drawing.Point(12, 126);
+            this.label_tip.Name = "label_tip";
+            this.label_tip.Size = new System.Drawing.Size(79, 16);
+            this.label_tip.TabIndex = 6;
+            this.label_tip.Text = "Tip Paketa:";
+            this.label_tip.Click += new System.EventHandler(this.label_tip_Click);
             // 
-            // textBox_tip_prevoza
+            // button_dodaj_rezervaciju
             // 
-            this.textBox_tip_prevoza.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_tip_prevoza.Location = new System.Drawing.Point(154, 79);
-            this.textBox_tip_prevoza.Name = "textBox_tip_prevoza";
-            this.textBox_tip_prevoza.Size = new System.Drawing.Size(166, 27);
-            this.textBox_tip_prevoza.TabIndex = 19;
+            this.button_dodaj_rezervaciju.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dodaj_rezervaciju.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.button_dodaj_rezervaciju.Location = new System.Drawing.Point(79, 3);
+            this.button_dodaj_rezervaciju.Name = "button_dodaj_rezervaciju";
+            this.button_dodaj_rezervaciju.Size = new System.Drawing.Size(171, 39);
+            this.button_dodaj_rezervaciju.TabIndex = 0;
+            this.button_dodaj_rezervaciju.Text = "Dodaj Rezervaciju";
+            this.button_dodaj_rezervaciju.UseVisualStyleBackColor = true;
             // 
-            // label_tip_prevoza
+            // panel_bottom
             // 
-            this.label_tip_prevoza.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_tip_prevoza.AutoSize = true;
-            this.label_tip_prevoza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tip_prevoza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_tip_prevoza.Location = new System.Drawing.Point(74, 83);
-            this.label_tip_prevoza.Name = "label_tip_prevoza";
-            this.label_tip_prevoza.Size = new System.Drawing.Size(74, 19);
-            this.label_tip_prevoza.TabIndex = 18;
-            this.label_tip_prevoza.Text = "Prezime:";
-            // 
-            // textBox_cena
-            // 
-            this.textBox_cena.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_cena.Location = new System.Drawing.Point(154, 35);
-            this.textBox_cena.Name = "textBox_cena";
-            this.textBox_cena.Size = new System.Drawing.Size(166, 27);
-            this.textBox_cena.TabIndex = 17;
-            // 
-            // label_ime
-            // 
-            this.label_ime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_ime.AutoSize = true;
-            this.label_ime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_ime.Location = new System.Drawing.Point(105, 39);
-            this.label_ime.Name = "label_ime";
-            this.label_ime.Size = new System.Drawing.Size(43, 19);
-            this.label_ime.TabIndex = 16;
-            this.label_ime.Text = "Ime:";
+            this.panel_bottom.Controls.Add(this.button_dodaj_rezervaciju);
+            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_bottom.Location = new System.Drawing.Point(0, 412);
+            this.panel_bottom.Name = "panel_bottom";
+            this.panel_bottom.Size = new System.Drawing.Size(334, 49);
+            this.panel_bottom.TabIndex = 3;
             // 
             // RezervacijaPaketa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 611);
-            this.Controls.Add(this.panel_info);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.ClientSize = new System.Drawing.Size(334, 461);
+            this.Controls.Add(this.panel_bottom);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RezervacijaPaketa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RezervacijaPaketa";
             this.Load += new System.EventHandler(this.RezervacijaPaketa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.panel_info.ResumeLayout(false);
-            this.panel_info.PerformLayout();
+            this.panel_bottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,15 +158,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.Panel panel_info;
-        private System.Windows.Forms.Button button_rezervisi;
-        private System.Windows.Forms.TextBox textBox_destinacija;
-        private System.Windows.Forms.Label label_pasos;
-        private System.Windows.Forms.TextBox textBox_tip_prevoza;
-        private System.Windows.Forms.Label label_tip_prevoza;
-        private System.Windows.Forms.TextBox textBox_cena;
-        private System.Windows.Forms.Label label_ime;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label_cena;
+        private System.Windows.Forms.TextBox textBox_naziv;
+        private System.Windows.Forms.Label label_naziv;
+        private System.Windows.Forms.ComboBox comboBox_tip;
+        private System.Windows.Forms.Label label_tip;
+        private System.Windows.Forms.Button button_dodaj_rezervaciju;
+        private System.Windows.Forms.Panel panel_bottom;
     }
 }

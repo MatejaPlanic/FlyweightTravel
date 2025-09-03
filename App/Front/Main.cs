@@ -13,9 +13,11 @@ namespace Front
     // Main.cs
     public partial class Main : Form
     {
-        public Main()
+        private Form startForm;
+        public Main(Form callingForm)
         {
             InitializeComponent();
+            startForm = callingForm;
         }
 
         private Form activeForm = null;
@@ -51,10 +53,11 @@ namespace Front
 
         private void button_izlaz_Click(object sender, EventArgs e)
         {
-            //Start start=new Start();
-            //this.Hide();
-            //start.Show();
-            Application.Exit();
+            
+            
+            this.Hide();
+            startForm.Show();
+            //Application.Exit();
         }
 
         private void Main_Load(object sender, EventArgs e)

@@ -27,9 +27,14 @@ namespace Front
 
         private void button_start_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
+            Main main = new Main(this);
             this.Hide();
             main.Show();
+        }
+
+        private void Start_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
