@@ -1,3 +1,9 @@
+using BackEnd.Builders;
+using BackEnd.Config;
+using BackEnd.Facade;
+using Microsoft.Data.Sqlite;
+using MySqlConnector;
+using Npgsql;
 
 namespace BackEnd
 {
@@ -5,32 +11,12 @@ namespace BackEnd
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
+            AgencyFacade ker = new AgencyFacade();
+            /*ker.AddNewClient("Stefan", "Grujicic", "0522320", "24.06.2003.", "stefan@gmail.com", "0603252928");*/
 
 
-            app.MapControllers();
+            SeaArrangementBuilder s = new SeaArrangementBuilder();
 
-            app.Run();
         }
     }
 }
