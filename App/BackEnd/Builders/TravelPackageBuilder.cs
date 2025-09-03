@@ -15,9 +15,8 @@
         public abstract void BuildDateOfDeparture(string dod);
         public abstract void BuildCabinType(string cabin);
 
-        public void BuildCommonDetails(int id, string name, double price, string packageType)
+        public void BuildCommonDetails(string name, double price, string packageType)
         {
-            package.Id = id;
             package.Name = name;
             package.Price = price;
             package.PackageType = packageType;

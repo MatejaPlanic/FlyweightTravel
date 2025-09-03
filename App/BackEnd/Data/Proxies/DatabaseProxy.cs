@@ -105,5 +105,12 @@ namespace BackEnd.Data.Proxies
                 }
             }
         }
+
+        public void AddNewPackage(string name, string destination, string transportType, string accommodationType, double price, string additionalActivities, string guide, double duration, string boat, string route, string dateOfDeparture, string cabinType, string packageType)
+        {
+
+        }
+    
+            
     }
 }

@@ -19,21 +19,26 @@ namespace BackEnd.Facade
         public void AddNewClient(string ime, string prezime, 
             string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
-            Console.WriteLine("USO U FASADU");
             clientService.AddClient(ime,prezime,brojPasosa,datumRodjenja,emailAdresa,brojTelefona);
         }
 
         public List<Client> GetAllClients()
         {
-            //return clientService.GetClients();
+          
             return null;
         }
 
         public void ReservePackageForClient(int clientId, int packageId)
         {
-            //reservationService.CreateReservation(clientId, packageId);
+            
         }
 
-        // ... ostale metode za rad sa podacima
+        public void AddNewPackage(string name,string destination, string transportType, string accommodationType, double price, string additionalActivities,  string guide, double duration, string boat, string route, string dateOfDeparture,string cabinType, string packageType)
+        {
+            packageService.AddNewPackage(name,destination,transportType,accommodationType,price,additionalActivities,guide,duration,boat,route,dateOfDeparture,
+                                   cabinType, packageType);
+        }
+
+      
     }
 }
