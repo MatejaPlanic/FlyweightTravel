@@ -1,4 +1,6 @@
-﻿namespace DsApp.Builders
+﻿using Front;
+
+namespace DsApp.Builders
 {
     public abstract class TravelPackageBuilder
     {

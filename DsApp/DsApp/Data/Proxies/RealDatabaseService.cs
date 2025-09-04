@@ -54,5 +54,39 @@ namespace DsApp.Data.Proxies
             _databaseManager.GetConnection().Close();
 
         }
+
+        public void AddNewPackage(SqlEnvelope envelope)
+        {
+            if (envelope is null) throw new ArgumentNullException(nameof(envelope));
+            if (string.IsNullOrWhiteSpace(envelope.Query))
+                throw new ArgumentException("Query je prazan.", nameof(envelope));
+
+            var conn = _databaseManager!.GetConnection();   
+            try
+            {
+                conn.Open();
+
+                using (var cmd = conn.CreateCommand())       
+                {
+                    cmd.CommandText = envelope.Query;
+                    cmd.Connection = conn;
+
+                    foreach (var kv in envelope.Parameters)
+                    {
+                        var p = cmd.CreateParameter();        
+                        p.ParameterName = kv.Key;            
+                        p.Value = kv.Value ?? DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
+
+                    cmd.ExecuteNonQuery();                    
+                }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
     }
 }

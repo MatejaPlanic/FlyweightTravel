@@ -28,130 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_dodatne_aktivnosti = new System.Windows.Forms.TextBox();
-            this.label_dodatne_aktivnosti = new System.Windows.Forms.Label();
-            this.textBox_ruta = new System.Windows.Forms.TextBox();
-            this.label_brod = new System.Windows.Forms.Label();
-            this.label_datum = new System.Windows.Forms.Label();
-            this.textBox_brod = new System.Windows.Forms.TextBox();
-            this.label_ruta = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            krstarenje_datum = new DateTimePicker();
+            krstarenje_kabina = new TextBox();
+            label_dodatne_aktivnosti = new Label();
+            krstarenje_ruta = new TextBox();
+            label_brod = new Label();
+            label_datum = new Label();
+            krstarenje_brod = new TextBox();
+            label_ruta = new Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox_dodatne_aktivnosti);
-            this.panel1.Controls.Add(this.label_dodatne_aktivnosti);
-            this.panel1.Controls.Add(this.textBox_ruta);
-            this.panel1.Controls.Add(this.label_brod);
-            this.panel1.Controls.Add(this.label_datum);
-            this.panel1.Controls.Add(this.textBox_brod);
-            this.panel1.Controls.Add(this.label_ruta);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 215);
-            this.panel1.TabIndex = 14;
+            panel1.Controls.Add(krstarenje_datum);
+            panel1.Controls.Add(krstarenje_kabina);
+            panel1.Controls.Add(label_dodatne_aktivnosti);
+            panel1.Controls.Add(krstarenje_ruta);
+            panel1.Controls.Add(label_brod);
+            panel1.Controls.Add(label_datum);
+            panel1.Controls.Add(krstarenje_brod);
+            panel1.Controls.Add(label_ruta);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(334, 215);
+            panel1.TabIndex = 14;
             // 
-            // textBox_dodatne_aktivnosti
+            // krstarenje_datum
             // 
-            this.textBox_dodatne_aktivnosti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dodatne_aktivnosti.Location = new System.Drawing.Point(12, 190);
-            this.textBox_dodatne_aktivnosti.Name = "textBox_dodatne_aktivnosti";
-            this.textBox_dodatne_aktivnosti.Size = new System.Drawing.Size(250, 23);
-            this.textBox_dodatne_aktivnosti.TabIndex = 13;
+            krstarenje_datum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_datum.Location = new Point(12, 138);
+            krstarenje_datum.Name = "krstarenje_datum";
+            krstarenje_datum.Size = new Size(250, 23);
+            krstarenje_datum.TabIndex = 14;
+            // 
+            // krstarenje_kabina
+            // 
+            krstarenje_kabina.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_kabina.Location = new Point(12, 190);
+            krstarenje_kabina.Name = "krstarenje_kabina";
+            krstarenje_kabina.Size = new Size(250, 23);
+            krstarenje_kabina.TabIndex = 13;
             // 
             // label_dodatne_aktivnosti
             // 
-            this.label_dodatne_aktivnosti.AutoSize = true;
-            this.label_dodatne_aktivnosti.Location = new System.Drawing.Point(9, 171);
-            this.label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
-            this.label_dodatne_aktivnosti.Size = new System.Drawing.Size(133, 16);
-            this.label_dodatne_aktivnosti.TabIndex = 12;
-            this.label_dodatne_aktivnosti.Text = "Dodatne Aktivnosti:";
+            label_dodatne_aktivnosti.AutoSize = true;
+            label_dodatne_aktivnosti.Location = new Point(9, 171);
+            label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
+            label_dodatne_aktivnosti.Size = new Size(80, 16);
+            label_dodatne_aktivnosti.TabIndex = 12;
+            label_dodatne_aktivnosti.Text = "Tip kabine:";
             // 
-            // textBox_ruta
+            // krstarenje_ruta
             // 
-            this.textBox_ruta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ruta.Location = new System.Drawing.Point(12, 84);
-            this.textBox_ruta.Name = "textBox_ruta";
-            this.textBox_ruta.Size = new System.Drawing.Size(250, 23);
-            this.textBox_ruta.TabIndex = 9;
+            krstarenje_ruta.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_ruta.Location = new Point(12, 84);
+            krstarenje_ruta.Name = "krstarenje_ruta";
+            krstarenje_ruta.Size = new Size(250, 23);
+            krstarenje_ruta.TabIndex = 9;
             // 
             // label_brod
             // 
-            this.label_brod.AutoSize = true;
-            this.label_brod.Location = new System.Drawing.Point(9, 11);
-            this.label_brod.Name = "label_brod";
-            this.label_brod.Size = new System.Drawing.Size(41, 16);
-            this.label_brod.TabIndex = 6;
-            this.label_brod.Text = "Brod:";
+            label_brod.AutoSize = true;
+            label_brod.Location = new Point(9, 11);
+            label_brod.Name = "label_brod";
+            label_brod.Size = new Size(41, 16);
+            label_brod.TabIndex = 6;
+            label_brod.Text = "Brod:";
             // 
             // label_datum
             // 
-            this.label_datum.AutoSize = true;
-            this.label_datum.Location = new System.Drawing.Point(9, 120);
-            this.label_datum.Name = "label_datum";
-            this.label_datum.Size = new System.Drawing.Size(108, 16);
-            this.label_datum.TabIndex = 10;
-            this.label_datum.Text = "Datum Polaska:";
+            label_datum.AutoSize = true;
+            label_datum.Location = new Point(9, 120);
+            label_datum.Name = "label_datum";
+            label_datum.Size = new Size(108, 16);
+            label_datum.TabIndex = 10;
+            label_datum.Text = "Datum Polaska:";
             // 
-            // textBox_brod
+            // krstarenje_brod
             // 
-            this.textBox_brod.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_brod.Location = new System.Drawing.Point(12, 30);
-            this.textBox_brod.Name = "textBox_brod";
-            this.textBox_brod.Size = new System.Drawing.Size(250, 23);
-            this.textBox_brod.TabIndex = 7;
+            krstarenje_brod.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_brod.Location = new Point(12, 30);
+            krstarenje_brod.Name = "krstarenje_brod";
+            krstarenje_brod.Size = new Size(250, 23);
+            krstarenje_brod.TabIndex = 7;
+            krstarenje_brod.TextChanged += textBox_brod_TextChanged;
             // 
             // label_ruta
             // 
-            this.label_ruta.AutoSize = true;
-            this.label_ruta.Location = new System.Drawing.Point(9, 65);
-            this.label_ruta.Name = "label_ruta";
-            this.label_ruta.Size = new System.Drawing.Size(40, 16);
-            this.label_ruta.TabIndex = 8;
-            this.label_ruta.Text = "Ruta:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 138);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 23);
-            this.dateTimePicker1.TabIndex = 14;
+            label_ruta.AutoSize = true;
+            label_ruta.Location = new Point(9, 65);
+            label_ruta.Name = "label_ruta";
+            label_ruta.Size = new Size(40, 16);
+            label_ruta.TabIndex = 8;
+            label_ruta.Text = "Ruta:";
             // 
             // PaketKrstarenje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 434);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PaketKrstarenje";
-            this.Text = "PaketKrstarenje";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(334, 434);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 71, 160);
+            Margin = new Padding(4);
+            Name = "PaketKrstarenje";
+            Text = "PaketKrstarenje";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox_dodatne_aktivnosti;
+        private System.Windows.Forms.TextBox krstarenje_kabina;
         private System.Windows.Forms.Label label_dodatne_aktivnosti;
-        private System.Windows.Forms.TextBox textBox_ruta;
+        private System.Windows.Forms.TextBox krstarenje_ruta;
         private System.Windows.Forms.Label label_brod;
         private System.Windows.Forms.Label label_datum;
-        private System.Windows.Forms.TextBox textBox_brod;
+        private System.Windows.Forms.TextBox krstarenje_brod;
         private System.Windows.Forms.Label label_ruta;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker krstarenje_datum;
     }
 }

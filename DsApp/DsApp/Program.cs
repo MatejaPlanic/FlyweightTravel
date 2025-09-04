@@ -15,8 +15,6 @@ namespace Front
         [STAThread]
         static void Main()
         {
-            AgencyFacade agencyFacade = new AgencyFacade();
-            agencyFacade.AddNewClient("Matundra123", "Ker", "02020323", "24.2.3.", "aoskj@gmail.com", "9'812389'1");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());

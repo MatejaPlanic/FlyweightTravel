@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Front;
+using DsApp.Builders;
+using DsApp.Facade;
 namespace Front
 {
     public partial class Novi_Paket : Form
@@ -52,23 +54,108 @@ namespace Front
             switch (comboBox_tip.SelectedItem.ToString())
             {
                 case "More":
-                    
                     openChildForm(new PaketAranzmanZaMore());
                     break;
                 case "Planina":
-                    
+
                     openChildForm(new PaketAranzmanZaPlanine());
                     break;
                 case "Ekskurzija":
-                    
+
                     openChildForm(new PaketEkskurzije());
                     break;
                 case "Krstarenje":
-                    
+
                     openChildForm(new PaketKrstarenje());
                     break;
                 default:
                     MessageBox.Show("Molimo odaberite formu iz ComboBox-a.");
+                    return;
+            }
+        }
+
+        private void button_dodaj_paket_Click(object sender, EventArgs e)
+        {
+            AgencyFacade af = AgencyFacade.GetInstance();
+            switch (comboBox_tip.SelectedItem.ToString())
+            {
+                case "More":
+                    if (activeForm is PaketAranzmanZaMore moreForm)
+                    {
+                        var sea = new SeaArrangementBuilder();
+                        if (!double.TryParse(textBox2.Text, out var cena))
+                        {
+                            MessageBox.Show("Neispravna cena.");
+                            return;
+                        }
+
+                        sea.BuildCommonDetails(textBox_naziv.Text, cena, "More");
+                        sea.BuildDestination(moreForm.DestinationText);
+                        sea.BuildAccommodationType(moreForm.AccommodationText);
+                        sea.BuildAccommodationType(moreForm.TransportText);
+                        af.AddNewPackage(sea);
+                    }
+                    break;
+                case "Planina":
+
+                    if(activeForm is PaketAranzmanZaPlanine planineForm)
+                    {
+                        var planina = new MountainArrangementBuilder();
+                        if (!double.TryParse(textBox2.Text, out var cena))
+                        {
+                            MessageBox.Show("Neispravna cena.");
+                            return;
+                        }
+                        planina.BuildCommonDetails(textBox_naziv.Text, cena, "Planina");
+                        planina.BuildDestination(planineForm.Destination);
+                        planina.BuildTransportType(planineForm.Transport);
+                        planina.BuildAccommodationType(planineForm.Accommodation);
+                        planina.BuildAdditionalActivities(planineForm.Dodatne);
+                        af.AddNewPackage(planina);
+                    }
+                    break;
+                case "Ekskurzija":
+                    if(activeForm is PaketEkskurzije ekskurzijaForm)
+                    {
+                        var ekskurzija = new ExcursionArrangementBuilder();
+                        if (!double.TryParse(textBox2.Text, out var cena))
+                        {
+                            MessageBox.Show("Neispravna cena.");
+                            return;
+                        }
+                        ekskurzija.BuildCommonDetails(textBox_naziv.Text, cena, "Ekskurzija");
+                        ekskurzija.BuildDestination(ekskurzijaForm.Destination);
+                        ekskurzija.BuildGuide(ekskurzijaForm.Guide);
+                        if(!double.TryParse(ekskurzijaForm.Duration, out var trajanje))
+                        {
+                            MessageBox.Show("Neispravno trajanje.");
+                            return;
+                        }
+                        ekskurzija.BuildDuration(trajanje);
+                        ekskurzija.BuildTransportType(ekskurzijaForm.Transport);
+                        af.AddNewPackage(ekskurzija);
+                    }
+                    
+                    break;
+                case "Krstarenje":
+                    if(activeForm is PaketKrstarenje krstarenjeForm)
+                    {
+                        var krstarenje = new CruiseArrangementBuilder();
+                        if (!double.TryParse(textBox2.Text, out var cena))
+                        {
+                            MessageBox.Show("Neispravna cena.");
+                            return;
+                        }
+                        krstarenje.BuildCommonDetails(textBox_naziv.Text, cena, "Krstarenje");
+                        krstarenje.BuildBoat(krstarenjeForm.Boat);
+                        krstarenje.BuildCabinType(krstarenjeForm.Kabina);
+                        krstarenje.BuildRoute(krstarenjeForm.Route);
+                        krstarenje.BuildDateOfDeparture(krstarenjeForm.DepartureDate);
+                        af.AddNewPackage(krstarenje);
+                    }
+                    
+                    break;
+                default:
                     return;
             }
         }

@@ -16,5 +16,28 @@ namespace Front
         {
             InitializeComponent();
         }
+
+        private void textBox_naziv_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string Destination
+        {
+            get => ekskurzija_destinacija.Text;
+        }
+
+        public string Guide
+        {
+            get => ekskurzija_vodic.Text;
+        }
+        public string Transport
+        {
+            get => ekskurzija_prevoz.Text;
+        }
+        public string Duration
+        {
+            get => ekskurzija_trajanje.Text;
+        }
     }
 }

@@ -28,135 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_destinacija = new System.Windows.Forms.Label();
-            this.label_prevoz = new System.Windows.Forms.Label();
-            this.textBox_naziv = new System.Windows.Forms.TextBox();
-            this.label_smestaj = new System.Windows.Forms.Label();
-            this.textBox_dodatne_aktivnosti = new System.Windows.Forms.TextBox();
-            this.label_dodatne_aktivnosti = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            planina_dodatne = new TextBox();
+            label_dodatne_aktivnosti = new Label();
+            planina_smestaj = new TextBox();
+            planina_prevoz = new TextBox();
+            label_destinacija = new Label();
+            label_prevoz = new Label();
+            planina_destinacija = new TextBox();
+            label_smestaj = new Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox_dodatne_aktivnosti);
-            this.panel1.Controls.Add(this.label_dodatne_aktivnosti);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label_destinacija);
-            this.panel1.Controls.Add(this.label_prevoz);
-            this.panel1.Controls.Add(this.textBox_naziv);
-            this.panel1.Controls.Add(this.label_smestaj);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 215);
-            this.panel1.TabIndex = 13;
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(planina_dodatne);
+            panel1.Controls.Add(label_dodatne_aktivnosti);
+            panel1.Controls.Add(planina_smestaj);
+            panel1.Controls.Add(planina_prevoz);
+            panel1.Controls.Add(label_destinacija);
+            panel1.Controls.Add(label_prevoz);
+            panel1.Controls.Add(planina_destinacija);
+            panel1.Controls.Add(label_smestaj);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(334, 215);
+            panel1.TabIndex = 13;
             // 
-            // textBox2
+            // planina_dodatne
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(12, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 23);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 23);
-            this.textBox1.TabIndex = 11;
-            // 
-            // label_destinacija
-            // 
-            this.label_destinacija.AutoSize = true;
-            this.label_destinacija.Location = new System.Drawing.Point(9, 11);
-            this.label_destinacija.Name = "label_destinacija";
-            this.label_destinacija.Size = new System.Drawing.Size(84, 16);
-            this.label_destinacija.TabIndex = 6;
-            this.label_destinacija.Text = "Destinacija:";
-            // 
-            // label_prevoz
-            // 
-            this.label_prevoz.AutoSize = true;
-            this.label_prevoz.Location = new System.Drawing.Point(9, 120);
-            this.label_prevoz.Name = "label_prevoz";
-            this.label_prevoz.Size = new System.Drawing.Size(84, 16);
-            this.label_prevoz.TabIndex = 10;
-            this.label_prevoz.Text = "Tip Prevoza:";
-            // 
-            // textBox_naziv
-            // 
-            this.textBox_naziv.BackColor = System.Drawing.Color.White;
-            this.textBox_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_naziv.Location = new System.Drawing.Point(12, 30);
-            this.textBox_naziv.Name = "textBox_naziv";
-            this.textBox_naziv.Size = new System.Drawing.Size(250, 23);
-            this.textBox_naziv.TabIndex = 7;
-            // 
-            // label_smestaj
-            // 
-            this.label_smestaj.AutoSize = true;
-            this.label_smestaj.Location = new System.Drawing.Point(9, 65);
-            this.label_smestaj.Name = "label_smestaj";
-            this.label_smestaj.Size = new System.Drawing.Size(107, 16);
-            this.label_smestaj.TabIndex = 8;
-            this.label_smestaj.Text = "Vrsta Smeštaja:";
-            // 
-            // textBox_dodatne_aktivnosti
-            // 
-            this.textBox_dodatne_aktivnosti.BackColor = System.Drawing.Color.White;
-            this.textBox_dodatne_aktivnosti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dodatne_aktivnosti.Location = new System.Drawing.Point(12, 190);
-            this.textBox_dodatne_aktivnosti.Name = "textBox_dodatne_aktivnosti";
-            this.textBox_dodatne_aktivnosti.Size = new System.Drawing.Size(250, 23);
-            this.textBox_dodatne_aktivnosti.TabIndex = 13;
+            planina_dodatne.BackColor = Color.White;
+            planina_dodatne.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planina_dodatne.Location = new Point(12, 190);
+            planina_dodatne.Name = "planina_dodatne";
+            planina_dodatne.Size = new Size(250, 23);
+            planina_dodatne.TabIndex = 13;
             // 
             // label_dodatne_aktivnosti
             // 
-            this.label_dodatne_aktivnosti.AutoSize = true;
-            this.label_dodatne_aktivnosti.Location = new System.Drawing.Point(9, 171);
-            this.label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
-            this.label_dodatne_aktivnosti.Size = new System.Drawing.Size(133, 16);
-            this.label_dodatne_aktivnosti.TabIndex = 12;
-            this.label_dodatne_aktivnosti.Text = "Dodatne Aktivnosti:";
+            label_dodatne_aktivnosti.AutoSize = true;
+            label_dodatne_aktivnosti.Location = new Point(9, 171);
+            label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
+            label_dodatne_aktivnosti.Size = new Size(133, 16);
+            label_dodatne_aktivnosti.TabIndex = 12;
+            label_dodatne_aktivnosti.Text = "Dodatne Aktivnosti:";
+            // 
+            // planina_smestaj
+            // 
+            planina_smestaj.BackColor = Color.White;
+            planina_smestaj.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planina_smestaj.Location = new Point(12, 84);
+            planina_smestaj.Name = "planina_smestaj";
+            planina_smestaj.Size = new Size(250, 23);
+            planina_smestaj.TabIndex = 9;
+            // 
+            // planina_prevoz
+            // 
+            planina_prevoz.BackColor = Color.White;
+            planina_prevoz.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planina_prevoz.Location = new Point(12, 138);
+            planina_prevoz.Name = "planina_prevoz";
+            planina_prevoz.Size = new Size(250, 23);
+            planina_prevoz.TabIndex = 11;
+            // 
+            // label_destinacija
+            // 
+            label_destinacija.AutoSize = true;
+            label_destinacija.Location = new Point(9, 11);
+            label_destinacija.Name = "label_destinacija";
+            label_destinacija.Size = new Size(84, 16);
+            label_destinacija.TabIndex = 6;
+            label_destinacija.Text = "Destinacija:";
+            // 
+            // label_prevoz
+            // 
+            label_prevoz.AutoSize = true;
+            label_prevoz.Location = new Point(9, 120);
+            label_prevoz.Name = "label_prevoz";
+            label_prevoz.Size = new Size(84, 16);
+            label_prevoz.TabIndex = 10;
+            label_prevoz.Text = "Tip Prevoza:";
+            // 
+            // planina_destinacija
+            // 
+            planina_destinacija.BackColor = Color.White;
+            planina_destinacija.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            planina_destinacija.Location = new Point(12, 30);
+            planina_destinacija.Name = "planina_destinacija";
+            planina_destinacija.Size = new Size(250, 23);
+            planina_destinacija.TabIndex = 7;
+            planina_destinacija.TextChanged += planina_destinacija_TextChanged;
+            // 
+            // label_smestaj
+            // 
+            label_smestaj.AutoSize = true;
+            label_smestaj.Location = new Point(9, 65);
+            label_smestaj.Name = "label_smestaj";
+            label_smestaj.Size = new Size(107, 16);
+            label_smestaj.TabIndex = 8;
+            label_smestaj.Text = "Vrsta Smeštaja:";
             // 
             // PaketAranzmanZaPlanine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 434);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PaketAranzmanZaPlanine";
-            this.Text = "PaketAranzmanZaPlanine";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(334, 434);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 71, 160);
+            Margin = new Padding(4);
+            Name = "PaketAranzmanZaPlanine";
+            Text = "PaketAranzmanZaPlanine";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox planina_smestaj;
+        private System.Windows.Forms.TextBox planina_prevoz;
         private System.Windows.Forms.Label label_destinacija;
         private System.Windows.Forms.Label label_prevoz;
-        private System.Windows.Forms.TextBox textBox_naziv;
+        private System.Windows.Forms.TextBox planina_destinacija;
         private System.Windows.Forms.Label label_smestaj;
-        private System.Windows.Forms.TextBox textBox_dodatne_aktivnosti;
+        private System.Windows.Forms.TextBox planina_dodatne;
         private System.Windows.Forms.Label label_dodatne_aktivnosti;
     }
 }

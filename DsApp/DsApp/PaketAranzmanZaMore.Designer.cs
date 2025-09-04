@@ -28,109 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label_smestaj = new System.Windows.Forms.Label();
-            this.textBox_naziv = new System.Windows.Forms.TextBox();
-            this.label_destinacija = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_prevoz = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            more_smestaj = new TextBox();
+            label_smestaj = new Label();
+            more_destinacija = new TextBox();
+            label_destinacija = new Label();
+            more_prevoz = new TextBox();
+            label_prevoz = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
-            // textBox2
+            // more_smestaj
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(12, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 23);
-            this.textBox2.TabIndex = 9;
+            more_smestaj.BackColor = Color.White;
+            more_smestaj.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            more_smestaj.Location = new Point(12, 84);
+            more_smestaj.Name = "more_smestaj";
+            more_smestaj.Size = new Size(250, 23);
+            more_smestaj.TabIndex = 9;
             // 
             // label_smestaj
             // 
-            this.label_smestaj.AutoSize = true;
-            this.label_smestaj.Location = new System.Drawing.Point(9, 65);
-            this.label_smestaj.Name = "label_smestaj";
-            this.label_smestaj.Size = new System.Drawing.Size(107, 16);
-            this.label_smestaj.TabIndex = 8;
-            this.label_smestaj.Text = "Vrsta Smeštaja:";
+            label_smestaj.AutoSize = true;
+            label_smestaj.Location = new Point(9, 65);
+            label_smestaj.Name = "label_smestaj";
+            label_smestaj.Size = new Size(107, 16);
+            label_smestaj.TabIndex = 8;
+            label_smestaj.Text = "Vrsta Smeštaja:";
             // 
-            // textBox_naziv
+            // more_destinacija
             // 
-            this.textBox_naziv.BackColor = System.Drawing.Color.White;
-            this.textBox_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_naziv.Location = new System.Drawing.Point(12, 30);
-            this.textBox_naziv.Name = "textBox_naziv";
-            this.textBox_naziv.Size = new System.Drawing.Size(250, 23);
-            this.textBox_naziv.TabIndex = 7;
+            more_destinacija.BackColor = Color.White;
+            more_destinacija.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            more_destinacija.Location = new Point(12, 30);
+            more_destinacija.Name = "more_destinacija";
+            more_destinacija.Size = new Size(250, 23);
+            more_destinacija.TabIndex = 7;
+            more_destinacija.TextChanged += more_destinacija_TextChanged;
             // 
             // label_destinacija
             // 
-            this.label_destinacija.AutoSize = true;
-            this.label_destinacija.Location = new System.Drawing.Point(9, 11);
-            this.label_destinacija.Name = "label_destinacija";
-            this.label_destinacija.Size = new System.Drawing.Size(84, 16);
-            this.label_destinacija.TabIndex = 6;
-            this.label_destinacija.Text = "Destinacija:";
+            label_destinacija.AutoSize = true;
+            label_destinacija.Location = new Point(9, 11);
+            label_destinacija.Name = "label_destinacija";
+            label_destinacija.Size = new Size(84, 16);
+            label_destinacija.TabIndex = 6;
+            label_destinacija.Text = "Destinacija:";
             // 
-            // textBox1
+            // more_prevoz
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 23);
-            this.textBox1.TabIndex = 11;
+            more_prevoz.BackColor = Color.White;
+            more_prevoz.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            more_prevoz.Location = new Point(12, 138);
+            more_prevoz.Name = "more_prevoz";
+            more_prevoz.Size = new Size(250, 23);
+            more_prevoz.TabIndex = 11;
             // 
             // label_prevoz
             // 
-            this.label_prevoz.AutoSize = true;
-            this.label_prevoz.Location = new System.Drawing.Point(9, 120);
-            this.label_prevoz.Name = "label_prevoz";
-            this.label_prevoz.Size = new System.Drawing.Size(84, 16);
-            this.label_prevoz.TabIndex = 10;
-            this.label_prevoz.Text = "Tip Prevoza:";
+            label_prevoz.AutoSize = true;
+            label_prevoz.Location = new Point(9, 120);
+            label_prevoz.Name = "label_prevoz";
+            label_prevoz.Size = new Size(84, 16);
+            label_prevoz.TabIndex = 10;
+            label_prevoz.Text = "Tip Prevoza:";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label_destinacija);
-            this.panel1.Controls.Add(this.label_prevoz);
-            this.panel1.Controls.Add(this.textBox_naziv);
-            this.panel1.Controls.Add(this.label_smestaj);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 183);
-            this.panel1.TabIndex = 12;
+            panel1.Controls.Add(more_smestaj);
+            panel1.Controls.Add(more_prevoz);
+            panel1.Controls.Add(label_destinacija);
+            panel1.Controls.Add(label_prevoz);
+            panel1.Controls.Add(more_destinacija);
+            panel1.Controls.Add(label_smestaj);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(334, 183);
+            panel1.TabIndex = 12;
             // 
             // PaketAranzmanZaMore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 434);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PaketAranzmanZaMore";
-            this.Text = "PaketAranzmanZaMore";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(334, 434);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 71, 160);
+            Margin = new Padding(4);
+            Name = "PaketAranzmanZaMore";
+            Text = "PaketAranzmanZaMore";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox more_smestaj;
         private System.Windows.Forms.Label label_smestaj;
-        private System.Windows.Forms.TextBox textBox_naziv;
+        private System.Windows.Forms.TextBox more_destinacija;
         private System.Windows.Forms.Label label_destinacija;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox more_prevoz;
         private System.Windows.Forms.Label label_prevoz;
         private System.Windows.Forms.Panel panel1;
     }
