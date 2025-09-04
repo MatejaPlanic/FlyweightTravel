@@ -16,5 +16,10 @@ namespace DsApp.Services
             proxy.AddNewPackage(tr);
         }
 
+        public List<string> getDestinations()
+        {
+            return proxy.getDestinations();
+        }
+
     }
 }

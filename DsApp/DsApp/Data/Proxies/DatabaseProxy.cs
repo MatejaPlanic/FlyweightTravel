@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using DsApp.Builders;
+using DsApp.Services;
 
 namespace DsApp.Data.Proxies
 {
@@ -191,7 +192,12 @@ namespace DsApp.Data.Proxies
 
             realService.AddNewPackage(new SqlEnvelope { Query = sql, Parameters = args });
         }
-    
-            
+
+        public List<string> getDestinations()
+        {
+            return realService.getDestinations();
+        }
+
+
     }
 }

@@ -24,5 +24,10 @@ namespace DsApp.Builders
             package.Route = route;
         }
 
+        public void BuildDestination(string dest)
+        {
+            package.Destination = dest;
+        }
+
     }
 }

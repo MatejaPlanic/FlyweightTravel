@@ -8,7 +8,7 @@
             package.Destination = dest;
         }
 
-        public void BuildDuration(double duration)
+        public void BuildDuration(string duration)
         {
             package.Duration = duration;
         }

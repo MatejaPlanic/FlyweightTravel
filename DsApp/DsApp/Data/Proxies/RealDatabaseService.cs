@@ -1,4 +1,5 @@
 ﻿using DsApp.Config;
+using DsApp.Services;
 using Microsoft.Data.Sqlite;
 using MySqlConnector;
 using System.Data;
@@ -87,6 +88,48 @@ namespace DsApp.Data.Proxies
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
             }
+        }
+
+        public List<string> getDestinations()
+        {
+            var result = new List<string>();
+
+            const string query = @"
+            SELECT DISTINCT destinacija
+            FROM packages
+            WHERE destinacija IS NOT NULL AND TRIM(destinacija) <> ''
+            ORDER BY destinacija;";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                var dest = reader.GetString(0);
+                                if (!string.IsNullOrWhiteSpace(dest))
+                                    result.Add(dest);
+                            }
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+
+            return result;
         }
     }
 }

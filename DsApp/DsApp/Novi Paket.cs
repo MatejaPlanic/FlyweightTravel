@@ -92,7 +92,7 @@ namespace Front
                         sea.BuildCommonDetails(textBox_naziv.Text, cena, "More");
                         sea.BuildDestination(moreForm.DestinationText);
                         sea.BuildAccommodationType(moreForm.AccommodationText);
-                        sea.BuildAccommodationType(moreForm.TransportText);
+                        sea.BuildTransportType(moreForm.TransportText);
                         af.AddNewPackage(sea);
                     }
                     break;
@@ -126,12 +126,8 @@ namespace Front
                         ekskurzija.BuildCommonDetails(textBox_naziv.Text, cena, "Ekskurzija");
                         ekskurzija.BuildDestination(ekskurzijaForm.Destination);
                         ekskurzija.BuildGuide(ekskurzijaForm.Guide);
-                        if(!double.TryParse(ekskurzijaForm.Duration, out var trajanje))
-                        {
-                            MessageBox.Show("Neispravno trajanje.");
-                            return;
-                        }
-                        ekskurzija.BuildDuration(trajanje);
+                  
+                        ekskurzija.BuildDuration(ekskurzijaForm.Duration);
                         ekskurzija.BuildTransportType(ekskurzijaForm.Transport);
                         af.AddNewPackage(ekskurzija);
                     }

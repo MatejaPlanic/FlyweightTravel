@@ -51,6 +51,11 @@ namespace DsApp.Facade
             packageService.AddNewPackage(tr);
         }
 
+        public List<string> getDestinations()
+        {
+            return packageService.getDestinations();
+        }
+
         public ClientService GetClientService()
         { return clientService; }
 
