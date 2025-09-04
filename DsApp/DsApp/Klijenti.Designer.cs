@@ -33,14 +33,14 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label5 = new Label();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            div_clients = new Guna.UI2.WinForms.Guna2DataGridView();
             button_pretraga = new Button();
             textBox_pretraga = new TextBox();
             button_dodaj = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)div_clients).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -68,12 +68,12 @@
             label5.Text = "Klijenti";
             label5.Click += label5_Click;
             // 
-            // guna2DataGridView1
+            // div_clients
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            guna2DataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            guna2DataGridView1.BackgroundColor = Color.Gainsboro;
+            div_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            div_clients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            div_clients.BackgroundColor = Color.Gainsboro;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -81,9 +81,9 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 4;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            div_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            div_clients.ColumnHeadersHeight = 40;
+            div_clients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -91,36 +91,35 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(0, 0);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowTemplate.Height = 22;
-            guna2DataGridView1.Size = new Size(934, 445);
-            guna2DataGridView1.TabIndex = 19;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.Gainsboro;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            div_clients.DefaultCellStyle = dataGridViewCellStyle3;
+            div_clients.GridColor = Color.FromArgb(231, 229, 255);
+            div_clients.Location = new Point(0, 0);
+            div_clients.Name = "div_clients";
+            div_clients.RowHeadersVisible = false;
+            div_clients.RowTemplate.Height = 22;
+            div_clients.Size = new Size(934, 445);
+            div_clients.TabIndex = 19;
+            div_clients.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            div_clients.ThemeStyle.AlternatingRowsStyle.Font = null;
+            div_clients.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            div_clients.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            div_clients.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            div_clients.ThemeStyle.BackColor = Color.Gainsboro;
+            div_clients.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            div_clients.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            div_clients.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            div_clients.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            div_clients.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            div_clients.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            div_clients.ThemeStyle.HeaderStyle.Height = 40;
+            div_clients.ThemeStyle.ReadOnly = false;
+            div_clients.ThemeStyle.RowsStyle.BackColor = Color.White;
+            div_clients.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            div_clients.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            div_clients.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            div_clients.ThemeStyle.RowsStyle.Height = 22;
+            div_clients.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            div_clients.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // button_pretraga
             // 
@@ -178,7 +177,7 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(guna2DataGridView1);
+            panel3.Controls.Add(div_clients);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 55);
             panel3.Name = "panel3";
@@ -201,7 +200,7 @@
             Load += Klijenti_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)div_clients).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -213,7 +212,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView div_clients;
         private System.Windows.Forms.Button button_pretraga;
         private System.Windows.Forms.TextBox textBox_pretraga;
         private System.Windows.Forms.Button button_dodaj;

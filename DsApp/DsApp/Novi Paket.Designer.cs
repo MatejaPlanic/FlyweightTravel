@@ -53,6 +53,7 @@
             button_dodaj_paket.TabIndex = 0;
             button_dodaj_paket.Text = "Dodaj Paket";
             button_dodaj_paket.UseVisualStyleBackColor = true;
+            button_dodaj_paket.Click += button_dodaj_paket_Click;
             // 
             // panel_top
             // 

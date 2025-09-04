@@ -1,4 +1,5 @@
-﻿using DsApp.Data.Proxies;
+﻿using DsApp.Builders;
+using DsApp.Data.Proxies;
 
 namespace DsApp.Services
 {
@@ -10,12 +11,13 @@ namespace DsApp.Services
         {
             proxy = DatabaseProxy.getProxy();
         }
-        public void AddNewPackage(string name, string destination, string transportType, string accommodationType, double price, string additionalActivities, string guide, double duration, string boat, string route, string dateOfDeparture,
-                                  string cabinType, string packageType)
+        public void AddNewPackage(TravelPackageBuilder tr)
         {
-            proxy.AddNewPackage(name, destination, transportType, accommodationType, price, additionalActivities, guide, duration, boat, route, dateOfDeparture,
-                                   cabinType, packageType);
+            proxy.AddNewPackage(tr);
         }
-
+        public List<TravelPackage> GetAllPackages()
+        {
+            return proxy.GetAllPackages();
+        }
     }
 }

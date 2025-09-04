@@ -1,4 +1,6 @@
-﻿using DsApp.Data.Proxies;
+﻿using DsApp.Builders;
+using DsApp.Data.Proxies;
+using DsApp.Models;
 
 namespace DsApp.Services
 {
@@ -15,5 +17,12 @@ namespace DsApp.Services
         { 
             proxy.AddClient(ime, prezime, brojPasosa, datumRodjenja, emailAdresa, brojTelefona);
         }
+
+        public List<Client> GetAllClients()
+        {
+            return proxy.GetAllClients();
+        }
+
+
     }
 }

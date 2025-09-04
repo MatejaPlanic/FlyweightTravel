@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,15 @@ namespace Front
         {
             Novi_Paket noviPaket = new Novi_Paket();
             noviPaket.ShowDialog();
+        }
+
+        public Guna2DataGridView getPaketiDiv
+        {
+            get => div_paketi;
+        }
+        private void Paketi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

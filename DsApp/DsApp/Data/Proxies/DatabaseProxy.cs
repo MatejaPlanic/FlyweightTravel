@@ -1,11 +1,19 @@
-﻿using DsApp.Data.Proxies;
+﻿using DsApp.Builders;
 using DsApp.Config;
+using DsApp.Data.Proxies;
+using DsApp.Models;
+using DsApp.Services;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace DsApp.Data.Proxies
 {
+    public sealed class SqlEnvelope
+    {
+        public string Query { get; init; } = "";
+        public Dictionary<string, object?> Parameters { get; init; } = new();
+    }
     public class DatabaseProxy
     {
         private RealDatabaseService? realService = null;
@@ -106,11 +114,99 @@ namespace DsApp.Data.Proxies
             }
         }
 
-        public void AddNewPackage(string name, string destination, string transportType, string accommodationType, double price, string additionalActivities, string guide, double duration, string boat, string route, string dateOfDeparture, string cabinType, string packageType)
+        public void AddNewPackage(TravelPackageBuilder tr)
         {
+            if (tr == null) throw new ArgumentNullException(nameof(tr));
+            var p = tr.GetPackage();
 
+            var args = new Dictionary<string, object?>();
+            string sql;
+
+            if (tr is SeaArrangementBuilder)
+            {
+                sql = @"
+         INSERT INTO packages
+           (ime, cena, tip_paketa, smestaj, destinacija, transport)
+         VALUES
+           (@ime, @cena, @tip, @smestaj, @destinacija, @transport);";
+
+                args["@ime"] = p.Name;
+                args["@cena"] = p.Price;
+                args["@tip"] = p.PackageType;
+                args["@smestaj"] = p.AccommodationType;
+                args["@destinacija"] = p.Destination;
+                args["@transport"] = p.TransportType;
+            }
+            else if (tr is MountainArrangementBuilder)
+            {
+                sql = @"
+         INSERT INTO packages
+           (ime, cena, tip_paketa, smestaj, destinacija, transport, dodatne_aktivnosti)
+         VALUES
+           (@ime, @cena, @tip, @smestaj, @destinacija, @transport, @aktivnosti);";
+
+                args["@ime"] = p.Name;
+                args["@cena"] = p.Price;
+                args["@tip"] = p.PackageType;
+                args["@smestaj"] = p.AccommodationType;
+                args["@destinacija"] = p.Destination;
+                args["@transport"] = p.TransportType;
+                args["@aktivnosti"] = p.AdditionalActivities;
+            }
+            else if (tr is ExcursionArrangementBuilder)
+            {
+                sql = @"
+         INSERT INTO packages
+           (ime, cena, tip_paketa, destinacija, transport, vodic, trajanje)
+         VALUES
+           (@ime, @cena, @tip, @destinacija, @transport, @vodic, @trajanje);";
+
+                args["@ime"] = p.Name;
+                args["@cena"] = p.Price;
+                args["@tip"] = p.PackageType;
+                args["@destinacija"] = p.Destination;
+                args["@transport"] = p.TransportType;
+                args["@vodic"] = p.Guide;
+                args["@trajanje"] = p.Duration;
+            }
+            else if (tr is CruiseArrangementBuilder)
+            {
+                sql = @"
+         INSERT INTO packages
+           (ime, cena, tip_paketa, brod, ruta, datum_polaska, tip_kabine)
+         VALUES
+           (@ime, @cena, @tip, @brod, @ruta, @datum, @kabina);";
+
+                args["@ime"] = p.Name;
+                args["@cena"] = p.Price;
+                args["@tip"] = p.PackageType;
+                args["@brod"] = p.Boat;
+                args["@ruta"] = p.Route;
+                args["@datum"] = p.DateOfDeparture;
+                args["@kabina"] = p.CabinType;
+            }
+            else
+            {
+                throw new ArgumentException("Nepoznat tip paketa.");
+            }
+
+            realService.AddNewPackage(new SqlEnvelope { Query = sql, Parameters = args });
         }
-    
-            
+
+        public List<Client> GetAllClients()
+        {
+            List<Client> clients = realService.GetAllClients();
+            foreach (Client client in clients)
+            {
+                client.BrojPasosa = Decrypt(client.BrojPasosa);
+            }
+
+            return clients;
+        }
+
+        public List<TravelPackage> GetAllPackages()
+        {
+            return realService.GetAllPackages();
+        }
     }
 }

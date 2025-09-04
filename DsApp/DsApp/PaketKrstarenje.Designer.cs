@@ -31,13 +31,14 @@
             panel1 = new Panel();
             krstarenje_destinacija = new TextBox();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             textBox_dodatne_aktivnosti = new TextBox();
+            krstarenje_datum = new DateTimePicker();
+            krstarenje_kabina = new TextBox();
             label_dodatne_aktivnosti = new Label();
-            textBox_ruta = new TextBox();
+            krstarenje_ruta = new TextBox();
             label_brod = new Label();
             label_datum = new Label();
-            textBox_brod = new TextBox();
+            krstarenje_brod = new TextBox();
             label_ruta = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -46,13 +47,14 @@
             // 
             panel1.Controls.Add(krstarenje_destinacija);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(textBox_dodatne_aktivnosti);
+            panel1.Controls.Add(krstarenje_datum);
+            panel1.Controls.Add(krstarenje_kabina);
             panel1.Controls.Add(label_dodatne_aktivnosti);
-            panel1.Controls.Add(textBox_ruta);
+            panel1.Controls.Add(krstarenje_ruta);
             panel1.Controls.Add(label_brod);
             panel1.Controls.Add(label_datum);
-            panel1.Controls.Add(textBox_brod);
+            panel1.Controls.Add(krstarenje_brod);
             panel1.Controls.Add(label_ruta);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -67,6 +69,23 @@
             krstarenje_destinacija.Name = "krstarenje_destinacija";
             krstarenje_destinacija.Size = new Size(250, 23);
             krstarenje_destinacija.TabIndex = 16;
+
+            // 
+            // krstarenje_datum
+            // 
+            krstarenje_datum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_datum.Location = new Point(12, 138);
+            krstarenje_datum.Name = "krstarenje_datum";
+            krstarenje_datum.Size = new Size(250, 23);
+            krstarenje_datum.TabIndex = 14;
+            // 
+            // krstarenje_kabina
+            // 
+            krstarenje_kabina.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_kabina.Location = new Point(12, 190);
+            krstarenje_kabina.Name = "krstarenje_kabina";
+            krstarenje_kabina.Size = new Size(250, 23);
+            krstarenje_kabina.TabIndex = 13;
             // 
             // label1
             // 
@@ -77,14 +96,6 @@
             label1.TabIndex = 15;
             label1.Text = "Destinacija:";
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(12, 191);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 23);
-            dateTimePicker1.TabIndex = 14;
-            // 
             // textBox_dodatne_aktivnosti
             // 
             textBox_dodatne_aktivnosti.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -92,23 +103,21 @@
             textBox_dodatne_aktivnosti.Name = "textBox_dodatne_aktivnosti";
             textBox_dodatne_aktivnosti.Size = new Size(250, 23);
             textBox_dodatne_aktivnosti.TabIndex = 13;
-            // 
-            // label_dodatne_aktivnosti
-            // 
             label_dodatne_aktivnosti.AutoSize = true;
-            label_dodatne_aktivnosti.Location = new Point(9, 224);
+            label_dodatne_aktivnosti.Location = new Point(9, 171);
             label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
-            label_dodatne_aktivnosti.Size = new Size(133, 16);
+            label_dodatne_aktivnosti.Size = new Size(80, 16);
             label_dodatne_aktivnosti.TabIndex = 12;
-            label_dodatne_aktivnosti.Text = "Dodatne Aktivnosti:";
+            label_dodatne_aktivnosti.Text = "Tip Kabine:";
+            label_dodatne_aktivnosti.Click += label_dodatne_aktivnosti_Click;
             // 
-            // textBox_ruta
+            // krstarenje_ruta
             // 
-            textBox_ruta.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_ruta.Location = new Point(12, 137);
-            textBox_ruta.Name = "textBox_ruta";
-            textBox_ruta.Size = new Size(250, 23);
-            textBox_ruta.TabIndex = 9;
+            krstarenje_ruta.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_ruta.Location = new Point(12, 84);
+            krstarenje_ruta.Name = "krstarenje_ruta";
+            krstarenje_ruta.Size = new Size(250, 23);
+            krstarenje_ruta.TabIndex = 9;
             // 
             // label_brod
             // 
@@ -128,13 +137,13 @@
             label_datum.TabIndex = 10;
             label_datum.Text = "Datum Polaska:";
             // 
-            // textBox_brod
+            // krstarenje_brod
             // 
-            textBox_brod.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_brod.Location = new Point(12, 83);
-            textBox_brod.Name = "textBox_brod";
-            textBox_brod.Size = new Size(250, 23);
-            textBox_brod.TabIndex = 7;
+            krstarenje_brod.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            krstarenje_brod.Location = new Point(12, 30);
+            krstarenje_brod.Name = "krstarenje_brod";
+            krstarenje_brod.Size = new Size(250, 23);
+            krstarenje_brod.TabIndex = 7;
             // 
             // label_ruta
             // 
@@ -166,14 +175,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox_dodatne_aktivnosti;
+        private System.Windows.Forms.TextBox krstarenje_kabina;
         private System.Windows.Forms.Label label_dodatne_aktivnosti;
-        private System.Windows.Forms.TextBox textBox_ruta;
+        private System.Windows.Forms.TextBox krstarenje_ruta;
         private System.Windows.Forms.Label label_brod;
         private System.Windows.Forms.Label label_datum;
-        private System.Windows.Forms.TextBox textBox_brod;
+        private System.Windows.Forms.TextBox krstarenje_brod;
         private System.Windows.Forms.Label label_ruta;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker krstarenje_datum;
         private TextBox krstarenje_destinacija;
         private Label label1;
     }

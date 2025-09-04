@@ -28,134 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_trajanje = new System.Windows.Forms.TextBox();
-            this.label_trajanje = new System.Windows.Forms.Label();
-            this.textBox_vodic = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_destinacija = new System.Windows.Forms.Label();
-            this.label_prevoz = new System.Windows.Forms.Label();
-            this.textBox_naziv = new System.Windows.Forms.TextBox();
-            this.label_vodic = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            ekskurzija_trajanje = new TextBox();
+            label_trajanje = new Label();
+            ekskurzija_vodic = new TextBox();
+            ekskurzija_prevoz = new TextBox();
+            label_destinacija = new Label();
+            label_prevoz = new Label();
+            ekskurzija_destinacija = new TextBox();
+            label_vodic = new Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox_trajanje);
-            this.panel1.Controls.Add(this.label_trajanje);
-            this.panel1.Controls.Add(this.textBox_vodic);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label_destinacija);
-            this.panel1.Controls.Add(this.label_prevoz);
-            this.panel1.Controls.Add(this.textBox_naziv);
-            this.panel1.Controls.Add(this.label_vodic);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 215);
-            this.panel1.TabIndex = 14;
+            panel1.Controls.Add(ekskurzija_trajanje);
+            panel1.Controls.Add(label_trajanje);
+            panel1.Controls.Add(ekskurzija_vodic);
+            panel1.Controls.Add(ekskurzija_prevoz);
+            panel1.Controls.Add(label_destinacija);
+            panel1.Controls.Add(label_prevoz);
+            panel1.Controls.Add(ekskurzija_destinacija);
+            panel1.Controls.Add(label_vodic);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(334, 215);
+            panel1.TabIndex = 14;
             // 
-            // textBox_trajanje
+            // ekskurzija_trajanje
             // 
-            this.textBox_trajanje.BackColor = System.Drawing.Color.White;
-            this.textBox_trajanje.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_trajanje.Location = new System.Drawing.Point(12, 190);
-            this.textBox_trajanje.Name = "textBox_trajanje";
-            this.textBox_trajanje.Size = new System.Drawing.Size(250, 23);
-            this.textBox_trajanje.TabIndex = 13;
+            ekskurzija_trajanje.BackColor = Color.White;
+            ekskurzija_trajanje.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ekskurzija_trajanje.Location = new Point(12, 190);
+            ekskurzija_trajanje.Name = "ekskurzija_trajanje";
+            ekskurzija_trajanje.Size = new Size(250, 23);
+            ekskurzija_trajanje.TabIndex = 13;
             // 
             // label_trajanje
             // 
-            this.label_trajanje.AutoSize = true;
-            this.label_trajanje.Location = new System.Drawing.Point(9, 171);
-            this.label_trajanje.Name = "label_trajanje";
-            this.label_trajanje.Size = new System.Drawing.Size(64, 16);
-            this.label_trajanje.TabIndex = 12;
-            this.label_trajanje.Text = "Trajanje:";
+            label_trajanje.AutoSize = true;
+            label_trajanje.Location = new Point(9, 171);
+            label_trajanje.Name = "label_trajanje";
+            label_trajanje.Size = new Size(64, 16);
+            label_trajanje.TabIndex = 12;
+            label_trajanje.Text = "Trajanje:";
             // 
-            // textBox_vodic
+            // ekskurzija_vodic
             // 
-            this.textBox_vodic.BackColor = System.Drawing.Color.White;
-            this.textBox_vodic.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_vodic.Location = new System.Drawing.Point(12, 84);
-            this.textBox_vodic.Name = "textBox_vodic";
-            this.textBox_vodic.Size = new System.Drawing.Size(250, 23);
-            this.textBox_vodic.TabIndex = 9;
+            ekskurzija_vodic.BackColor = Color.White;
+            ekskurzija_vodic.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ekskurzija_vodic.Location = new Point(12, 84);
+            ekskurzija_vodic.Name = "ekskurzija_vodic";
+            ekskurzija_vodic.Size = new Size(250, 23);
+            ekskurzija_vodic.TabIndex = 9;
             // 
-            // textBox1
+            // ekskurzija_prevoz
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 23);
-            this.textBox1.TabIndex = 11;
+            ekskurzija_prevoz.BackColor = Color.White;
+            ekskurzija_prevoz.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ekskurzija_prevoz.Location = new Point(12, 138);
+            ekskurzija_prevoz.Name = "ekskurzija_prevoz";
+            ekskurzija_prevoz.Size = new Size(250, 23);
+            ekskurzija_prevoz.TabIndex = 11;
             // 
             // label_destinacija
             // 
-            this.label_destinacija.AutoSize = true;
-            this.label_destinacija.Location = new System.Drawing.Point(9, 11);
-            this.label_destinacija.Name = "label_destinacija";
-            this.label_destinacija.Size = new System.Drawing.Size(84, 16);
-            this.label_destinacija.TabIndex = 6;
-            this.label_destinacija.Text = "Destinacija:";
+            label_destinacija.AutoSize = true;
+            label_destinacija.Location = new Point(9, 11);
+            label_destinacija.Name = "label_destinacija";
+            label_destinacija.Size = new Size(84, 16);
+            label_destinacija.TabIndex = 6;
+            label_destinacija.Text = "Destinacija:";
             // 
             // label_prevoz
             // 
-            this.label_prevoz.AutoSize = true;
-            this.label_prevoz.Location = new System.Drawing.Point(9, 120);
-            this.label_prevoz.Name = "label_prevoz";
-            this.label_prevoz.Size = new System.Drawing.Size(84, 16);
-            this.label_prevoz.TabIndex = 10;
-            this.label_prevoz.Text = "Tip Prevoza:";
+            label_prevoz.AutoSize = true;
+            label_prevoz.Location = new Point(9, 120);
+            label_prevoz.Name = "label_prevoz";
+            label_prevoz.Size = new Size(84, 16);
+            label_prevoz.TabIndex = 10;
+            label_prevoz.Text = "Tip Prevoza:";
             // 
-            // textBox_naziv
+            // ekskurzija_destinacija
             // 
-            this.textBox_naziv.BackColor = System.Drawing.Color.White;
-            this.textBox_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_naziv.Location = new System.Drawing.Point(12, 30);
-            this.textBox_naziv.Name = "textBox_naziv";
-            this.textBox_naziv.Size = new System.Drawing.Size(250, 23);
-            this.textBox_naziv.TabIndex = 7;
+            ekskurzija_destinacija.BackColor = Color.White;
+            ekskurzija_destinacija.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ekskurzija_destinacija.Location = new Point(12, 30);
+            ekskurzija_destinacija.Name = "ekskurzija_destinacija";
+            ekskurzija_destinacija.Size = new Size(250, 23);
+            ekskurzija_destinacija.TabIndex = 7;
             // 
             // label_vodic
             // 
-            this.label_vodic.AutoSize = true;
-            this.label_vodic.Location = new System.Drawing.Point(9, 65);
-            this.label_vodic.Name = "label_vodic";
-            this.label_vodic.Size = new System.Drawing.Size(49, 16);
-            this.label_vodic.TabIndex = 8;
-            this.label_vodic.Text = "Vodič:";
+            label_vodic.AutoSize = true;
+            label_vodic.Location = new Point(9, 65);
+            label_vodic.Name = "label_vodic";
+            label_vodic.Size = new Size(49, 16);
+            label_vodic.TabIndex = 8;
+            label_vodic.Text = "Vodič:";
             // 
             // PaketEkskurzije
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 434);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PaketEkskurzije";
-            this.Text = "PaketEkskurzije";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(334, 434);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 71, 160);
+            Margin = new Padding(4);
+            Name = "PaketEkskurzije";
+            Text = "PaketEkskurzije";
+            Load += PaketEkskurzije_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox_trajanje;
+        private System.Windows.Forms.TextBox ekskurzija_trajanje;
         private System.Windows.Forms.Label label_trajanje;
-        private System.Windows.Forms.TextBox textBox_vodic;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ekskurzija_vodic;
+        private System.Windows.Forms.TextBox ekskurzija_prevoz;
         private System.Windows.Forms.Label label_destinacija;
         private System.Windows.Forms.Label label_prevoz;
-        private System.Windows.Forms.TextBox textBox_naziv;
+        private System.Windows.Forms.TextBox ekskurzija_destinacija;
         private System.Windows.Forms.Label label_vodic;
     }
 }

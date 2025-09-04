@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Front
 {
     public partial class Klijenti : Form
     {
+
+
         public Klijenti()
         {
             InitializeComponent();
@@ -37,17 +40,16 @@ namespace Front
 
         }
 
-        
+        public Guna2DataGridView getClientDiv
+        {
+            get => div_clients;
+            
+        }
 
         private void button_dodaj_Click(object sender, EventArgs e)
         {
             DodajKlijenta noviKlijent = new DodajKlijenta();
             noviKlijent.ShowDialog();
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
