@@ -1,4 +1,5 @@
-﻿using DsApp.Models;
+﻿using DsApp.Config;
+using DsApp.Models;
 using DsApp.Services;
 
 namespace DsApp.Facade
@@ -8,8 +9,9 @@ namespace DsApp.Facade
         private readonly ClientService clientService;
         private readonly PackageService packageService;
         private readonly ReservationService reservationService;
-
-        public AgencyFacade()
+        private static readonly object padlock = new object();
+        private static AgencyFacade? instance = null;
+        private AgencyFacade()
         {
             clientService = new ClientService();
             packageService = new PackageService();
@@ -21,7 +23,17 @@ namespace DsApp.Facade
         {
             clientService.AddClient(ime,prezime,brojPasosa,datumRodjenja,emailAdresa,brojTelefona);
         }
-
+        public static AgencyFacade GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new AgencyFacade();
+                }
+                return instance;
+            }
+        }
         public List<Client> GetAllClients()
         {
           
@@ -39,6 +51,11 @@ namespace DsApp.Facade
                                    cabinType, packageType);
         }
 
-      
+        public ClientService GetClientService()
+        { return clientService; }
+
+        public PackageService GetPackageService() { return packageService; }
+
+        public ReservationService GetReservationService() { return reservationService; }
     }
 }
