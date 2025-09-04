@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DsApp.Facade;
+using DsApp.Models;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,11 +47,32 @@ namespace Front
         private void button_klijenti_Click(object sender, EventArgs e)
         {
             openChildForm(new Klijenti());
+
+            List<Client> clients = new List<Client>();
+
+            AgencyFacade fasada = AgencyFacade.GetInstance();
+
+            clients = fasada.GetAllClients();
+
+            if (activeForm is Klijenti c)
+            {
+                c.getClientDiv.DataSource = clients;
+                if (c.getClientDiv.Columns.Contains("Id"))
+                {
+                    c.getClientDiv.Columns["Id"].Visible = false;
+                }
+            }
+
         }
 
         private void button_paketi_Click(object sender, EventArgs e)
         {
             openChildForm(new Paketi());
+            AgencyFacade fasada = AgencyFacade.GetInstance();
+            if (activeForm is Paketi p)
+            {
+                p.getPaketiDiv.DataSource = fasada.GetAllPackages();
+            }
         }
 
         private void button_izlaz_Click(object sender, EventArgs e)

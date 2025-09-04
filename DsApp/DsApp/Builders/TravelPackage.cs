@@ -11,7 +11,7 @@
         public string AdditionalActivities { get; set; }
         public string Guide {  get; set; }
 
-        public double Duration { get; set; }
+        public string Duration { get; set; }
 
         public string Boat { get; set; }
 

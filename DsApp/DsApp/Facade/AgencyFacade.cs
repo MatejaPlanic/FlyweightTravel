@@ -1,4 +1,5 @@
-﻿using DsApp.Config;
+﻿using DsApp.Builders;
+using DsApp.Config;
 using DsApp.Models;
 using DsApp.Services;
 
@@ -36,8 +37,13 @@ namespace DsApp.Facade
         }
         public List<Client> GetAllClients()
         {
-          
-            return null;
+
+            return clientService.GetAllClients();
+        }
+
+        public List<TravelPackage> GetAllPackages()
+        {
+            return packageService.GetAllPackages();
         }
 
         public void ReservePackageForClient(int clientId, int packageId)
@@ -45,10 +51,9 @@ namespace DsApp.Facade
             
         }
 
-        public void AddNewPackage(string name,string destination, string transportType, string accommodationType, double price, string additionalActivities,  string guide, double duration, string boat, string route, string dateOfDeparture,string cabinType, string packageType)
+        public void AddNewPackage(TravelPackageBuilder tr)
         {
-            packageService.AddNewPackage(name,destination,transportType,accommodationType,price,additionalActivities,guide,duration,boat,route,dateOfDeparture,
-                                   cabinType, packageType);
+            packageService.AddNewPackage(tr);
         }
 
         public ClientService GetClientService()

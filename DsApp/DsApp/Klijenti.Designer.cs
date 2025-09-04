@@ -28,183 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.button_pretraga = new System.Windows.Forms.Button();
-            this.textBox_pretraga = new System.Windows.Forms.TextBox();
-            this.button_dodaj = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            panel1 = new Panel();
+            label5 = new Label();
+            div_clients = new Guna.UI2.WinForms.Guna2DataGridView();
+            button_pretraga = new Button();
+            textBox_pretraga = new TextBox();
+            button_dodaj = new Button();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)div_clients).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 55);
-            this.panel1.TabIndex = 17;
+            panel1.BackColor = Color.FromArgb(0, 71, 160);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(934, 55);
+            panel1.TabIndex = 17;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(434, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Klijenti";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            label5.Anchor = AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(434, 14);
+            label5.Name = "label5";
+            label5.Size = new Size(71, 23);
+            label5.TabIndex = 0;
+            label5.Text = "Klijenti";
+            label5.Click += label5_Click;
             // 
-            // guna2DataGridView1
+            // div_clients
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle24;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(934, 445);
-            this.guna2DataGridView1.TabIndex = 19;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            dataGridViewCellStyle1.BackColor = Color.White;
+            div_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            div_clients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            div_clients.BackgroundColor = Color.Gainsboro;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            div_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            div_clients.ColumnHeadersHeight = 40;
+            div_clients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            div_clients.DefaultCellStyle = dataGridViewCellStyle3;
+            div_clients.GridColor = Color.FromArgb(231, 229, 255);
+            div_clients.Location = new Point(0, 0);
+            div_clients.Name = "div_clients";
+            div_clients.RowHeadersVisible = false;
+            div_clients.RowTemplate.Height = 22;
+            div_clients.Size = new Size(934, 445);
+            div_clients.TabIndex = 19;
+            div_clients.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            div_clients.ThemeStyle.AlternatingRowsStyle.Font = null;
+            div_clients.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            div_clients.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            div_clients.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            div_clients.ThemeStyle.BackColor = Color.Gainsboro;
+            div_clients.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            div_clients.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            div_clients.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            div_clients.ThemeStyle.HeaderStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            div_clients.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            div_clients.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            div_clients.ThemeStyle.HeaderStyle.Height = 40;
+            div_clients.ThemeStyle.ReadOnly = false;
+            div_clients.ThemeStyle.RowsStyle.BackColor = Color.White;
+            div_clients.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            div_clients.ThemeStyle.RowsStyle.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            div_clients.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            div_clients.ThemeStyle.RowsStyle.Height = 22;
+            div_clients.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            div_clients.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // button_pretraga
             // 
-            this.button_pretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_pretraga.BackColor = System.Drawing.Color.Orange;
-            this.button_pretraga.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_pretraga.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_pretraga.ForeColor = System.Drawing.Color.White;
-            this.button_pretraga.Location = new System.Drawing.Point(811, 66);
-            this.button_pretraga.Name = "button_pretraga";
-            this.button_pretraga.Size = new System.Drawing.Size(111, 33);
-            this.button_pretraga.TabIndex = 29;
-            this.button_pretraga.Text = "Pretraži";
-            this.button_pretraga.UseVisualStyleBackColor = false;
-            this.button_pretraga.Click += new System.EventHandler(this.button1_Click);
+            button_pretraga.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_pretraga.BackColor = Color.Orange;
+            button_pretraga.FlatStyle = FlatStyle.Popup;
+            button_pretraga.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_pretraga.ForeColor = Color.White;
+            button_pretraga.Location = new Point(811, 66);
+            button_pretraga.Name = "button_pretraga";
+            button_pretraga.Size = new Size(111, 33);
+            button_pretraga.TabIndex = 29;
+            button_pretraga.Text = "Pretraži";
+            button_pretraga.UseVisualStyleBackColor = false;
+            button_pretraga.Click += button1_Click;
             // 
             // textBox_pretraga
             // 
-            this.textBox_pretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_pretraga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_pretraga.Location = new System.Drawing.Point(512, 70);
-            this.textBox_pretraga.Name = "textBox_pretraga";
-            this.textBox_pretraga.Size = new System.Drawing.Size(293, 27);
-            this.textBox_pretraga.TabIndex = 30;
-            this.textBox_pretraga.TextChanged += new System.EventHandler(this.textBox_pretraga_TextChanged);
+            textBox_pretraga.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            textBox_pretraga.BorderStyle = BorderStyle.FixedSingle;
+            textBox_pretraga.Location = new Point(512, 70);
+            textBox_pretraga.Name = "textBox_pretraga";
+            textBox_pretraga.Size = new Size(293, 27);
+            textBox_pretraga.TabIndex = 30;
+            textBox_pretraga.TextChanged += textBox_pretraga_TextChanged;
             // 
             // button_dodaj
             // 
-            this.button_dodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_dodaj.BackColor = System.Drawing.Color.Green;
-            this.button_dodaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_dodaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dodaj.ForeColor = System.Drawing.Color.White;
-            this.button_dodaj.Location = new System.Drawing.Point(811, 27);
-            this.button_dodaj.Name = "button_dodaj";
-            this.button_dodaj.Size = new System.Drawing.Size(111, 33);
-            this.button_dodaj.TabIndex = 32;
-            this.button_dodaj.Text = "Dodaj";
-            this.button_dodaj.UseVisualStyleBackColor = false;
-            this.button_dodaj.Click += new System.EventHandler(this.button_dodaj_Click);
+            button_dodaj.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_dodaj.BackColor = Color.Green;
+            button_dodaj.FlatStyle = FlatStyle.Popup;
+            button_dodaj.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_dodaj.ForeColor = Color.White;
+            button_dodaj.Location = new Point(811, 27);
+            button_dodaj.Name = "button_dodaj";
+            button_dodaj.Size = new Size(111, 33);
+            button_dodaj.TabIndex = 32;
+            button_dodaj.Text = "Dodaj";
+            button_dodaj.UseVisualStyleBackColor = false;
+            button_dodaj.Click += button_dodaj_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_dodaj);
-            this.panel2.Controls.Add(this.button_pretraga);
-            this.panel2.Controls.Add(this.textBox_pretraga);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 500);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 111);
-            this.panel2.TabIndex = 33;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            panel2.Controls.Add(button_dodaj);
+            panel2.Controls.Add(button_pretraga);
+            panel2.Controls.Add(textBox_pretraga);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 500);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(934, 111);
+            panel2.TabIndex = 33;
+            panel2.Paint += panel2_Paint;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.guna2DataGridView1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 55);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(934, 445);
-            this.panel3.TabIndex = 34;
+            panel3.Controls.Add(div_clients);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 55);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(934, 445);
+            panel3.TabIndex = 34;
             // 
             // Klijenti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 611);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Klijenti";
-            this.Text = "Klijenti";
-            this.Load += new System.EventHandler(this.Klijenti_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(934, 611);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(5);
+            Name = "Klijenti";
+            Text = "Klijenti";
+            Load += Klijenti_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)div_clients).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -212,7 +210,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView div_clients;
         private System.Windows.Forms.Button button_pretraga;
         private System.Windows.Forms.TextBox textBox_pretraga;
         private System.Windows.Forms.Button button_dodaj;
