@@ -28,130 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label_cena = new System.Windows.Forms.Label();
-            this.textBox_naziv = new System.Windows.Forms.TextBox();
-            this.label_naziv = new System.Windows.Forms.Label();
-            this.comboBox_tip = new System.Windows.Forms.ComboBox();
-            this.label_tip = new System.Windows.Forms.Label();
-            this.button_dodaj_rezervaciju = new System.Windows.Forms.Button();
-            this.panel_bottom = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel_bottom.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            textBox2 = new TextBox();
+            label_cena = new Label();
+            label_naziv = new Label();
+            comboBox_tip = new ComboBox();
+            label_tip = new Label();
+            button_dodaj_rezervaciju = new Button();
+            panel_bottom = new Panel();
+            comboBox1 = new ComboBox();
+            panel1.SuspendLayout();
+            panel_bottom.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label_cena);
-            this.panel1.Controls.Add(this.textBox_naziv);
-            this.panel1.Controls.Add(this.label_naziv);
-            this.panel1.Controls.Add(this.comboBox_tip);
-            this.panel1.Controls.Add(this.label_tip);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 276);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label_cena);
+            panel1.Controls.Add(label_naziv);
+            panel1.Controls.Add(comboBox_tip);
+            panel1.Controls.Add(label_tip);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(334, 276);
+            panel1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(15, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 23);
-            this.textBox2.TabIndex = 11;
+            textBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(14, 158);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(250, 23);
+            textBox2.TabIndex = 11;
             // 
             // label_cena
             // 
-            this.label_cena.AutoSize = true;
-            this.label_cena.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_cena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_cena.Location = new System.Drawing.Point(12, 9);
-            this.label_cena.Name = "label_cena";
-            this.label_cena.Size = new System.Drawing.Size(83, 16);
-            this.label_cena.TabIndex = 10;
-            this.label_cena.Text = "Broj Osoba:";
-            // 
-            // textBox_naziv
-            // 
-            this.textBox_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_naziv.Location = new System.Drawing.Point(15, 88);
-            this.textBox_naziv.Name = "textBox_naziv";
-            this.textBox_naziv.Size = new System.Drawing.Size(250, 23);
-            this.textBox_naziv.TabIndex = 9;
+            label_cena.AutoSize = true;
+            label_cena.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_cena.ForeColor = Color.FromArgb(0, 71, 160);
+            label_cena.Location = new Point(11, 139);
+            label_cena.Name = "label_cena";
+            label_cena.Size = new Size(83, 16);
+            label_cena.TabIndex = 10;
+            label_cena.Text = "Broj Osoba:";
             // 
             // label_naziv
             // 
-            this.label_naziv.AutoSize = true;
-            this.label_naziv.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_naziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_naziv.Location = new System.Drawing.Point(12, 70);
-            this.label_naziv.Name = "label_naziv";
-            this.label_naziv.Size = new System.Drawing.Size(84, 16);
-            this.label_naziv.TabIndex = 8;
-            this.label_naziv.Text = "Destinacija:";
+            label_naziv.AutoSize = true;
+            label_naziv.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_naziv.ForeColor = Color.FromArgb(0, 71, 160);
+            label_naziv.Location = new Point(11, 22);
+            label_naziv.Name = "label_naziv";
+            label_naziv.Size = new Size(84, 16);
+            label_naziv.TabIndex = 8;
+            label_naziv.Text = "Destinacija:";
             // 
             // comboBox_tip
             // 
-            this.comboBox_tip.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_tip.FormattingEnabled = true;
-            this.comboBox_tip.Location = new System.Drawing.Point(15, 145);
-            this.comboBox_tip.Name = "comboBox_tip";
-            this.comboBox_tip.Size = new System.Drawing.Size(250, 25);
-            this.comboBox_tip.TabIndex = 7;
+            comboBox_tip.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox_tip.FormattingEnabled = true;
+            comboBox_tip.Location = new Point(14, 103);
+            comboBox_tip.Name = "comboBox_tip";
+            comboBox_tip.Size = new Size(250, 25);
+            comboBox_tip.TabIndex = 7;
             // 
             // label_tip
             // 
-            this.label_tip.AutoSize = true;
-            this.label_tip.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_tip.Location = new System.Drawing.Point(12, 126);
-            this.label_tip.Name = "label_tip";
-            this.label_tip.Size = new System.Drawing.Size(79, 16);
-            this.label_tip.TabIndex = 6;
-            this.label_tip.Text = "Tip Paketa:";
-            this.label_tip.Click += new System.EventHandler(this.label_tip_Click);
+            label_tip.AutoSize = true;
+            label_tip.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_tip.ForeColor = Color.FromArgb(0, 71, 160);
+            label_tip.Location = new Point(11, 84);
+            label_tip.Name = "label_tip";
+            label_tip.Size = new Size(79, 16);
+            label_tip.TabIndex = 6;
+            label_tip.Text = "Tip Paketa:";
+            label_tip.Click += label_tip_Click;
             // 
             // button_dodaj_rezervaciju
             // 
-            this.button_dodaj_rezervaciju.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dodaj_rezervaciju.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button_dodaj_rezervaciju.Location = new System.Drawing.Point(79, 3);
-            this.button_dodaj_rezervaciju.Name = "button_dodaj_rezervaciju";
-            this.button_dodaj_rezervaciju.Size = new System.Drawing.Size(171, 39);
-            this.button_dodaj_rezervaciju.TabIndex = 0;
-            this.button_dodaj_rezervaciju.Text = "Dodaj Rezervaciju";
-            this.button_dodaj_rezervaciju.UseVisualStyleBackColor = true;
+            button_dodaj_rezervaciju.Cursor = Cursors.Hand;
+            button_dodaj_rezervaciju.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_dodaj_rezervaciju.ForeColor = Color.FromArgb(0, 71, 160);
+            button_dodaj_rezervaciju.Location = new Point(79, 3);
+            button_dodaj_rezervaciju.Name = "button_dodaj_rezervaciju";
+            button_dodaj_rezervaciju.Size = new Size(171, 39);
+            button_dodaj_rezervaciju.TabIndex = 0;
+            button_dodaj_rezervaciju.Text = "Dodaj Rezervaciju";
+            button_dodaj_rezervaciju.UseVisualStyleBackColor = true;
             // 
             // panel_bottom
             // 
-            this.panel_bottom.Controls.Add(this.button_dodaj_rezervaciju);
-            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_bottom.Location = new System.Drawing.Point(0, 412);
-            this.panel_bottom.Name = "panel_bottom";
-            this.panel_bottom.Size = new System.Drawing.Size(334, 49);
-            this.panel_bottom.TabIndex = 3;
+            panel_bottom.Controls.Add(button_dodaj_rezervaciju);
+            panel_bottom.Dock = DockStyle.Bottom;
+            panel_bottom.Location = new Point(0, 412);
+            panel_bottom.Name = "panel_bottom";
+            panel_bottom.Size = new Size(334, 49);
+            panel_bottom.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(15, 45);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(250, 25);
+            comboBox1.TabIndex = 12;
             // 
             // RezervacijaPaketa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 461);
-            this.Controls.Add(this.panel_bottom);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "RezervacijaPaketa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RezervacijaPaketa";
-            this.Load += new System.EventHandler(this.RezervacijaPaketa_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel_bottom.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(334, 461);
+            Controls.Add(panel_bottom);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(4);
+            Name = "RezervacijaPaketa";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "RezervacijaPaketa";
+            Load += RezervacijaPaketa_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel_bottom.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -160,11 +161,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label_cena;
-        private System.Windows.Forms.TextBox textBox_naziv;
         private System.Windows.Forms.Label label_naziv;
         private System.Windows.Forms.ComboBox comboBox_tip;
         private System.Windows.Forms.Label label_tip;
         private System.Windows.Forms.Button button_dodaj_rezervaciju;
         private System.Windows.Forms.Panel panel_bottom;
+        private ComboBox comboBox1;
     }
 }

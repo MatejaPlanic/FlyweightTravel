@@ -53,17 +53,37 @@ namespace Front
 
         private void button_izlaz_Click(object sender, EventArgs e)
         {
-            
-            
-            this.Hide();
-            startForm.Show();
-            //Application.Exit();
+
+
+            //this.Hide();
+            //startForm.Show();
+            Application.Exit();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
 
         }
-    }
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_CLOSE = 0xF060;   // X (Close)
 
+            if (m.Msg == WM_SYSCOMMAND)
+            {
+                int command = m.WParam.ToInt32() & 0xFFF0;
+
+                if (command == SC_CLOSE)
+                {
+                    // Kliknuto na X
+                    Application.Exit(); // gasi celu aplikaciju
+                    return;             // prekida normalno ponašanje
+                }
+                
+            }
+
+            base.WndProc(ref m); // ako ništa ne menjaš, zovi original
+        }
+
+    }
 }

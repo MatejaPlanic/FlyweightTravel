@@ -28,87 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox_file = new System.Windows.Forms.ComboBox();
-            this.button_start = new System.Windows.Forms.Button();
-            this.label = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            comboBox_file = new ComboBox();
+            button_start = new Button();
+            label = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // comboBox_file
             // 
-            this.comboBox_file.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox_file.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_file.FormattingEnabled = true;
-            this.comboBox_file.Location = new System.Drawing.Point(54, 64);
-            this.comboBox_file.Name = "comboBox_file";
-            this.comboBox_file.Size = new System.Drawing.Size(251, 29);
-            this.comboBox_file.TabIndex = 0;
-            this.comboBox_file.SelectedIndexChanged += new System.EventHandler(this.comboBox_file_SelectedIndexChanged);
+            comboBox_file.Anchor = AnchorStyles.None;
+            comboBox_file.Cursor = Cursors.Hand;
+            comboBox_file.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox_file.FormattingEnabled = true;
+            comboBox_file.Location = new Point(63, 74);
+            comboBox_file.Margin = new Padding(4, 3, 4, 3);
+            comboBox_file.Name = "comboBox_file";
+            comboBox_file.Size = new Size(292, 29);
+            comboBox_file.TabIndex = 0;
+            comboBox_file.SelectedIndexChanged += comboBox_file_SelectedIndexChanged;
             // 
             // button_start
             // 
-            this.button_start.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button_start.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_start.ForeColor = System.Drawing.Color.White;
-            this.button_start.Location = new System.Drawing.Point(54, 32);
-            this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(251, 44);
-            this.button_start.TabIndex = 1;
-            this.button_start.Text = "Start";
-            this.button_start.UseVisualStyleBackColor = false;
-            this.button_start.Click += new System.EventHandler(this.button_start_Click);
+            button_start.Anchor = AnchorStyles.None;
+            button_start.BackColor = Color.FromArgb(0, 71, 160);
+            button_start.Cursor = Cursors.Hand;
+            button_start.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_start.ForeColor = Color.White;
+            button_start.Location = new Point(63, 37);
+            button_start.Margin = new Padding(4, 3, 4, 3);
+            button_start.Name = "button_start";
+            button_start.Size = new Size(293, 51);
+            button_start.TabIndex = 1;
+            button_start.Text = "Start";
+            button_start.UseVisualStyleBackColor = false;
+            button_start.Click += button_start_Click;
             // 
             // label
             // 
-            this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label.Location = new System.Drawing.Point(89, 27);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(185, 23);
-            this.label.TabIndex = 2;
-            this.label.Text = "Turistička Agencija";
+            label.Anchor = AnchorStyles.None;
+            label.AutoSize = true;
+            label.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label.ForeColor = Color.FromArgb(0, 71, 160);
+            label.Location = new Point(104, 31);
+            label.Margin = new Padding(4, 0, 4, 0);
+            label.Name = "label";
+            label.Size = new Size(185, 23);
+            label.TabIndex = 2;
+            label.Text = "Turistička Agencija";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label);
-            this.panel1.Controls.Add(this.comboBox_file);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 125);
-            this.panel1.TabIndex = 3;
+            panel1.Controls.Add(label);
+            panel1.Controls.Add(comboBox_file);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(433, 144);
+            panel1.TabIndex = 3;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_start);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(371, 115);
-            this.panel2.TabIndex = 4;
+            panel2.Controls.Add(button_start);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 143);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(433, 133);
+            panel2.TabIndex = 4;
             // 
             // Start
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(371, 239);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Name = "Start";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dobrodošli";
-            this.Load += new System.EventHandler(this.Start_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(433, 276);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Start";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Dobrodošli";
+            Load += Start_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

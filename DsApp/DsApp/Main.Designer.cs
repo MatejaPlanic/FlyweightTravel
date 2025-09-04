@@ -28,144 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button_izlaz = new System.Windows.Forms.Button();
-            this.button_rezervacije = new System.Windows.Forms.Button();
-            this.button_paketi = new System.Windows.Forms.Button();
-            this.button_klijenti = new System.Windows.Forms.Button();
-            this.label_naziv = new System.Windows.Forms.Label();
-            this.panel_main = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            button_izlaz = new Button();
+            button_rezervacije = new Button();
+            button_paketi = new Button();
+            button_klijenti = new Button();
+            label_naziv = new Label();
+            panel_main = new Panel();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label_naziv);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 617);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(0, 71, 160);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(label_naziv);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(233, 712);
+            panel1.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button_izlaz);
-            this.panel3.Controls.Add(this.button_rezervacije);
-            this.panel3.Controls.Add(this.button_paketi);
-            this.panel3.Controls.Add(this.button_klijenti);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 86);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 385);
-            this.panel3.TabIndex = 2;
+            panel3.Controls.Add(button_izlaz);
+            panel3.Controls.Add(button_rezervacije);
+            panel3.Controls.Add(button_paketi);
+            panel3.Controls.Add(button_klijenti);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 99);
+            panel3.Margin = new Padding(4, 3, 4, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(233, 444);
+            panel3.TabIndex = 2;
             // 
             // button_izlaz
             // 
-            this.button_izlaz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_izlaz.FlatAppearance.BorderSize = 0;
-            this.button_izlaz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_izlaz.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_izlaz.ForeColor = System.Drawing.Color.White;
-            this.button_izlaz.Location = new System.Drawing.Point(0, 255);
-            this.button_izlaz.Name = "button_izlaz";
-            this.button_izlaz.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button_izlaz.Size = new System.Drawing.Size(200, 85);
-            this.button_izlaz.TabIndex = 3;
-            this.button_izlaz.Text = "Izlaz";
-            this.button_izlaz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_izlaz.UseVisualStyleBackColor = true;
-            this.button_izlaz.Click += new System.EventHandler(this.button_izlaz_Click);
+            button_izlaz.Cursor = Cursors.Hand;
+            button_izlaz.Dock = DockStyle.Top;
+            button_izlaz.FlatAppearance.BorderSize = 0;
+            button_izlaz.FlatStyle = FlatStyle.Flat;
+            button_izlaz.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_izlaz.ForeColor = Color.White;
+            button_izlaz.Location = new Point(0, 294);
+            button_izlaz.Margin = new Padding(4, 3, 4, 3);
+            button_izlaz.Name = "button_izlaz";
+            button_izlaz.Padding = new Padding(23, 0, 0, 0);
+            button_izlaz.Size = new Size(233, 98);
+            button_izlaz.TabIndex = 3;
+            button_izlaz.Text = "Izlaz";
+            button_izlaz.TextAlign = ContentAlignment.MiddleLeft;
+            button_izlaz.UseVisualStyleBackColor = true;
+            button_izlaz.Click += button_izlaz_Click;
             // 
             // button_rezervacije
             // 
-            this.button_rezervacije.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_rezervacije.FlatAppearance.BorderSize = 0;
-            this.button_rezervacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_rezervacije.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_rezervacije.ForeColor = System.Drawing.Color.White;
-            this.button_rezervacije.Location = new System.Drawing.Point(0, 170);
-            this.button_rezervacije.Name = "button_rezervacije";
-            this.button_rezervacije.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button_rezervacije.Size = new System.Drawing.Size(200, 85);
-            this.button_rezervacije.TabIndex = 2;
-            this.button_rezervacije.Text = "Rezervacije";
-            this.button_rezervacije.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_rezervacije.UseVisualStyleBackColor = true;
-            this.button_rezervacije.Click += new System.EventHandler(this.button_rezervacije_Click);
+            button_rezervacije.Cursor = Cursors.Hand;
+            button_rezervacije.Dock = DockStyle.Top;
+            button_rezervacije.FlatAppearance.BorderSize = 0;
+            button_rezervacije.FlatStyle = FlatStyle.Flat;
+            button_rezervacije.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_rezervacije.ForeColor = Color.White;
+            button_rezervacije.Location = new Point(0, 196);
+            button_rezervacije.Margin = new Padding(4, 3, 4, 3);
+            button_rezervacije.Name = "button_rezervacije";
+            button_rezervacije.Padding = new Padding(23, 0, 0, 0);
+            button_rezervacije.Size = new Size(233, 98);
+            button_rezervacije.TabIndex = 2;
+            button_rezervacije.Text = "Rezervacije";
+            button_rezervacije.TextAlign = ContentAlignment.MiddleLeft;
+            button_rezervacije.UseVisualStyleBackColor = true;
+            button_rezervacije.Click += button_rezervacije_Click;
             // 
             // button_paketi
             // 
-            this.button_paketi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_paketi.FlatAppearance.BorderSize = 0;
-            this.button_paketi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_paketi.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_paketi.ForeColor = System.Drawing.Color.White;
-            this.button_paketi.Location = new System.Drawing.Point(0, 85);
-            this.button_paketi.Name = "button_paketi";
-            this.button_paketi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button_paketi.Size = new System.Drawing.Size(200, 85);
-            this.button_paketi.TabIndex = 1;
-            this.button_paketi.Text = "Paketi";
-            this.button_paketi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_paketi.UseVisualStyleBackColor = true;
-            this.button_paketi.Click += new System.EventHandler(this.button_paketi_Click);
+            button_paketi.Cursor = Cursors.Hand;
+            button_paketi.Dock = DockStyle.Top;
+            button_paketi.FlatAppearance.BorderSize = 0;
+            button_paketi.FlatStyle = FlatStyle.Flat;
+            button_paketi.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_paketi.ForeColor = Color.White;
+            button_paketi.Location = new Point(0, 98);
+            button_paketi.Margin = new Padding(4, 3, 4, 3);
+            button_paketi.Name = "button_paketi";
+            button_paketi.Padding = new Padding(23, 0, 0, 0);
+            button_paketi.Size = new Size(233, 98);
+            button_paketi.TabIndex = 1;
+            button_paketi.Text = "Paketi";
+            button_paketi.TextAlign = ContentAlignment.MiddleLeft;
+            button_paketi.UseVisualStyleBackColor = true;
+            button_paketi.Click += button_paketi_Click;
             // 
             // button_klijenti
             // 
-            this.button_klijenti.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_klijenti.FlatAppearance.BorderSize = 0;
-            this.button_klijenti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_klijenti.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_klijenti.ForeColor = System.Drawing.Color.White;
-            this.button_klijenti.Location = new System.Drawing.Point(0, 0);
-            this.button_klijenti.Name = "button_klijenti";
-            this.button_klijenti.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button_klijenti.Size = new System.Drawing.Size(200, 85);
-            this.button_klijenti.TabIndex = 0;
-            this.button_klijenti.Text = "Klijenti";
-            this.button_klijenti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_klijenti.UseVisualStyleBackColor = true;
-            this.button_klijenti.Click += new System.EventHandler(this.button_klijenti_Click);
+            button_klijenti.Cursor = Cursors.Hand;
+            button_klijenti.Dock = DockStyle.Top;
+            button_klijenti.FlatAppearance.BorderSize = 0;
+            button_klijenti.FlatStyle = FlatStyle.Flat;
+            button_klijenti.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_klijenti.ForeColor = Color.White;
+            button_klijenti.Location = new Point(0, 0);
+            button_klijenti.Margin = new Padding(4, 3, 4, 3);
+            button_klijenti.Name = "button_klijenti";
+            button_klijenti.Padding = new Padding(23, 0, 0, 0);
+            button_klijenti.Size = new Size(233, 98);
+            button_klijenti.TabIndex = 0;
+            button_klijenti.Text = "Klijenti";
+            button_klijenti.TextAlign = ContentAlignment.MiddleLeft;
+            button_klijenti.UseVisualStyleBackColor = true;
+            button_klijenti.Click += button_klijenti_Click;
             // 
             // label_naziv
             // 
-            this.label_naziv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_naziv.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_naziv.ForeColor = System.Drawing.Color.White;
-            this.label_naziv.Location = new System.Drawing.Point(0, 0);
-            this.label_naziv.Name = "label_naziv";
-            this.label_naziv.Size = new System.Drawing.Size(200, 86);
-            this.label_naziv.TabIndex = 0;
-            this.label_naziv.Text = "FlyWheitTravel;";
-            this.label_naziv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label_naziv.Dock = DockStyle.Top;
+            label_naziv.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_naziv.ForeColor = Color.White;
+            label_naziv.Location = new Point(0, 0);
+            label_naziv.Margin = new Padding(4, 0, 4, 0);
+            label_naziv.Name = "label_naziv";
+            label_naziv.Size = new Size(233, 99);
+            label_naziv.TabIndex = 0;
+            label_naziv.Text = "FlyWheitTravel;";
+            label_naziv.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel_main
             // 
-            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.Location = new System.Drawing.Point(200, 0);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(934, 617);
-            this.panel_main.TabIndex = 1;
+            panel_main.Dock = DockStyle.Fill;
+            panel_main.Location = new Point(233, 0);
+            panel_main.Margin = new Padding(4, 3, 4, 3);
+            panel_main.Name = "panel_main";
+            panel_main.Size = new Size(1090, 712);
+            panel_main.TabIndex = 1;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 617);
-            this.Controls.Add(this.panel_main);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Turistička agencija";
-            this.Load += new System.EventHandler(this.Main_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1323, 712);
+            Controls.Add(panel_main);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Turistička agencija";
+            Load += Main_Load;
+            panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

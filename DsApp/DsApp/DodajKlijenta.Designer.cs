@@ -28,191 +28,192 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_datum = new System.Windows.Forms.Label();
-            this.textBox_prezime = new System.Windows.Forms.TextBox();
-            this.textBox_pasos = new System.Windows.Forms.TextBox();
-            this.label_ime = new System.Windows.Forms.Label();
-            this.label_pasos = new System.Windows.Forms.Label();
-            this.textBox_ime = new System.Windows.Forms.TextBox();
-            this.label_prezime = new System.Windows.Forms.Label();
-            this.panel_top = new System.Windows.Forms.Panel();
-            this.textBox_mail = new System.Windows.Forms.TextBox();
-            this.label_mail = new System.Windows.Forms.Label();
-            this.textBox_telefon = new System.Windows.Forms.TextBox();
-            this.label_telefon = new System.Windows.Forms.Label();
-            this.dateTimePicker_datum = new System.Windows.Forms.DateTimePicker();
-            this.panel_bottom = new System.Windows.Forms.Panel();
-            this.button_dodaj_paket = new System.Windows.Forms.Button();
-            this.panel_top.SuspendLayout();
-            this.panel_bottom.SuspendLayout();
-            this.SuspendLayout();
+            label_datum = new Label();
+            textBox_prezime = new TextBox();
+            textBox_pasos = new TextBox();
+            label_ime = new Label();
+            label_pasos = new Label();
+            textBox_ime = new TextBox();
+            label_prezime = new Label();
+            panel_top = new Panel();
+            dateTimePicker_datum = new DateTimePicker();
+            textBox_telefon = new TextBox();
+            label_telefon = new Label();
+            textBox_mail = new TextBox();
+            label_mail = new Label();
+            panel_bottom = new Panel();
+            button_dodaj_paket = new Button();
+            panel_top.SuspendLayout();
+            panel_bottom.SuspendLayout();
+            SuspendLayout();
             // 
             // label_datum
             // 
-            this.label_datum.AutoSize = true;
-            this.label_datum.Location = new System.Drawing.Point(12, 159);
-            this.label_datum.Name = "label_datum";
-            this.label_datum.Size = new System.Drawing.Size(108, 16);
-            this.label_datum.TabIndex = 20;
-            this.label_datum.Text = "Datum rođenja:";
+            label_datum.AutoSize = true;
+            label_datum.Location = new Point(12, 159);
+            label_datum.Name = "label_datum";
+            label_datum.Size = new Size(108, 16);
+            label_datum.TabIndex = 20;
+            label_datum.Text = "Datum rođenja:";
             // 
             // textBox_prezime
             // 
-            this.textBox_prezime.BackColor = System.Drawing.Color.White;
-            this.textBox_prezime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_prezime.Location = new System.Drawing.Point(15, 77);
-            this.textBox_prezime.Name = "textBox_prezime";
-            this.textBox_prezime.Size = new System.Drawing.Size(250, 23);
-            this.textBox_prezime.TabIndex = 17;
+            textBox_prezime.BackColor = Color.White;
+            textBox_prezime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_prezime.Location = new Point(15, 77);
+            textBox_prezime.Name = "textBox_prezime";
+            textBox_prezime.Size = new Size(250, 23);
+            textBox_prezime.TabIndex = 17;
             // 
             // textBox_pasos
             // 
-            this.textBox_pasos.BackColor = System.Drawing.Color.White;
-            this.textBox_pasos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_pasos.Location = new System.Drawing.Point(15, 128);
-            this.textBox_pasos.Name = "textBox_pasos";
-            this.textBox_pasos.Size = new System.Drawing.Size(250, 23);
-            this.textBox_pasos.TabIndex = 19;
+            textBox_pasos.BackColor = Color.White;
+            textBox_pasos.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_pasos.Location = new Point(15, 128);
+            textBox_pasos.Name = "textBox_pasos";
+            textBox_pasos.Size = new Size(250, 23);
+            textBox_pasos.TabIndex = 19;
             // 
             // label_ime
             // 
-            this.label_ime.AutoSize = true;
-            this.label_ime.Location = new System.Drawing.Point(12, 8);
-            this.label_ime.Name = "label_ime";
-            this.label_ime.Size = new System.Drawing.Size(35, 16);
-            this.label_ime.TabIndex = 14;
-            this.label_ime.Text = "Ime:";
+            label_ime.AutoSize = true;
+            label_ime.Location = new Point(12, 8);
+            label_ime.Name = "label_ime";
+            label_ime.Size = new Size(35, 16);
+            label_ime.TabIndex = 14;
+            label_ime.Text = "Ime:";
             // 
             // label_pasos
             // 
-            this.label_pasos.AutoSize = true;
-            this.label_pasos.Location = new System.Drawing.Point(12, 111);
-            this.label_pasos.Name = "label_pasos";
-            this.label_pasos.Size = new System.Drawing.Size(85, 16);
-            this.label_pasos.TabIndex = 18;
-            this.label_pasos.Text = "Broj Pasoša:";
+            label_pasos.AutoSize = true;
+            label_pasos.Location = new Point(12, 111);
+            label_pasos.Name = "label_pasos";
+            label_pasos.Size = new Size(85, 16);
+            label_pasos.TabIndex = 18;
+            label_pasos.Text = "Broj Pasoša:";
             // 
             // textBox_ime
             // 
-            this.textBox_ime.BackColor = System.Drawing.Color.White;
-            this.textBox_ime.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ime.Location = new System.Drawing.Point(15, 26);
-            this.textBox_ime.Name = "textBox_ime";
-            this.textBox_ime.Size = new System.Drawing.Size(250, 23);
-            this.textBox_ime.TabIndex = 15;
-            this.textBox_ime.Tag = "";
+            textBox_ime.BackColor = Color.White;
+            textBox_ime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_ime.Location = new Point(15, 26);
+            textBox_ime.Name = "textBox_ime";
+            textBox_ime.Size = new Size(250, 23);
+            textBox_ime.TabIndex = 15;
+            textBox_ime.Tag = "";
             // 
             // label_prezime
             // 
-            this.label_prezime.AutoSize = true;
-            this.label_prezime.Location = new System.Drawing.Point(12, 59);
-            this.label_prezime.Name = "label_prezime";
-            this.label_prezime.Size = new System.Drawing.Size(61, 16);
-            this.label_prezime.TabIndex = 16;
-            this.label_prezime.Text = "Prezime:";
+            label_prezime.AutoSize = true;
+            label_prezime.Location = new Point(12, 59);
+            label_prezime.Name = "label_prezime";
+            label_prezime.Size = new Size(61, 16);
+            label_prezime.TabIndex = 16;
+            label_prezime.Text = "Prezime:";
             // 
             // panel_top
             // 
-            this.panel_top.Controls.Add(this.dateTimePicker_datum);
-            this.panel_top.Controls.Add(this.textBox_telefon);
-            this.panel_top.Controls.Add(this.label_telefon);
-            this.panel_top.Controls.Add(this.textBox_mail);
-            this.panel_top.Controls.Add(this.label_mail);
-            this.panel_top.Controls.Add(this.label_ime);
-            this.panel_top.Controls.Add(this.label_prezime);
-            this.panel_top.Controls.Add(this.label_datum);
-            this.panel_top.Controls.Add(this.textBox_ime);
-            this.panel_top.Controls.Add(this.textBox_prezime);
-            this.panel_top.Controls.Add(this.label_pasos);
-            this.panel_top.Controls.Add(this.textBox_pasos);
-            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Location = new System.Drawing.Point(0, 0);
-            this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(334, 309);
-            this.panel_top.TabIndex = 22;
-            // 
-            // textBox_mail
-            // 
-            this.textBox_mail.BackColor = System.Drawing.Color.White;
-            this.textBox_mail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_mail.Location = new System.Drawing.Point(15, 227);
-            this.textBox_mail.Name = "textBox_mail";
-            this.textBox_mail.Size = new System.Drawing.Size(250, 23);
-            this.textBox_mail.TabIndex = 23;
-            // 
-            // label_mail
-            // 
-            this.label_mail.AutoSize = true;
-            this.label_mail.Location = new System.Drawing.Point(12, 209);
-            this.label_mail.Name = "label_mail";
-            this.label_mail.Size = new System.Drawing.Size(52, 16);
-            this.label_mail.TabIndex = 22;
-            this.label_mail.Text = "E-mail:";
-            // 
-            // textBox_telefon
-            // 
-            this.textBox_telefon.BackColor = System.Drawing.Color.White;
-            this.textBox_telefon.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_telefon.Location = new System.Drawing.Point(15, 274);
-            this.textBox_telefon.Name = "textBox_telefon";
-            this.textBox_telefon.Size = new System.Drawing.Size(250, 23);
-            this.textBox_telefon.TabIndex = 25;
-            // 
-            // label_telefon
-            // 
-            this.label_telefon.AutoSize = true;
-            this.label_telefon.Location = new System.Drawing.Point(12, 256);
-            this.label_telefon.Name = "label_telefon";
-            this.label_telefon.Size = new System.Drawing.Size(57, 16);
-            this.label_telefon.TabIndex = 24;
-            this.label_telefon.Text = "Telefon:";
+            panel_top.Controls.Add(dateTimePicker_datum);
+            panel_top.Controls.Add(textBox_telefon);
+            panel_top.Controls.Add(label_telefon);
+            panel_top.Controls.Add(textBox_mail);
+            panel_top.Controls.Add(label_mail);
+            panel_top.Controls.Add(label_ime);
+            panel_top.Controls.Add(label_prezime);
+            panel_top.Controls.Add(label_datum);
+            panel_top.Controls.Add(textBox_ime);
+            panel_top.Controls.Add(textBox_prezime);
+            panel_top.Controls.Add(label_pasos);
+            panel_top.Controls.Add(textBox_pasos);
+            panel_top.Dock = DockStyle.Top;
+            panel_top.Location = new Point(0, 0);
+            panel_top.Name = "panel_top";
+            panel_top.Size = new Size(334, 309);
+            panel_top.TabIndex = 22;
             // 
             // dateTimePicker_datum
             // 
-            this.dateTimePicker_datum.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_datum.Location = new System.Drawing.Point(15, 175);
-            this.dateTimePicker_datum.Name = "dateTimePicker_datum";
-            this.dateTimePicker_datum.Size = new System.Drawing.Size(250, 23);
-            this.dateTimePicker_datum.TabIndex = 28;
+            dateTimePicker_datum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker_datum.Location = new Point(15, 175);
+            dateTimePicker_datum.Name = "dateTimePicker_datum";
+            dateTimePicker_datum.Size = new Size(250, 23);
+            dateTimePicker_datum.TabIndex = 28;
+            // 
+            // textBox_telefon
+            // 
+            textBox_telefon.BackColor = Color.White;
+            textBox_telefon.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_telefon.Location = new Point(15, 274);
+            textBox_telefon.Name = "textBox_telefon";
+            textBox_telefon.Size = new Size(250, 23);
+            textBox_telefon.TabIndex = 25;
+            // 
+            // label_telefon
+            // 
+            label_telefon.AutoSize = true;
+            label_telefon.Location = new Point(12, 256);
+            label_telefon.Name = "label_telefon";
+            label_telefon.Size = new Size(57, 16);
+            label_telefon.TabIndex = 24;
+            label_telefon.Text = "Telefon:";
+            // 
+            // textBox_mail
+            // 
+            textBox_mail.BackColor = Color.White;
+            textBox_mail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox_mail.Location = new Point(15, 227);
+            textBox_mail.Name = "textBox_mail";
+            textBox_mail.Size = new Size(250, 23);
+            textBox_mail.TabIndex = 23;
+            // 
+            // label_mail
+            // 
+            label_mail.AutoSize = true;
+            label_mail.Location = new Point(12, 209);
+            label_mail.Name = "label_mail";
+            label_mail.Size = new Size(52, 16);
+            label_mail.TabIndex = 22;
+            label_mail.Text = "E-mail:";
             // 
             // panel_bottom
             // 
-            this.panel_bottom.Controls.Add(this.button_dodaj_paket);
-            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_bottom.Location = new System.Drawing.Point(0, 388);
-            this.panel_bottom.Name = "panel_bottom";
-            this.panel_bottom.Size = new System.Drawing.Size(334, 46);
-            this.panel_bottom.TabIndex = 23;
+            panel_bottom.Controls.Add(button_dodaj_paket);
+            panel_bottom.Dock = DockStyle.Bottom;
+            panel_bottom.Location = new Point(0, 388);
+            panel_bottom.Name = "panel_bottom";
+            panel_bottom.Size = new Size(334, 46);
+            panel_bottom.TabIndex = 23;
             // 
             // button_dodaj_paket
             // 
-            this.button_dodaj_paket.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dodaj_paket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button_dodaj_paket.Location = new System.Drawing.Point(94, 3);
-            this.button_dodaj_paket.Name = "button_dodaj_paket";
-            this.button_dodaj_paket.Size = new System.Drawing.Size(126, 37);
-            this.button_dodaj_paket.TabIndex = 0;
-            this.button_dodaj_paket.Text = "Dodaj Klijenta";
-            this.button_dodaj_paket.UseVisualStyleBackColor = true;
+            button_dodaj_paket.Cursor = Cursors.Hand;
+            button_dodaj_paket.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_dodaj_paket.ForeColor = Color.FromArgb(0, 71, 160);
+            button_dodaj_paket.Location = new Point(94, 3);
+            button_dodaj_paket.Name = "button_dodaj_paket";
+            button_dodaj_paket.Size = new Size(126, 37);
+            button_dodaj_paket.TabIndex = 0;
+            button_dodaj_paket.Text = "Dodaj Klijenta";
+            button_dodaj_paket.UseVisualStyleBackColor = true;
             // 
             // DodajKlijenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 434);
-            this.Controls.Add(this.panel_bottom);
-            this.Controls.Add(this.panel_top);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "DodajKlijenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DodajKlijenta";
-            this.panel_top.ResumeLayout(false);
-            this.panel_top.PerformLayout();
-            this.panel_bottom.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(334, 434);
+            Controls.Add(panel_bottom);
+            Controls.Add(panel_top);
+            Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(0, 71, 160);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(4);
+            Name = "DodajKlijenta";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "DodajKlijenta";
+            panel_top.ResumeLayout(false);
+            panel_top.PerformLayout();
+            panel_bottom.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
