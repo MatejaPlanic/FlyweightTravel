@@ -173,9 +173,9 @@ namespace DsApp.Data.Proxies
             {
                 sql = @"
          INSERT INTO packages
-           (ime, cena, tip_paketa, brod, ruta, datum_polaska, tip_kabine)
+           (ime, cena, tip_paketa, brod, ruta, datum_polaska, tip_kabine, destinacija)
          VALUES
-           (@ime, @cena, @tip, @brod, @ruta, @datum, @kabina);";
+           (@ime, @cena, @tip, @brod, @ruta, @datum, @kabina, @destinacija);";
 
                 args["@ime"] = p.Name;
                 args["@cena"] = p.Price;
@@ -184,6 +184,7 @@ namespace DsApp.Data.Proxies
                 args["@ruta"] = p.Route;
                 args["@datum"] = p.DateOfDeparture;
                 args["@kabina"] = p.CabinType;
+                args["@destinacija"] = p.Destination;
             }
             else
             {

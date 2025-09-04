@@ -14,7 +14,7 @@ namespace Front
     public partial class PaketKrstarenje : Form
     {
 
-       
+
 
         public PaketKrstarenje()
         {
@@ -23,6 +23,11 @@ namespace Front
             krstarenje_datum.CustomFormat = "dd.MM.yyyy";
         }
         private void label_dodatne_aktivnosti_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PaketKrstarenje_Load(object sender, EventArgs e)
         {
 
         }
@@ -40,6 +45,11 @@ namespace Front
         public string Kabina
         {
             get => krstarenje_kabina.Text;
+        }
+
+        public string Destination
+        {
+            get => krstarenje_destinacija.Text;
         }
 
         public string DepartureDate

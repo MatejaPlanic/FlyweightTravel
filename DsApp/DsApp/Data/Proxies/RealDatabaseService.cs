@@ -157,6 +157,7 @@ namespace DsApp.Data.Proxies
                                         krstarenje.BuildCabinType(reader["tip_kabine"].ToString());
                                         krstarenje.BuildRoute(reader["ruta"].ToString());
                                         krstarenje.BuildDateOfDeparture(reader["datum_polaska"].ToString());
+                                        krstarenje.BuildDestination(reader["destinacija"].ToString());
                                         krstarenje.GetPackage().Id = reader.GetInt32(0);
                                     packages.Add(krstarenje.GetPackage());
                                     break;

@@ -147,6 +147,7 @@ namespace Front
                         krstarenje.BuildCabinType(krstarenjeForm.Kabina);
                         krstarenje.BuildRoute(krstarenjeForm.Route);
                         krstarenje.BuildDateOfDeparture(krstarenjeForm.DepartureDate);
+                        krstarenje.BuildDestination(krstarenjeForm.Destination);
                         af.AddNewPackage(krstarenje);
                     }
 

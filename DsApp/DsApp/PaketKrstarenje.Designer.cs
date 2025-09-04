@@ -31,7 +31,6 @@
             panel1 = new Panel();
             krstarenje_destinacija = new TextBox();
             label1 = new Label();
-            textBox_dodatne_aktivnosti = new TextBox();
             krstarenje_datum = new DateTimePicker();
             krstarenje_kabina = new TextBox();
             label_dodatne_aktivnosti = new Label();
@@ -47,7 +46,6 @@
             // 
             panel1.Controls.Add(krstarenje_destinacija);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textBox_dodatne_aktivnosti);
             panel1.Controls.Add(krstarenje_datum);
             panel1.Controls.Add(krstarenje_kabina);
             panel1.Controls.Add(label_dodatne_aktivnosti);
@@ -69,7 +67,15 @@
             krstarenje_destinacija.Name = "krstarenje_destinacija";
             krstarenje_destinacija.Size = new Size(250, 23);
             krstarenje_destinacija.TabIndex = 16;
-
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(9, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 16);
+            label1.TabIndex = 15;
+            label1.Text = "Destinacija:";
             // 
             // krstarenje_datum
             // 
@@ -87,22 +93,8 @@
             krstarenje_kabina.Size = new Size(250, 23);
             krstarenje_kabina.TabIndex = 13;
             // 
-            // label1
+            // label_dodatne_aktivnosti
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(9, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 16);
-            label1.TabIndex = 15;
-            label1.Text = "Destinacija:";
-            // 
-            // textBox_dodatne_aktivnosti
-            // 
-            textBox_dodatne_aktivnosti.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_dodatne_aktivnosti.Location = new Point(12, 243);
-            textBox_dodatne_aktivnosti.Name = "textBox_dodatne_aktivnosti";
-            textBox_dodatne_aktivnosti.Size = new Size(250, 23);
-            textBox_dodatne_aktivnosti.TabIndex = 13;
             label_dodatne_aktivnosti.AutoSize = true;
             label_dodatne_aktivnosti.Location = new Point(9, 171);
             label_dodatne_aktivnosti.Name = "label_dodatne_aktivnosti";
@@ -114,7 +106,7 @@
             // krstarenje_ruta
             // 
             krstarenje_ruta.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            krstarenje_ruta.Location = new Point(12, 84);
+            krstarenje_ruta.Location = new Point(12, 244);
             krstarenje_ruta.Name = "krstarenje_ruta";
             krstarenje_ruta.Size = new Size(250, 23);
             krstarenje_ruta.TabIndex = 9;
@@ -131,7 +123,7 @@
             // label_datum
             // 
             label_datum.AutoSize = true;
-            label_datum.Location = new Point(9, 173);
+            label_datum.Location = new Point(12, 119);
             label_datum.Name = "label_datum";
             label_datum.Size = new Size(108, 16);
             label_datum.TabIndex = 10;
@@ -140,7 +132,7 @@
             // krstarenje_brod
             // 
             krstarenje_brod.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            krstarenje_brod.Location = new Point(12, 30);
+            krstarenje_brod.Location = new Point(12, 83);
             krstarenje_brod.Name = "krstarenje_brod";
             krstarenje_brod.Size = new Size(250, 23);
             krstarenje_brod.TabIndex = 7;
@@ -148,7 +140,7 @@
             // label_ruta
             // 
             label_ruta.AutoSize = true;
-            label_ruta.Location = new Point(9, 118);
+            label_ruta.Location = new Point(12, 225);
             label_ruta.Name = "label_ruta";
             label_ruta.Size = new Size(40, 16);
             label_ruta.TabIndex = 8;
@@ -166,6 +158,7 @@
             Margin = new Padding(4);
             Name = "PaketKrstarenje";
             Text = "PaketKrstarenje";
+            Load += PaketKrstarenje_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
