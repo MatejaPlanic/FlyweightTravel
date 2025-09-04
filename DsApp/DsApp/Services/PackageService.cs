@@ -19,5 +19,13 @@ namespace DsApp.Services
         {
             return proxy.GetAllPackages();
         }
+        public List<string> GetAllDestinations()
+        {
+            return proxy.GetAllDestinations();
+        }
+        public List<string> GetAllPackageDestinationNames(string dest)
+        {
+            return proxy.GetAllPackageDestinationNames(dest);
+        }
     }
 }

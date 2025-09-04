@@ -213,5 +213,93 @@ namespace DsApp.Data.Proxies
                     conn.Close();
             }
         }
+
+        public List<string> GetAllDestinations()
+        {
+            var result = new List<string>();
+
+            const string query = @"
+            SELECT DISTINCT destinacija
+            FROM packages
+            WHERE destinacija IS NOT NULL AND TRIM(destinacija) <> ''
+            ORDER BY destinacija;";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                var dest = reader.GetString(0);
+                                if (!string.IsNullOrWhiteSpace(dest))
+                                    result.Add(dest);
+                            }
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+
+            return result;
+        }
+
+        public List<string> GetAllPackageDestinationNames(string dest)
+        {
+            var result = new List<string>();
+            if (string.IsNullOrWhiteSpace(dest))
+                return result;
+
+            const string query = @"
+        SELECT ime
+        FROM packages
+        WHERE LOWER(TRIM(destinacija)) = LOWER(TRIM(@dest))
+        ORDER BY ime;";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    var p = cmd.CreateParameter();
+                    p.ParameterName = "@dest";
+                    p.Value = dest;
+                    cmd.Parameters.Add(p);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                                result.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+
+            return result;
+        }
+
     }
 }

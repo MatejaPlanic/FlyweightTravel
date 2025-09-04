@@ -209,5 +209,14 @@ namespace DsApp.Data.Proxies
         {
             return realService.GetAllPackages();
         }
+
+        public List<string> GetAllDestinations()
+        {
+            return realService.GetAllDestinations();
+        }
+        public List<string> GetAllPackageDestinationNames(string dest)
+        {
+            return realService.GetAllPackageDestinationNames(dest);
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
             textBox2 = new TextBox();
             label_cena = new Label();
             label_naziv = new Label();
@@ -36,7 +37,6 @@
             label_tip = new Label();
             button_dodaj_rezervaciju = new Button();
             panel_bottom = new Panel();
-            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             panel_bottom.SuspendLayout();
             SuspendLayout();
@@ -54,6 +54,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(334, 276);
             panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(15, 45);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(250, 25);
+            comboBox1.TabIndex = 12;
             // 
             // textBox2
             // 
@@ -87,6 +96,7 @@
             // 
             // comboBox_tip
             // 
+            comboBox_tip.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_tip.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_tip.FormattingEnabled = true;
             comboBox_tip.Location = new Point(14, 103);
@@ -126,14 +136,6 @@
             panel_bottom.Name = "panel_bottom";
             panel_bottom.Size = new Size(334, 49);
             panel_bottom.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 45);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 25);
-            comboBox1.TabIndex = 12;
             // 
             // RezervacijaPaketa
             // 

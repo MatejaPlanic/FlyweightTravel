@@ -51,6 +51,16 @@ namespace DsApp.Facade
             
         }
 
+        public List<string> GetAllDestinations()
+        {
+            return packageService.GetAllDestinations();
+        }
+
+        public List<string> GetAllPackageDestinationNames(string dest)
+        {
+            return packageService.GetAllPackageDestinationNames(dest);
+        }
+
         public void AddNewPackage(TravelPackageBuilder tr)
         {
             packageService.AddNewPackage(tr);
