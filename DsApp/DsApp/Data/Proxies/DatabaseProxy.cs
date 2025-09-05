@@ -232,6 +232,7 @@ namespace DsApp.Data.Proxies
         public void CancelReservation(int id)
         {
             realService.CancelReservation(id);
+        }
         public List<Client> SearchClients(string srch)
         {
             return realService.SearchClients(srch);
