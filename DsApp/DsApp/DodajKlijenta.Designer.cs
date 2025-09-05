@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             label_datum = new Label();
-            textBox_prezime = new TextBox();
-            textBox_pasos = new TextBox();
+            klijent_prezime = new TextBox();
+            klijent_pasos = new TextBox();
             label_ime = new Label();
             label_pasos = new Label();
-            textBox_ime = new TextBox();
+            klijent_ime = new TextBox();
             label_prezime = new Label();
             panel_top = new Panel();
-            dateTimePicker_datum = new DateTimePicker();
-            textBox_telefon = new TextBox();
+            klijent_datum = new DateTimePicker();
+            klijent_telefon = new TextBox();
             label_telefon = new Label();
-            textBox_mail = new TextBox();
+            klijent_email = new TextBox();
             label_mail = new Label();
             panel_bottom = new Panel();
             button_dodaj_paket = new Button();
@@ -56,23 +56,23 @@
             label_datum.TabIndex = 20;
             label_datum.Text = "Datum rođenja:";
             // 
-            // textBox_prezime
+            // klijent_prezime
             // 
-            textBox_prezime.BackColor = Color.White;
-            textBox_prezime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_prezime.Location = new Point(15, 77);
-            textBox_prezime.Name = "textBox_prezime";
-            textBox_prezime.Size = new Size(250, 23);
-            textBox_prezime.TabIndex = 17;
+            klijent_prezime.BackColor = Color.White;
+            klijent_prezime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_prezime.Location = new Point(15, 77);
+            klijent_prezime.Name = "klijent_prezime";
+            klijent_prezime.Size = new Size(250, 23);
+            klijent_prezime.TabIndex = 17;
             // 
-            // textBox_pasos
+            // klijent_pasos
             // 
-            textBox_pasos.BackColor = Color.White;
-            textBox_pasos.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_pasos.Location = new Point(15, 128);
-            textBox_pasos.Name = "textBox_pasos";
-            textBox_pasos.Size = new Size(250, 23);
-            textBox_pasos.TabIndex = 19;
+            klijent_pasos.BackColor = Color.White;
+            klijent_pasos.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_pasos.Location = new Point(15, 128);
+            klijent_pasos.Name = "klijent_pasos";
+            klijent_pasos.Size = new Size(250, 23);
+            klijent_pasos.TabIndex = 19;
             // 
             // label_ime
             // 
@@ -92,15 +92,15 @@
             label_pasos.TabIndex = 18;
             label_pasos.Text = "Broj Pasoša:";
             // 
-            // textBox_ime
+            // klijent_ime
             // 
-            textBox_ime.BackColor = Color.White;
-            textBox_ime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_ime.Location = new Point(15, 26);
-            textBox_ime.Name = "textBox_ime";
-            textBox_ime.Size = new Size(250, 23);
-            textBox_ime.TabIndex = 15;
-            textBox_ime.Tag = "";
+            klijent_ime.BackColor = Color.White;
+            klijent_ime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_ime.Location = new Point(15, 26);
+            klijent_ime.Name = "klijent_ime";
+            klijent_ime.Size = new Size(250, 23);
+            klijent_ime.TabIndex = 15;
+            klijent_ime.Tag = "";
             // 
             // label_prezime
             // 
@@ -113,40 +113,40 @@
             // 
             // panel_top
             // 
-            panel_top.Controls.Add(dateTimePicker_datum);
-            panel_top.Controls.Add(textBox_telefon);
+            panel_top.Controls.Add(klijent_datum);
+            panel_top.Controls.Add(klijent_telefon);
             panel_top.Controls.Add(label_telefon);
-            panel_top.Controls.Add(textBox_mail);
+            panel_top.Controls.Add(klijent_email);
             panel_top.Controls.Add(label_mail);
             panel_top.Controls.Add(label_ime);
             panel_top.Controls.Add(label_prezime);
             panel_top.Controls.Add(label_datum);
-            panel_top.Controls.Add(textBox_ime);
-            panel_top.Controls.Add(textBox_prezime);
+            panel_top.Controls.Add(klijent_ime);
+            panel_top.Controls.Add(klijent_prezime);
             panel_top.Controls.Add(label_pasos);
-            panel_top.Controls.Add(textBox_pasos);
+            panel_top.Controls.Add(klijent_pasos);
             panel_top.Dock = DockStyle.Top;
             panel_top.Location = new Point(0, 0);
             panel_top.Name = "panel_top";
             panel_top.Size = new Size(334, 309);
             panel_top.TabIndex = 22;
             // 
-            // dateTimePicker_datum
+            // klijent_datum
             // 
-            dateTimePicker_datum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker_datum.Location = new Point(15, 175);
-            dateTimePicker_datum.Name = "dateTimePicker_datum";
-            dateTimePicker_datum.Size = new Size(250, 23);
-            dateTimePicker_datum.TabIndex = 28;
+            klijent_datum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_datum.Location = new Point(15, 175);
+            klijent_datum.Name = "klijent_datum";
+            klijent_datum.Size = new Size(250, 23);
+            klijent_datum.TabIndex = 28;
             // 
-            // textBox_telefon
+            // klijent_telefon
             // 
-            textBox_telefon.BackColor = Color.White;
-            textBox_telefon.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_telefon.Location = new Point(15, 274);
-            textBox_telefon.Name = "textBox_telefon";
-            textBox_telefon.Size = new Size(250, 23);
-            textBox_telefon.TabIndex = 25;
+            klijent_telefon.BackColor = Color.White;
+            klijent_telefon.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_telefon.Location = new Point(15, 274);
+            klijent_telefon.Name = "klijent_telefon";
+            klijent_telefon.Size = new Size(250, 23);
+            klijent_telefon.TabIndex = 25;
             // 
             // label_telefon
             // 
@@ -157,14 +157,14 @@
             label_telefon.TabIndex = 24;
             label_telefon.Text = "Telefon:";
             // 
-            // textBox_mail
+            // klijent_email
             // 
-            textBox_mail.BackColor = Color.White;
-            textBox_mail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox_mail.Location = new Point(15, 227);
-            textBox_mail.Name = "textBox_mail";
-            textBox_mail.Size = new Size(250, 23);
-            textBox_mail.TabIndex = 23;
+            klijent_email.BackColor = Color.White;
+            klijent_email.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            klijent_email.Location = new Point(15, 227);
+            klijent_email.Name = "klijent_email";
+            klijent_email.Size = new Size(250, 23);
+            klijent_email.TabIndex = 23;
             // 
             // label_mail
             // 
@@ -195,6 +195,7 @@
             button_dodaj_paket.TabIndex = 0;
             button_dodaj_paket.Text = "Dodaj Klijenta";
             button_dodaj_paket.UseVisualStyleBackColor = true;
+            button_dodaj_paket.Click += button_dodaj_paket_Click;
             // 
             // DodajKlijenta
             // 
@@ -220,18 +221,18 @@
 
         #endregion
         private System.Windows.Forms.Label label_datum;
-        private System.Windows.Forms.TextBox textBox_prezime;
-        private System.Windows.Forms.TextBox textBox_pasos;
+        private System.Windows.Forms.TextBox klijent_prezime;
+        private System.Windows.Forms.TextBox klijent_pasos;
         private System.Windows.Forms.Label label_ime;
         private System.Windows.Forms.Label label_pasos;
-        private System.Windows.Forms.TextBox textBox_ime;
+        private System.Windows.Forms.TextBox klijent_ime;
         private System.Windows.Forms.Label label_prezime;
         private System.Windows.Forms.Panel panel_top;
-        private System.Windows.Forms.TextBox textBox_mail;
+        private System.Windows.Forms.TextBox klijent_email;
         private System.Windows.Forms.Label label_mail;
-        private System.Windows.Forms.TextBox textBox_telefon;
+        private System.Windows.Forms.TextBox klijent_telefon;
         private System.Windows.Forms.Label label_telefon;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_datum;
+        private System.Windows.Forms.DateTimePicker klijent_datum;
         private System.Windows.Forms.Panel panel_bottom;
         private System.Windows.Forms.Button button_dodaj_paket;
     }

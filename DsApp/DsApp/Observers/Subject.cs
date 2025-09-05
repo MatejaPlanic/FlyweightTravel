@@ -1,19 +1,27 @@
-﻿namespace DsApp.Observers
-{
-    public abstract class Subject
-    {
-        private List<IObserver> observers = new List<IObserver>();
+﻿using System.Collections.Generic;
 
-        public void Attach(IObserver observer)
+namespace DsApp.Observers
+{
+    // Generička klasa za Subject (izdavača)
+    public abstract class Subject<T>
+    {
+        private readonly List<IObserver<T>> observers = new List<IObserver<T>>();
+
+        public void Attach(IObserver<T> observer)
         {
             observers.Add(observer);
         }
 
-        public void Notify()
+        public void Detach(IObserver<T> observer)
+        {
+            observers.Remove(observer);
+        }
+
+        protected void Notify(T data)
         {
             foreach (var observer in observers)
             {
-                observer.Update();
+                observer.Update(data);
             }
         }
     }

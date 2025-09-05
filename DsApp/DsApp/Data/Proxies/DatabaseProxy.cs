@@ -23,7 +23,7 @@ namespace DsApp.Data.Proxies
         private static readonly byte[] iv = Encoding.UTF8.GetBytes("stefimatundra123");
         private DatabaseProxy()
         {
-            realService = new RealDatabaseService();
+            realService = RealDatabaseService.GetInstance();
         }
 
         public static DatabaseProxy getProxy()
@@ -232,6 +232,9 @@ namespace DsApp.Data.Proxies
         public void CancelReservation(int id)
         {
             realService.CancelReservation(id);
+        public List<Client> SearchClients(string srch)
+        {
+            return realService.SearchClients(srch);
         }
     }
 }

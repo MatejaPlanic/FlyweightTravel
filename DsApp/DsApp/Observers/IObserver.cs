@@ -1,7 +1,8 @@
 ﻿namespace DsApp.Observers
 {
-    public interface IObserver
+    // Generički interfejs za Observere
+    public interface IObserver<T>
     {
-        void Update();
+        void Update(T data);
     }
 }

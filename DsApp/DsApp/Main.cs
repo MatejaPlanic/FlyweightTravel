@@ -1,4 +1,5 @@
-﻿using DsApp.Facade;
+﻿using DsApp.Config;
+using DsApp.Facade;
 using DsApp.Models;
 using Guna.UI2.WinForms;
 using System;
@@ -71,7 +72,24 @@ namespace Front
             AgencyFacade fasada = AgencyFacade.GetInstance();
             if (activeForm is Paketi p)
             {
-                p.getPaketiDiv.DataSource = fasada.GetAllPackages();
+                var paketi = fasada.GetAllPackages();
+                var rows = paketi.Select(r => new
+                {
+                    Naziv = r.Name,
+                    Destinacija = r.Destination,
+                    Transport = r.TransportType,
+                    Smestaj = r.AccommodationType,
+                    Cena = r.Price,
+                    Info = r.AdditionalActivities,
+                    Vodic = r.Guide,
+                    Trajanje = r.Duration,
+                    Brod = r.Boat,
+                    Ruta = r.Route,
+                    Polazak = r.DateOfDeparture,
+                    Kabina = r.CabinType,
+                    Paket = r.PackageType
+                }).ToList();
+                p.getPaketiDiv.DataSource = rows;
             }
         }
 
@@ -86,7 +104,7 @@ namespace Front
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            label_naziv.Text = DatabaseManager.GetName();
         }
         protected override void WndProc(ref Message m)
         {
@@ -103,11 +121,15 @@ namespace Front
                     Application.Exit(); // gasi celu aplikaciju
                     return;             // prekida normalno ponašanje
                 }
-                
+
             }
 
             base.WndProc(ref m); // ako ništa ne menjaš, zovi original
         }
 
+        private void label_naziv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

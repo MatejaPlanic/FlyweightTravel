@@ -1,2 +1,2 @@
-FlyweightTravel
-Server=localhost;Database=zito;Uid=root;Pwd=;Port=3306;
+FlyweightTravel2
+Server=localhost;Database=ker4;Uid=root;Pwd=;Port=3306;
