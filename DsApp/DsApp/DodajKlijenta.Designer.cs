@@ -145,6 +145,7 @@
             klijent_telefon.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             klijent_telefon.Location = new Point(15, 274);
             klijent_telefon.Name = "klijent_telefon";
+            klijent_telefon.PlaceholderText = "0601234567";
             klijent_telefon.Size = new Size(250, 23);
             klijent_telefon.TabIndex = 25;
             // 
@@ -163,6 +164,7 @@
             klijent_email.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             klijent_email.Location = new Point(15, 227);
             klijent_email.Name = "klijent_email";
+            klijent_email.PlaceholderText = "example@mail.com";
             klijent_email.Size = new Size(250, 23);
             klijent_email.TabIndex = 23;
             // 
