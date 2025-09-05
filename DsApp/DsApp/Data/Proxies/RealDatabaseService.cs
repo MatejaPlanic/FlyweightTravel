@@ -496,6 +496,7 @@ namespace DsApp.Data.Proxies
                     var p6 = cmd.CreateParameter(); p6.ParameterName = "@dest"; p6.Value = destinacija; cmd.Parameters.Add(p6);
 
                     cmd.ExecuteNonQuery();
+                    _notifier.NotifyResChanged();
                 }
             }
             finally
@@ -525,6 +526,7 @@ namespace DsApp.Data.Proxies
                     var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
 
                     cmd.ExecuteNonQuery();
+                    _notifier.NotifyResChanged();
                 }
             }
             finally

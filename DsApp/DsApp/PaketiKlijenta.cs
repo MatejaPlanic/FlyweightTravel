@@ -1,4 +1,5 @@
 ﻿using DsApp.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace Front
     public partial class PaketiKlijenta : Form
     {
         private readonly int _clientId;
-        public PaketiKlijenta(int clientId)
+        private readonly Guna2DataGridView _dg;
+        public PaketiKlijenta(int clientId, Guna2DataGridView rezs)
         {
             InitializeComponent();
+            _dg = rezs;
             _clientId = clientId;
         }
 
@@ -27,7 +30,7 @@ namespace Front
             // Ako je glavna forma otvorena, pozovi openChildForm metodu da otvori "RezervisiPakete"
             if (mainForm != null)
             {
-                mainForm.openChildForm(new RezervacijaPaketa(_clientId));
+                mainForm.openChildForm(new RezervacijaPaketa(_clientId, _dg));
             }
         }
 

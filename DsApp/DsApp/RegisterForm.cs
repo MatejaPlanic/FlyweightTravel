@@ -1,4 +1,6 @@
 ﻿using DsApp.Facade;
+using DsApp.Observers;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +13,14 @@ using System.Windows.Forms;
 
 namespace Front
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : Form, DsApp.Observers.IObserver<string>
     {
         private readonly AgencyFacade _facade = AgencyFacade.GetInstance();
         public RegisterForm()
         {
             InitializeComponent();
             comboBox1.SelectionChangeCommitted += comboBox1_Changed;
+            DatabaseNotifier.GetInstance().Attach(this);
         }
 
         public int idKlijent
@@ -71,7 +74,7 @@ namespace Front
         private void button_dodaj_Click(object sender, EventArgs e)
         {
             int currentClientId = idKlijent;
-            RezervacijaPaketa noviPaket = new RezervacijaPaketa(currentClientId);
+            RezervacijaPaketa noviPaket = new RezervacijaPaketa(currentClientId, guna2DataGridView1);
             noviPaket.ShowDialog();
         }
         private int? GetSelectedReservationId()
@@ -109,20 +112,25 @@ namespace Front
 
             try
             {
-                _facade.CancelReservation(id.Value);   
-                
+
+                _facade.CancelReservation(id.Value);
+                MessageBox.Show("Uspešno otkazana rezervacija");
+                return;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Greška pri otkazivanju: " + ex.Message);
             }
         }
-
+        public Guna2DataGridView GetGuna
+        {
+            get => guna2DataGridView1;
+        }
         private void comboBox1_Changed(object sender, EventArgs e)
         {
 
                 int clientId = idKlijent;
-                var rezervacije = _facade.GetAllReservations(clientId);
+            var rezervacije = _facade.GetAllReservations(clientId);
             var rows = rezervacije.Select(r => new
             {
                 ID = r.ID,
@@ -137,6 +145,14 @@ namespace Front
             if (guna2DataGridView1.Columns.Contains("ID"))
                 guna2DataGridView1.Columns["ID"].Visible = false;
 
+        }
+
+        public void Update(string data)
+        {
+            if (data == "res_change")
+            {
+                comboBox1_Changed(null, null);
+            }
         }
     }
 }

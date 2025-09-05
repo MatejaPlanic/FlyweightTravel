@@ -1,5 +1,6 @@
 ﻿using DsApp.Facade;
 using DsApp.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,18 +11,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Front;
+using DsApp.Observers;
 namespace Front
 {
-    public partial class RezervacijaPaketa : Form
+    public partial class RezervacijaPaketa : Form, DsApp.Observers.IObserver<string>
     {
         private readonly AgencyFacade _facade = AgencyFacade.GetInstance();
         private readonly int _clientId;
-        public RezervacijaPaketa(int clientId)
+        private readonly Guna2DataGridView _dg;
+        public RezervacijaPaketa(int clientId, Guna2DataGridView rezs)
         {
             InitializeComponent();
             _clientId = clientId;
             comboBox1.SelectionChangeCommitted += ComboDestinacija_Changed;
+            DatabaseNotifier.GetInstance().Attach(this);
+            _dg = rezs;
         }
 
 
@@ -32,7 +37,7 @@ namespace Front
             // Ako je glavna forma otvorena, pozovi openChildForm metodu da otvori "RezervisiPakete"
             if (mainForm != null)
             {
-                mainForm.openChildForm(new PaketiKlijenta(_clientId));
+                mainForm.openChildForm(new PaketiKlijenta(_clientId, _dg));
             }
         }
 
@@ -109,6 +114,29 @@ namespace Front
             _facade.AddNewReservation(destinacija, tip_id, broj_osoba, _clientId);
             MessageBox.Show("Uspesno ste dodali rezervaciju");
             this.Close();
+        }
+
+        public void Update(string data)
+        {
+            if (data == "res_change")
+            {
+                int clientId = _clientId;
+                var rezervacije = _facade.GetAllReservations(clientId);
+                var rows = rezervacije.Select(r => new
+                {
+                    ID = r.ID,
+                    Paket = r.PackageName,
+                    Datum = r.ReservationDate,
+                    Status = r.State?.ToString(),
+                    BrojOsoba = r.Broj_osoba,
+                    Destinacija = r.Destinacija
+                }).ToList();
+
+                _dg.DataSource = rows;
+
+                if (_dg.Columns.Contains("ID"))
+                    _dg.Columns["ID"].Visible = false;
+            }
         }
     }
 }

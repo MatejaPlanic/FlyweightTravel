@@ -41,13 +41,11 @@ namespace Front
                 MessageBox.Show("Unesite Prezime");
                 return;
             }
-
-            else if(klijent_pasos.Text == "")
+            else if (!Regex.IsMatch(klijent_pasos.Text, @"^\d+$"))
             {
-                MessageBox.Show("Unesite Broj pasoša");
+                MessageBox.Show("Broj pasoša može sadržati samo cifre (0–9).");
                 return;
             }
-
             else if(klijent_datum.Value.Date > DateTime.Today)
             {
                 MessageBox.Show("Datum ne sme biti u budućnosti.");

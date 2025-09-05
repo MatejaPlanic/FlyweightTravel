@@ -37,5 +37,11 @@ namespace DsApp.Observers
             this._changeMessage = "package_added";
             base.Notify(this._changeMessage);
         }
+
+        public void NotifyResChanged()
+        {
+            this._changeMessage = "res_change";
+            base.Notify(this._changeMessage);
+        }
     }
 }

@@ -16,12 +16,10 @@ namespace Front
 {
     public partial class Klijenti : Form, DsApp.Observers.IObserver<string>
     {
-        RealDatabaseService rdb;
         AgencyFacade af = AgencyFacade.GetInstance();
         public Klijenti()
         {
             InitializeComponent();
-            rdb = RealDatabaseService.GetInstance();
             DatabaseNotifier.GetInstance().Attach(this);
         }
 
