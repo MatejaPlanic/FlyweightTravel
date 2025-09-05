@@ -2,10 +2,12 @@
 using DsApp.Config;
 using DsApp.Models;
 using DsApp.Services;
+using DsApp.States;
 using Front;
 using Microsoft.Data.Sqlite;
 using MySqlConnector;
 using System.Data;
+using System.Globalization;
 
 namespace DsApp.Data.Proxies
 {
@@ -256,14 +258,14 @@ namespace DsApp.Data.Proxies
             return result;
         }
 
-        public List<string> GetAllPackageDestinationNames(string dest)
+        public List<(string Name, int Id)> GetAllPackageDestinationNames(string dest)
         {
-            var result = new List<string>();
+            var result = new List<( string Name, int Id)>();
             if (string.IsNullOrWhiteSpace(dest))
                 return result;
 
             const string query = @"
-        SELECT ime
+        SELECT ime,id
         FROM packages
         WHERE LOWER(TRIM(destinacija)) = LOWER(TRIM(@dest))
         ORDER BY ime;";
@@ -286,8 +288,10 @@ namespace DsApp.Data.Proxies
                     {
                         while (reader.Read())
                         {
-                            if (!reader.IsDBNull(0))
-                                result.Add(reader.GetString(0));
+                            var id = reader.IsDBNull(1) ? 0 : Convert.ToInt32(reader.GetValue(1));
+                            var name = reader.IsDBNull(0) ? "" : reader.GetString(0);
+
+                            result.Add((name,id));
                         }
                     }
                 }
@@ -300,6 +304,161 @@ namespace DsApp.Data.Proxies
 
             return result;
         }
+
+        public List<Reservation> GetAllReservations(int id)
+        {
+            var result = new List<Reservation>();
+            const string query = @"
+                SELECT r.id      AS res_id,
+                       p.ime     AS paket,
+                       r.datum_rezervacije,
+                       r.state,
+                       r.broj_osoba,
+                       r.destinacija
+                FROM reservations r
+                JOIN packages p ON p.id = r.id_package
+                WHERE r.id_client = @id;";
+            var conn = _databaseManager!.GetConnection();
+
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    var p = cmd.CreateParameter();
+                    p.ParameterName = "@id";
+                    p.Value = id;
+                    cmd.Parameters.Add(p);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            
+                            var resId = !reader.IsDBNull(0) ? Convert.ToInt32(reader.GetValue(0)) : 0;
+                            var paket = !reader.IsDBNull(1) ? reader.GetString(1) : "Paket";
+                            var broj_osoba = !reader.IsDBNull(4) ? Convert.ToInt32(reader.GetValue(4)) : 0;
+                            var destinacija = !reader.IsDBNull(5) ? reader.GetString(5) : "Destinacija";
+
+                            var res = new Reservation(paket,broj_osoba, destinacija) { ID = resId };
+
+                           
+                            if (!reader.IsDBNull(2))
+                            {
+                                string dateStr;
+                                var fieldType = reader.GetFieldType(2);
+                                if (fieldType == typeof(DateTime))
+                                {
+                                    var dt = reader.GetDateTime(2);
+                                    dateStr = dt.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
+                                }
+                                else
+                                {
+                                    var raw = reader.GetValue(2)?.ToString() ?? "";
+                                    if (DateTime.TryParse(raw, out var dt))
+                                        dateStr = dt.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
+                                    else
+                                        dateStr = raw; 
+                                }
+                                res.ReservationDate = dateStr;
+                            }
+
+                            var stateStr = !reader.IsDBNull(3) ? reader.GetString(3) : null;
+                            if(stateStr == "Otkazana")
+                            {
+                                res.State = new CanceledState();
+                            }
+                            else if (stateStr == "Ažurirana")
+                            {
+                                res.State = new UpdatedState();
+                            }
+                            else if (stateStr == "Rezervisana")
+                            {
+                                res.State = new ReservedState();
+                            }
+
+                            result.Add(res);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+            }
+
+            return result;
+        }
+
+        public void AddNewReservation(string destinacija, int tipId, int broj_osoba, int klijentId)
+        {
+            const string sql = @"
+        INSERT INTO reservations
+            (id_client, id_package, state, datum_rezervacije, broj_osoba, destinacija)
+        VALUES
+            (@client, @package, @state, @datum, @broj, @dest);";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    cmd.Connection = conn;
+
+                    string datum = DateTime.Now.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
+
+                    var p1 = cmd.CreateParameter(); p1.ParameterName = "@client"; p1.Value = klijentId; cmd.Parameters.Add(p1);
+                    var p2 = cmd.CreateParameter(); p2.ParameterName = "@package"; p2.Value = tipId; cmd.Parameters.Add(p2);
+                    var p3 = cmd.CreateParameter(); p3.ParameterName = "@state"; p3.Value = "Rezervisana"; cmd.Parameters.Add(p3);
+                    var p4 = cmd.CreateParameter(); p4.ParameterName = "@datum"; p4.Value = datum; cmd.Parameters.Add(p4);
+                    var p5 = cmd.CreateParameter(); p5.ParameterName = "@broj"; p5.Value = broj_osoba; cmd.Parameters.Add(p5);
+                    var p6 = cmd.CreateParameter(); p6.ParameterName = "@dest"; p6.Value = destinacija; cmd.Parameters.Add(p6);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
+
+        public void CancelReservation(int id)
+        {
+            const string sql = @"
+            UPDATE reservations
+            SET state = @state
+            WHERE id = @id;";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    cmd.Connection = conn;
+
+                    var pState = cmd.CreateParameter(); pState.ParameterName = "@state"; pState.Value = "Otkazana"; cmd.Parameters.Add(pState);
+                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
+
 
     }
 }

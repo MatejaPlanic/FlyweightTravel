@@ -23,7 +23,7 @@ namespace DsApp.Services
         {
             return proxy.GetAllDestinations();
         }
-        public List<string> GetAllPackageDestinationNames(string dest)
+        public List<(string Name, int Id)> GetAllPackageDestinationNames(string dest)
         {
             return proxy.GetAllPackageDestinationNames(dest);
         }

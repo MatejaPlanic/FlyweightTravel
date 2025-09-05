@@ -16,5 +16,10 @@ namespace Front
         {
             InitializeComponent();
         }
+
+        private void DodajKlijenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

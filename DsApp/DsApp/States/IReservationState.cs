@@ -4,7 +4,8 @@ namespace DsApp.States
 {
     public interface IReservationState
     {
-        void ProcessPayment(Reservation reservation);
+        void Update(Reservation reservation);
         void Cancel(Reservation reservation);
+        string getState();
     }
 }

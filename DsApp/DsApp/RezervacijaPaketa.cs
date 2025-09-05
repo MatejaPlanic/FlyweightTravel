@@ -1,4 +1,5 @@
 ﻿using DsApp.Facade;
+using DsApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace Front
     public partial class RezervacijaPaketa : Form
     {
         private readonly AgencyFacade _facade = AgencyFacade.GetInstance();
-        public RezervacijaPaketa()
+        private readonly int _clientId;
+        public RezervacijaPaketa(int clientId)
         {
             InitializeComponent();
+            _clientId = clientId;
             comboBox1.SelectionChangeCommitted += ComboDestinacija_Changed;
         }
 
@@ -29,7 +32,7 @@ namespace Front
             // Ako je glavna forma otvorena, pozovi openChildForm metodu da otvori "RezervisiPakete"
             if (mainForm != null)
             {
-                mainForm.openChildForm(new PaketiKlijenta());
+                mainForm.openChildForm(new PaketiKlijenta(_clientId));
             }
         }
 
@@ -41,9 +44,9 @@ namespace Front
 
                 destinacije.Insert(0, "Izaberite destinaciju");
                 comboBox1.BeginUpdate();
-                comboBox1.DataSource = null;          
+                comboBox1.DataSource = null;
                 comboBox1.Items.Clear();
-                comboBox1.DataSource = destinacije;   
+                comboBox1.DataSource = destinacije;
                 comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
                 comboBox1.SelectedIndex = destinacije.Count > 0 ? 0 : -1;
             }
@@ -68,14 +71,44 @@ namespace Front
             if (string.IsNullOrWhiteSpace(dest)) return;
 
             // Pozovi fasadu
-            var imena = _facade.GetAllPackageDestinationNames(dest); 
+            var imena = _facade.GetAllPackageDestinationNames(dest);
+            var items = imena.Select(t => new { Name = t.Name, Id = t.Id }).ToList();
 
             comboBox_tip.BeginUpdate();
             comboBox_tip.DataSource = null;
             comboBox_tip.Items.Clear();
-            comboBox_tip.DataSource = imena;           
+
+            
+            comboBox_tip.DisplayMember = "Name"; 
+            comboBox_tip.ValueMember = "Id";
+            comboBox_tip.DataSource = items;
             comboBox_tip.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_tip.EndUpdate();
+        }
+
+        private void button_dodaj_rezervaciju_Click(object sender, EventArgs e)
+        {
+            var destinacija = comboBox1.Text;
+            if (comboBox_tip.SelectedValue == null)
+            {
+                MessageBox.Show("Izaberite tip paketa.");
+                return;
+            }
+            int tip_id = comboBox_tip.SelectedValue is int v
+                ? v
+                : Convert.ToInt32(comboBox_tip.SelectedValue); 
+
+            if (!int.TryParse(textBox2.Text, out int broj_osoba) || broj_osoba <= 0)
+            {
+                MessageBox.Show("Unesite ispravan broj osoba (pozitivan ceo broj).");
+                return;
+            }
+
+
+
+            _facade.AddNewReservation(destinacija, tip_id, broj_osoba, _clientId);
+            MessageBox.Show("Uspesno ste dodali rezervaciju");
+            this.Close();
         }
     }
 }

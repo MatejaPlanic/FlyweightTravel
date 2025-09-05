@@ -214,9 +214,24 @@ namespace DsApp.Data.Proxies
         {
             return realService.GetAllDestinations();
         }
-        public List<string> GetAllPackageDestinationNames(string dest)
+        public List<(string Name, int Id)> GetAllPackageDestinationNames(string dest)
         {
             return realService.GetAllPackageDestinationNames(dest);
+        }
+
+        public List<Reservation> GetAllReservations(int id)
+        {
+            return realService.GetAllReservations(id);
+        }
+
+        public void AddNewReservation(string destinacija, int tipId, int broj_osoba, int klijentId)
+        {
+            realService.AddNewReservation(destinacija,tipId,broj_osoba,klijentId);
+        }
+
+        public void CancelReservation(int id)
+        {
+            realService.CancelReservation(id);
         }
     }
 }

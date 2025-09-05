@@ -127,6 +127,7 @@
             button_dodaj_rezervaciju.TabIndex = 0;
             button_dodaj_rezervaciju.Text = "Dodaj Rezervaciju";
             button_dodaj_rezervaciju.UseVisualStyleBackColor = true;
+            button_dodaj_rezervaciju.Click += button_dodaj_rezervaciju_Click;
             // 
             // panel_bottom
             // 

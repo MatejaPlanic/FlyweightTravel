@@ -210,6 +210,7 @@
             Name = "DodajKlijenta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DodajKlijenta";
+            Load += DodajKlijenta_Load;
             panel_top.ResumeLayout(false);
             panel_top.PerformLayout();
             panel_bottom.ResumeLayout(false);

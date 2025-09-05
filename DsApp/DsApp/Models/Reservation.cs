@@ -4,29 +4,33 @@
     using DsApp.States;
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
 
     public class Reservation
     {
         public int ID { get; set; }
 
-        public Client Client { get; set; }
+        public string PackageName { get; set; }
 
-        public TravelPackage Package { get; set; }
+        public int Broj_osoba { get; set; }
 
-        public DateTime ReservationDate { get; set; }
+        public string Destinacija { get; set; }
+
+        public string ReservationDate { get; set; }
 
         public IReservationState State { get; set; }
 
-        public Reservation(Client client, TravelPackage package)
-        {
-            this.Client = client;
-            this.Package = package;
-            this.ReservationDate = DateTime.Now;
+        public Reservation(string package,int osobe,string dest)
+        { 
+            this.PackageName = package;
+            this.ReservationDate = DateTime.Now.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
             this.State = new ReservedState();
+            this.Broj_osoba = osobe;
+            this.Destinacija = dest;
         }
-        public void ProcessPayment()
+        public void Update()
         {
-            this.State.ProcessPayment(this);
+            this.State.Update(this);
         }
 
         public void Cancel()

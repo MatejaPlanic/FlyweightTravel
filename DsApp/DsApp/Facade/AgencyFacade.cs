@@ -37,7 +37,6 @@ namespace DsApp.Facade
         }
         public List<Client> GetAllClients()
         {
-
             return clientService.GetAllClients();
         }
 
@@ -56,7 +55,7 @@ namespace DsApp.Facade
             return packageService.GetAllDestinations();
         }
 
-        public List<string> GetAllPackageDestinationNames(string dest)
+        public List<(string Name, int Id)> GetAllPackageDestinationNames(string dest)
         {
             return packageService.GetAllPackageDestinationNames(dest);
         }
@@ -66,8 +65,23 @@ namespace DsApp.Facade
             packageService.AddNewPackage(tr);
         }
 
+        public List<Reservation> GetAllReservations(int id)
+        {
+            return reservationService.GetAllReservations(id);
+        }
+
         public ClientService GetClientService()
         { return clientService; }
+
+        public void AddNewReservation(string destinacija,int tipId,int broj_osoba,int klijentId)
+        {
+            reservationService.AddNewReservation(destinacija,tipId,broj_osoba,klijentId);
+        }
+
+        public void CancelReservation(int id)
+        {
+            reservationService.CancelReservation(id);
+        }
 
         public PackageService GetPackageService() { return packageService; }
 

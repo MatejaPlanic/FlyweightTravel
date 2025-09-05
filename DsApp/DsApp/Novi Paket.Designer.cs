@@ -108,6 +108,7 @@
             // 
             // comboBox_tip
             // 
+            comboBox_tip.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_tip.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_tip.FormattingEnabled = true;
             comboBox_tip.Location = new Point(12, 28);

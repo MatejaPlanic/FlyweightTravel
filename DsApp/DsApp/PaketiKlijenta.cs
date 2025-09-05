@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DsApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Front
 {
     public partial class PaketiKlijenta : Form
     {
-        public PaketiKlijenta()
+        private readonly int _clientId;
+        public PaketiKlijenta(int clientId)
         {
             InitializeComponent();
+            _clientId = clientId;
         }
 
         private void button_rezervisi_Click(object sender, EventArgs e)
@@ -24,7 +27,7 @@ namespace Front
             // Ako je glavna forma otvorena, pozovi openChildForm metodu da otvori "RezervisiPakete"
             if (mainForm != null)
             {
-                mainForm.openChildForm(new RezervacijaPaketa());
+                mainForm.openChildForm(new RezervacijaPaketa(_clientId));
             }
         }
 
