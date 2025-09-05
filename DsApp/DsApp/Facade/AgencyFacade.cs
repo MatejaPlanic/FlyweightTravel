@@ -41,6 +41,11 @@ namespace DsApp.Facade
             return clientService.GetAllClients();
         }
 
+        public List<Client> SearchClients(string srch)
+        {
+            return clientService.SearchClients(srch);
+        }
+
         public List<TravelPackage> GetAllPackages()
         {
             return packageService.GetAllPackages();

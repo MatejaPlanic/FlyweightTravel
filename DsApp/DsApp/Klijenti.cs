@@ -1,4 +1,7 @@
-﻿using Guna.UI2.WinForms;
+﻿using DsApp.Data.Proxies;
+using DsApp.Facade;
+using DsApp.Observers;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +14,15 @@ using System.Windows.Forms;
 
 namespace Front
 {
-    public partial class Klijenti : Form
+    public partial class Klijenti : Form, DsApp.Observers.IObserver<string>
     {
-
-
+        RealDatabaseService rdb;
+        AgencyFacade af = AgencyFacade.GetInstance();
         public Klijenti()
         {
             InitializeComponent();
+            rdb = RealDatabaseService.GetInstance();
+            DatabaseNotifier.GetInstance().Attach(this);
         }
 
         private void Klijenti_Load(object sender, EventArgs e)
@@ -27,6 +32,9 @@ namespace Front
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
+            div_clients.DataSource = af.SearchClients(textBox_pretraga.Text);
 
         }
 
@@ -55,6 +63,14 @@ namespace Front
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void Update(string data)
+        {
+            if (data == "client_added")
+            {
+                div_clients.DataSource = af.GetAllClients();
+            }
         }
     }
 }

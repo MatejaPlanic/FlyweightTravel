@@ -23,6 +23,9 @@ namespace DsApp.Services
             return proxy.GetAllClients();
         }
 
-
+        public List<Client> SearchClients(string srch)
+        {
+            return proxy.SearchClients(srch);
+        }
     }
 }

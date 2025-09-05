@@ -23,7 +23,7 @@ namespace DsApp.Data.Proxies
         private static readonly byte[] iv = Encoding.UTF8.GetBytes("stefimatundra123");
         private DatabaseProxy()
         {
-            realService = new RealDatabaseService();
+            realService = RealDatabaseService.GetInstance();
         }
 
         public static DatabaseProxy getProxy()
@@ -208,6 +208,11 @@ namespace DsApp.Data.Proxies
         public List<TravelPackage> GetAllPackages()
         {
             return realService.GetAllPackages();
+        }
+
+        public List<Client> SearchClients(string srch)
+        {
+            return realService.SearchClients(srch);
         }
     }
 }

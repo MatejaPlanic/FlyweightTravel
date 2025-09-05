@@ -1,6 +1,8 @@
 ﻿using DsApp.Builders;
 using DsApp.Config;
+using DsApp.Facade;
 using DsApp.Models;
+using DsApp.Observers;
 using DsApp.Services;
 using Front;
 using Microsoft.Data.Sqlite;
@@ -11,7 +13,26 @@ namespace DsApp.Data.Proxies
 {
     public class RealDatabaseService
     {
+        private static RealDatabaseService? instance = null;
         private DatabaseManager? _databaseManager = DatabaseManager.GetInstance();
+        private DatabaseNotifier _notifier = DatabaseNotifier.GetInstance();
+        private static readonly object padlock = new object();
+        private RealDatabaseService()
+        { 
+        
+        }
+
+        public static RealDatabaseService GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new RealDatabaseService();
+                }
+                return instance;
+            }
+        }
 
         public void AddClient(string ime, string prezime,
         string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
@@ -54,7 +75,9 @@ namespace DsApp.Data.Proxies
                 command.Parameters.Add(paramBrojTelefona);
 
                 command.ExecuteNonQuery();
-                }
+
+                _notifier.NotifyClientsChanged();
+            }
             _databaseManager.GetConnection().Close();
 
         }
@@ -101,6 +124,57 @@ namespace DsApp.Data.Proxies
 
             return clients;
         }
+
+        public List<Client> SearchClients(string srch)
+        {
+            var clients = new List<Client>();
+            string query = "SELECT id, ime, prezime, brojpasosa, datumrodjenja, emailadresa, brojtelefona FROM client " +
+                           "WHERE ime LIKE @ime OR prezime LIKE @prezime;";
+
+            _databaseManager.GetConnection().Open();
+            
+                using (var command = _databaseManager.CreateCommand())
+                {
+                    command.CommandText = query;
+                    command.Connection = _databaseManager.GetConnection();
+
+                IDbDataParameter paramIme = command.CreateParameter();
+                    paramIme.ParameterName = "@ime";
+                    paramIme.Value = "%" + srch + "%";
+                    command.Parameters.Add(paramIme);
+
+                    IDbDataParameter paramPrezime = command.CreateParameter();
+                    paramPrezime.ParameterName = "@prezime";
+                    paramPrezime.Value = "%" + srch + "%";
+                    command.Parameters.Add(paramPrezime);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            clients.Add(new Client(
+
+                                reader.GetInt32(0),
+                                reader["ime"].ToString(),
+                                reader["prezime"].ToString(),
+                                reader["brojpasosa"].ToString(),
+                                reader["datumrodjenja"].ToString(),
+                                reader["emailadresa"].ToString(),
+                                reader["brojtelefona"].ToString()
+                            ));
+                        }
+                    }
+                }
+            _databaseManager.GetConnection().Close();
+
+
+            return clients;
+        }
+
+
+
+
+
 
         public List<TravelPackage> GetAllPackages()
         {
@@ -205,6 +279,7 @@ namespace DsApp.Data.Proxies
                     }
 
                     cmd.ExecuteNonQuery();
+                    _notifier.NotifyPackagesChanged();
                 }
             }
             finally

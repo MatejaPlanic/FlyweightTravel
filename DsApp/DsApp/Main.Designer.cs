@@ -49,7 +49,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(233, 712);
+            panel1.Size = new Size(233, 792);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -161,14 +161,14 @@
             panel_main.Location = new Point(233, 0);
             panel_main.Margin = new Padding(4, 3, 4, 3);
             panel_main.Name = "panel_main";
-            panel_main.Size = new Size(1090, 712);
+            panel_main.Size = new Size(1353, 792);
             panel_main.TabIndex = 1;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1323, 712);
+            ClientSize = new Size(1586, 792);
             Controls.Add(panel_main);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.Fixed3D;

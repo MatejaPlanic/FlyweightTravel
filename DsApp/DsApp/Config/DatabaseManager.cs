@@ -28,16 +28,17 @@
                         
                 }
             }
-            DatabaseManager.SetConnectionString(configFile);
+            DatabaseManager.SetUp(configFile);
         }
-        public static void SetConnectionString(string connectionString)
+        public static void SetUp(string connectionString)
         {
+
             _connectionString = connectionString;
             if (_connectionString.ToLower().Contains("config1"))
             {
                 dbBroker = SqliteBroker.GetInstance(_connectionString);
-
-                using (var connection = DatabaseManager.GetInstance().GetConnection())
+                string[] lines = System.IO.File.ReadAllLines(connectionString);
+                using (var connection = new SqliteConnection(lines[1]))
                 {
                     connection.Open();
 
@@ -82,12 +83,14 @@
 
                     // SQL za kreiranje 'reservations' tabele
                     var createReservationsTableQuery = "CREATE TABLE IF NOT EXISTS reservations (" +
-                                                       "id INTEGER NOT NULL UNIQUE, " +
-                                                       "id_client INTEGER NOT NULL, " +
-                                                       "id_package INTEGER NOT NULL, " +
-                                                       "state TEXT, " +
-                                                       "datum_rezervacije TEXT NOT NULL, " +
-                                                       "PRIMARY KEY(\"id\" AUTOINCREMENT));";
+                                                         "id INTEGER NOT NULL UNIQUE, " +
+                                                         "id_client INTEGER NOT NULL, " +
+                                                         "id_package INTEGER NOT NULL, " +
+                                                         "state TEXT, " +
+                                                         "datum_rezervacije TEXT NOT NULL, " +
+                                                         "broj_osoba INTEGER, " +
+                                                         "destinacija TEXT, " +
+                                                         "PRIMARY KEY(\"id\" AUTOINCREMENT));";
 
                     using (var command = new SqliteCommand(createReservationsTableQuery, (SqliteConnection)connection))
                     {
@@ -156,13 +159,16 @@
                         command.ExecuteNonQuery();
                     }
 
-                    
+
                     var createReservationsTableQuery = "CREATE TABLE IF NOT EXISTS reservations (" +
-                                                       "id INT PRIMARY KEY AUTO_INCREMENT, " +
-                                                       "id_client INT NOT NULL, " +
-                                                       "id_package INT NOT NULL, " +
-                                                       "state VARCHAR(255), " +
-                                                       "datum_rezervacije VARCHAR(255));";
+                                                         "id INT NOT NULL AUTO_INCREMENT, " +
+                                                         "id_client INT NOT NULL, " +
+                                                         "id_package INT NOT NULL, " +
+                                                         "state VARCHAR(255), " +
+                                                         "datum_rezervacije VARCHAR(255) NOT NULL, " +
+                                                         "broj_osoba INT, " +
+                                                         "destinacija VARCHAR(255), " +
+                                                         "PRIMARY KEY (id));";
 
                     using (var command = new MySqlCommand(createReservationsTableQuery, (MySqlConnection)connection))
                     {

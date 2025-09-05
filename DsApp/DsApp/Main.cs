@@ -72,7 +72,24 @@ namespace Front
             AgencyFacade fasada = AgencyFacade.GetInstance();
             if (activeForm is Paketi p)
             {
-                p.getPaketiDiv.DataSource = fasada.GetAllPackages();
+                var paketi = fasada.GetAllPackages();
+                var rows = paketi.Select(r => new
+                {
+                    Naziv = r.Name,
+                    Destinacija = r.Destination,
+                    Transport = r.TransportType,
+                    Smestaj = r.AccommodationType,
+                    Cena = r.Price,
+                    Info = r.AdditionalActivities,
+                    Vodic = r.Guide,
+                    Trajanje = r.Duration,
+                    Brod = r.Boat,
+                    Ruta = r.Route,
+                    Polazak = r.DateOfDeparture,
+                    Kabina = r.CabinType,
+                    Paket = r.PackageType
+                }).ToList();
+                p.getPaketiDiv.DataSource = rows;
             }
         }
 
