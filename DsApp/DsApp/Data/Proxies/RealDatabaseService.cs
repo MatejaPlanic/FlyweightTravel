@@ -11,7 +11,7 @@ namespace DsApp.Data.Proxies
 {
     public class RealDatabaseService
     {
-        private DatabaseManager? _databaseManager = DatabaseManager.GetInstance("../../../Config/config1.txt");
+        private DatabaseManager? _databaseManager = DatabaseManager.GetInstance();
 
         public void AddClient(string ime, string prezime,
         string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)

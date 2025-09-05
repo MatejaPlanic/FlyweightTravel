@@ -153,6 +153,7 @@
             label_naziv.TabIndex = 0;
             label_naziv.Text = "FlyWheitTravel;";
             label_naziv.TextAlign = ContentAlignment.MiddleCenter;
+            label_naziv.Click += label_naziv_Click;
             // 
             // panel_main
             // 

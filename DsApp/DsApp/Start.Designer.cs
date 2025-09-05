@@ -41,6 +41,7 @@
             // 
             comboBox_file.Anchor = AnchorStyles.None;
             comboBox_file.Cursor = Cursors.Hand;
+            comboBox_file.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_file.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_file.FormattingEnabled = true;
             comboBox_file.Location = new Point(63, 74);

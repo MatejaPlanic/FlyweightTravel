@@ -1,4 +1,5 @@
-﻿using DsApp.Facade;
+﻿using DsApp.Config;
+using DsApp.Facade;
 using DsApp.Models;
 using Guna.UI2.WinForms;
 using System;
@@ -86,7 +87,7 @@ namespace Front
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            label_naziv.Text = DatabaseManager.GetName();
         }
         protected override void WndProc(ref Message m)
         {
@@ -103,11 +104,15 @@ namespace Front
                     Application.Exit(); // gasi celu aplikaciju
                     return;             // prekida normalno ponašanje
                 }
-                
+
             }
 
             base.WndProc(ref m); // ako ništa ne menjaš, zovi original
         }
 
+        private void label_naziv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

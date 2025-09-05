@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DsApp.Config;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,8 +29,11 @@ namespace Front
         private void button_start_Click(object sender, EventArgs e)
         {
             Main main = new Main(this);
+            string file = "../../../Config/" + comboBox_file.Text;
+            DatabaseManager.Initialize(file);
             this.Hide();
             main.Show();
+            
         }
 
         private void Start_Load(object sender, EventArgs e)
