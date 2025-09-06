@@ -397,7 +397,8 @@ namespace DsApp.Data.Proxies
 
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
                 using (var cmd = _databaseManager.CreateCommand())
                 {
                     cmd.CommandText = query;
