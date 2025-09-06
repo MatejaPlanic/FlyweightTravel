@@ -32,8 +32,10 @@
             button_start = new Button();
             label = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             comboBox_file.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_file.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox_file.FormattingEnabled = true;
-            comboBox_file.Location = new Point(63, 74);
+            comboBox_file.Location = new Point(81, 149);
             comboBox_file.Margin = new Padding(4, 3, 4, 3);
             comboBox_file.Name = "comboBox_file";
             comboBox_file.Size = new Size(292, 29);
@@ -56,14 +58,15 @@
             button_start.Anchor = AnchorStyles.None;
             button_start.BackColor = Color.FromArgb(0, 71, 160);
             button_start.Cursor = Cursors.Hand;
+            button_start.FlatStyle = FlatStyle.Flat;
             button_start.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_start.ForeColor = Color.White;
-            button_start.Location = new Point(63, 37);
+            button_start.Location = new Point(80, 52);
             button_start.Margin = new Padding(4, 3, 4, 3);
             button_start.Name = "button_start";
             button_start.Size = new Size(293, 51);
             button_start.TabIndex = 1;
-            button_start.Text = "Start";
+            button_start.Text = "Pokreni";
             button_start.UseVisualStyleBackColor = false;
             button_start.Click += button_start_Click;
             // 
@@ -73,7 +76,7 @@
             label.AutoSize = true;
             label.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label.ForeColor = Color.FromArgb(0, 71, 160);
-            label.Location = new Point(104, 31);
+            label.Location = new Point(127, 120);
             label.Margin = new Padding(4, 0, 4, 0);
             label.Name = "label";
             label.Size = new Size(185, 23);
@@ -83,22 +86,34 @@
             // panel1
             // 
             panel1.Controls.Add(label);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(comboBox_file);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(433, 144);
+            panel1.Size = new Size(467, 241);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = DsApp.Properties.Resources.fly_logo_trans;
+            pictureBox1.Location = new Point(81, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(292, 138);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             panel2.Controls.Add(button_start);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 143);
+            panel2.Location = new Point(0, 195);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(433, 133);
+            panel2.Size = new Size(467, 133);
             panel2.TabIndex = 4;
             // 
             // Start
@@ -106,7 +121,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(433, 276);
+            ClientSize = new Size(467, 328);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
@@ -116,6 +131,7 @@
             Load += Start_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
 
@@ -128,5 +144,6 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

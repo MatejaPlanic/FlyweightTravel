@@ -1,4 +1,5 @@
-﻿using DsApp.Facade;
+﻿using DsApp;
+using DsApp.Facade;
 using DsApp.Observers;
 using Guna.UI2.WinForms;
 using System;
@@ -27,9 +28,9 @@ namespace Front
         {
             get
             {
-                if (comboBox1.SelectedValue is int v) return v;                       
-                return int.TryParse(comboBox1.SelectedValue?.ToString(), out var id)  
-                    ? id : 0;                                                         
+                if (comboBox1.SelectedValue is int v) return v;
+                return int.TryParse(comboBox1.SelectedValue?.ToString(), out var id)
+                    ? id : 0;
             }
         }
 
@@ -46,7 +47,7 @@ namespace Front
                 var items = korisnici
                     .Select(k => new
                     {
-                        Id = k.ID,                        
+                        Id = k.ID,
                         Name = $"{k.Ime} {k.Prezime}"
                     })
                     .ToList();
@@ -56,8 +57,8 @@ namespace Front
                 comboBox1.Items.Clear();
 
                 comboBox1.DataSource = items;
-                comboBox1.DisplayMember = "Name";   
-                comboBox1.ValueMember = "Id";     
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "Id";
                 comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
                 comboBox1.SelectedIndex = items.Count > 0 ? 0 : -1;
             }
@@ -129,16 +130,16 @@ namespace Front
         private void comboBox1_Changed(object sender, EventArgs e)
         {
 
-                int clientId = idKlijent;
+            int clientId = idKlijent;
             var rezervacije = _facade.GetAllReservations(clientId);
             var rows = rezervacije.Select(r => new
             {
                 ID = r.ID,
                 Paket = r.PackageName,
                 Datum = r.ReservationDate,
-                Status = r.State?.ToString(),   
-                BrojOsoba = r.Broj_osoba,           
-                Destinacija = r.Destinacija         
+                Status = r.State?.ToString(),
+                BrojOsoba = r.Broj_osoba,
+                Destinacija = r.Destinacija
             }).ToList();
             guna2DataGridView1.DataSource = rows;
 
@@ -153,6 +154,11 @@ namespace Front
             {
                 comboBox1_Changed(null, null);
             }
+        }
+
+        private void button_azuriraj_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

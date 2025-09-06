@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel3 = new Panel();
+            button_backup = new Button();
             button_izlaz = new Button();
             button_rezervacije = new Button();
             button_paketi = new Button();
@@ -54,6 +55,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(button_backup);
             panel3.Controls.Add(button_izlaz);
             panel3.Controls.Add(button_rezervacije);
             panel3.Controls.Add(button_paketi);
@@ -62,18 +64,36 @@
             panel3.Location = new Point(0, 99);
             panel3.Margin = new Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(233, 444);
+            panel3.Size = new Size(233, 504);
             panel3.TabIndex = 2;
+            // 
+            // button_backup
+            // 
+            button_backup.Cursor = Cursors.Hand;
+            button_backup.Dock = DockStyle.Top;
+            button_backup.FlatAppearance.BorderSize = 0;
+            button_backup.FlatStyle = FlatStyle.Flat;
+            button_backup.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_backup.ForeColor = Color.White;
+            button_backup.Location = new Point(0, 294);
+            button_backup.Margin = new Padding(4, 3, 4, 3);
+            button_backup.Name = "button_backup";
+            button_backup.Padding = new Padding(23, 0, 0, 0);
+            button_backup.Size = new Size(233, 98);
+            button_backup.TabIndex = 4;
+            button_backup.Text = "Sačuvaj bazu";
+            button_backup.TextAlign = ContentAlignment.MiddleLeft;
+            button_backup.UseVisualStyleBackColor = true;
             // 
             // button_izlaz
             // 
             button_izlaz.Cursor = Cursors.Hand;
-            button_izlaz.Dock = DockStyle.Top;
+            button_izlaz.Dock = DockStyle.Bottom;
             button_izlaz.FlatAppearance.BorderSize = 0;
             button_izlaz.FlatStyle = FlatStyle.Flat;
             button_izlaz.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_izlaz.ForeColor = Color.White;
-            button_izlaz.Location = new Point(0, 294);
+            button_izlaz.Location = new Point(0, 406);
             button_izlaz.Margin = new Padding(4, 3, 4, 3);
             button_izlaz.Name = "button_izlaz";
             button_izlaz.Padding = new Padding(23, 0, 0, 0);
@@ -193,6 +213,7 @@
         private System.Windows.Forms.Button button_paketi;
         private System.Windows.Forms.Button button_izlaz;
         private System.Windows.Forms.Panel panel_main;
+        private Button button_backup;
     }
 }
 

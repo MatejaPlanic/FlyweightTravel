@@ -37,6 +37,8 @@
             panel_tabela = new Panel();
             button_dodaj = new Button();
             panel2 = new Panel();
+            button_obrisi = new Button();
+            button_azuriraj = new Button();
             comboBox1 = new ComboBox();
             button_otkazi = new Button();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -134,9 +136,10 @@
             button_dodaj.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button_dodaj.BackColor = Color.Green;
             button_dodaj.Cursor = Cursors.Hand;
+            button_dodaj.FlatStyle = FlatStyle.Flat;
             button_dodaj.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_dodaj.ForeColor = Color.White;
-            button_dodaj.Location = new Point(682, 24);
+            button_dodaj.Location = new Point(430, 24);
             button_dodaj.Name = "button_dodaj";
             button_dodaj.Size = new Size(111, 44);
             button_dodaj.TabIndex = 28;
@@ -146,6 +149,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button_obrisi);
+            panel2.Controls.Add(button_azuriraj);
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(button_otkazi);
             panel2.Controls.Add(button_dodaj);
@@ -154,6 +159,37 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(934, 74);
             panel2.TabIndex = 18;
+            // 
+            // button_obrisi
+            // 
+            button_obrisi.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_obrisi.BackColor = Color.FromArgb(220, 0, 0);
+            button_obrisi.Cursor = Cursors.Hand;
+            button_obrisi.FlatStyle = FlatStyle.Flat;
+            button_obrisi.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_obrisi.ForeColor = Color.White;
+            button_obrisi.Location = new Point(781, 24);
+            button_obrisi.Name = "button_obrisi";
+            button_obrisi.Size = new Size(111, 44);
+            button_obrisi.TabIndex = 32;
+            button_obrisi.Text = "Obriši";
+            button_obrisi.UseVisualStyleBackColor = false;
+            // 
+            // button_azuriraj
+            // 
+            button_azuriraj.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_azuriraj.BackColor = Color.RoyalBlue;
+            button_azuriraj.Cursor = Cursors.Hand;
+            button_azuriraj.FlatStyle = FlatStyle.Flat;
+            button_azuriraj.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button_azuriraj.ForeColor = Color.White;
+            button_azuriraj.Location = new Point(547, 24);
+            button_azuriraj.Name = "button_azuriraj";
+            button_azuriraj.Size = new Size(111, 44);
+            button_azuriraj.TabIndex = 31;
+            button_azuriraj.Text = "Ažuriraj";
+            button_azuriraj.UseVisualStyleBackColor = false;
+            button_azuriraj.Click += button_azuriraj_Click;
             // 
             // comboBox1
             // 
@@ -167,11 +203,13 @@
             // button_otkazi
             // 
             button_otkazi.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button_otkazi.BackColor = Color.FromArgb(160, 31, 0);
+            button_otkazi.BackColor = Color.DarkOrange;
             button_otkazi.Cursor = Cursors.Hand;
+            button_otkazi.FlatAppearance.BorderSize = 0;
+            button_otkazi.FlatStyle = FlatStyle.Flat;
             button_otkazi.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_otkazi.ForeColor = Color.White;
-            button_otkazi.Location = new Point(811, 24);
+            button_otkazi.Location = new Point(664, 24);
             button_otkazi.Name = "button_otkazi";
             button_otkazi.Size = new Size(111, 44);
             button_otkazi.TabIndex = 29;
@@ -212,5 +250,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_otkazi;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Button button_obrisi;
+        private Button button_azuriraj;
     }
 }

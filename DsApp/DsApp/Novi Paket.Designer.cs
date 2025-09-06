@@ -76,6 +76,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(250, 23);
             textBox2.TabIndex = 5;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label_cena
             // 

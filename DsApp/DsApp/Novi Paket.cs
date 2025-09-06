@@ -75,12 +75,12 @@ namespace Front
                 MessageBox.Show("Odaberite tip paketa.");
                 return;
             }
-            if(textBox_naziv.Text == "")
+            if (textBox_naziv.Text == "")
             {
                 MessageBox.Show("Unesite naziv paketa.");
                 return;
             }
-            if(textBox2.Text == "")
+            if (textBox2.Text == "")
             {
                 MessageBox.Show("Unesite cenu paketa.");
                 return;
@@ -100,7 +100,7 @@ namespace Front
                         }
 
                         sea.BuildCommonDetails(textBox_naziv.Text, cena, "More");
-                        if(moreForm.DestinationText == "")
+                        if (moreForm.DestinationText == "")
                         {
                             MessageBox.Show("Unesite destinaciju.");
                             return;
@@ -145,14 +145,14 @@ namespace Front
                         }
                         planina.BuildAccommodationType(planineForm.Accommodation);
 
-                       
+
                         if (planineForm.Transport == "")
                         {
                             MessageBox.Show("Unesite tip prevoza.");
                             return;
                         }
                         planina.BuildTransportType(planineForm.Transport);
-                       
+
                         if (planineForm.Dodatne == "")
                         {
                             MessageBox.Show("Unesite dodatne aktivnosti.");
@@ -196,7 +196,7 @@ namespace Front
                             return;
                         }
                         ekskurzija.BuildDuration(ekskurzijaForm.Duration);
-                        
+
                         af.AddNewPackage(ekskurzija);
                     }
 
@@ -252,8 +252,8 @@ namespace Front
                             return;
                         }
                         krstarenje.BuildRoute(krstarenjeForm.Route);
-                        
-                        
+
+
                         af.AddNewPackage(krstarenje);
                     }
 
@@ -263,6 +263,11 @@ namespace Front
             }
             MessageBox.Show("Uspesno ste dodali paket");
             this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

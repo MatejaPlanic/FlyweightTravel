@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label5 = new Label();
             div_clients = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -70,28 +70,28 @@
             // 
             // div_clients
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            div_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            div_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             div_clients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             div_clients.BackgroundColor = Color.Gainsboro;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            div_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            div_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             div_clients.ColumnHeadersHeight = 40;
             div_clients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            div_clients.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            div_clients.DefaultCellStyle = dataGridViewCellStyle9;
             div_clients.GridColor = Color.FromArgb(231, 229, 255);
             div_clients.Location = new Point(0, 0);
             div_clients.Name = "div_clients";
@@ -126,12 +126,12 @@
             button_pretraga.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button_pretraga.BackColor = Color.Orange;
             button_pretraga.Cursor = Cursors.Hand;
-            button_pretraga.FlatStyle = FlatStyle.Popup;
+            button_pretraga.FlatStyle = FlatStyle.Flat;
             button_pretraga.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_pretraga.ForeColor = Color.White;
-            button_pretraga.Location = new Point(811, 66);
+            button_pretraga.Location = new Point(811, 63);
             button_pretraga.Name = "button_pretraga";
-            button_pretraga.Size = new Size(111, 33);
+            button_pretraga.Size = new Size(111, 39);
             button_pretraga.TabIndex = 29;
             button_pretraga.Text = "Pretraži";
             button_pretraga.UseVisualStyleBackColor = false;
@@ -152,12 +152,12 @@
             button_dodaj.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button_dodaj.BackColor = Color.Green;
             button_dodaj.Cursor = Cursors.Hand;
-            button_dodaj.FlatStyle = FlatStyle.Popup;
+            button_dodaj.FlatStyle = FlatStyle.Flat;
             button_dodaj.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button_dodaj.ForeColor = Color.White;
-            button_dodaj.Location = new Point(811, 27);
+            button_dodaj.Location = new Point(811, 18);
             button_dodaj.Name = "button_dodaj";
-            button_dodaj.Size = new Size(111, 33);
+            button_dodaj.Size = new Size(111, 39);
             button_dodaj.TabIndex = 32;
             button_dodaj.Text = "Dodaj";
             button_dodaj.UseVisualStyleBackColor = false;
