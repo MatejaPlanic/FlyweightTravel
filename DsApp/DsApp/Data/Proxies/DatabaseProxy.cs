@@ -235,7 +235,14 @@ namespace DsApp.Data.Proxies
         }
         public List<Client> SearchClients(string srch)
         {
-            return realService.SearchClients(srch);
+            List<Client> clients = realService.SearchClients(srch);
+            foreach (Client client in clients)
+            {
+                client.BrojPasosa = Decrypt(client.BrojPasosa);
+            }
+
+            return clients;
+
         }
     }
 }
