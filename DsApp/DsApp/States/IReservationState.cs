@@ -1,11 +1,12 @@
 ﻿using DsApp.Models;
+using DsApp.ViewModels;
 
 namespace DsApp.States
 {
     public interface IReservationState
     {
-        void Update(Reservation reservation);
-        void Cancel(Reservation reservation);
+        bool Update(ReservationRow reservation);
+        bool Cancel(ReservationRow reservation);
         string getState();
     }
 }

@@ -28,14 +28,5 @@
             this.Broj_osoba = osobe;
             this.Destinacija = dest;
         }
-        public void Update()
-        {
-            this.State.Update(this);
-        }
-
-        public void Cancel()
-        {
-            this.State.Cancel(this);
-        }
     }
 }

@@ -174,6 +174,7 @@
             button_obrisi.TabIndex = 32;
             button_obrisi.Text = "Obriši";
             button_obrisi.UseVisualStyleBackColor = false;
+            button_obrisi.Click += button_obrisi_Click;
             // 
             // button_azuriraj
             // 

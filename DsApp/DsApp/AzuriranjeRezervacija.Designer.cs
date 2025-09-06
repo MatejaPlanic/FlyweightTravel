@@ -136,6 +136,7 @@
             button_dodaj_rezervaciju.TabIndex = 1;
             button_dodaj_rezervaciju.Text = "Ažuriraj Rezervaciju";
             button_dodaj_rezervaciju.UseVisualStyleBackColor = true;
+            button_dodaj_rezervaciju.Click += button_dodaj_rezervaciju_Click;
             // 
             // AzuriranjeRezervacija
             // 
@@ -149,6 +150,7 @@
             Name = "AzuriranjeRezervacija";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AzuriranjeRezervacija";
+            Load += AzuriranjeRezervacija_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

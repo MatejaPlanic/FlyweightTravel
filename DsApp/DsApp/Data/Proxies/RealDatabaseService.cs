@@ -536,6 +536,72 @@ namespace DsApp.Data.Proxies
             }
         }
 
+        public void DeleteReservation(int id)
+        {
+            const string sql = @"
+            DELETE FROM reservations
+            WHERE id = @id;";
+
+            var conn = _databaseManager!.GetConnection();
+
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    cmd.Connection = conn;
+
+                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
+
+        public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
+        {
+            const string sql = @"
+            UPDATE reservations
+            SET destinacija = @dest,
+                id_package  = @pkg,
+                broj_osoba  = @broj,
+                state       = @state
+            WHERE id = @id;";
+
+            var conn = _databaseManager!.GetConnection();
+            try
+            {
+                conn.Open();
+                using (var cmd = _databaseManager.CreateCommand())
+                {
+                    cmd.CommandText = sql;
+                    cmd.Connection = conn;
+
+                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
+                    var pDest = cmd.CreateParameter(); pDest.ParameterName = "@dest"; pDest.Value = destinacija; cmd.Parameters.Add(pDest);
+                    var pPkg = cmd.CreateParameter(); pPkg.ParameterName = "@pkg"; pPkg.Value = tip_id; cmd.Parameters.Add(pPkg);
+                    var pBroj = cmd.CreateParameter(); pBroj.ParameterName = "@broj"; pBroj.Value = broj_osoba; cmd.Parameters.Add(pBroj);
+                    var pSt = cmd.CreateParameter(); pSt.ParameterName = "@state"; pSt.Value = "Ažurirana"; cmd.Parameters.Add(pSt);
+
+                    var affected = cmd.ExecuteNonQuery();
+                    if (affected == 0)
+                        throw new InvalidOperationException("Rezervacija nije pronađena ili nije ažurirana.");
+                }
+
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
+
 
     }
 }

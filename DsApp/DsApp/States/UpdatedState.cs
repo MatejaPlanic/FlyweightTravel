@@ -1,18 +1,20 @@
 ﻿using DsApp.Models;
+using DsApp.ViewModels;
 
 namespace DsApp.States
 {
     public class UpdatedState : IReservationState
     {
-        public void Update(Reservation reservation)
+        public bool Update(ReservationRow reservation)
         {
-            Console.WriteLine("Rezervacija je već ažurirana.");
+            reservation.state = new UpdatedState();
+            return true;
         }
 
-        public void Cancel(Reservation reservation)
+        public bool Cancel(ReservationRow reservation)
         {
-            Console.WriteLine("Ažurirana rezervacija je otkazana.");
-            reservation.State = new CanceledState();
+            reservation.state = new CanceledState();
+            return true;
         }
 
         string IReservationState.getState()
