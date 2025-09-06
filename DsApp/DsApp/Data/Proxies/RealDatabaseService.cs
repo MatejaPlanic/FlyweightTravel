@@ -555,6 +555,7 @@ namespace DsApp.Data.Proxies
                     var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
 
                     cmd.ExecuteNonQuery();
+                    _notifier.NotifyResChanged();
                 }
             }
             finally
@@ -590,6 +591,7 @@ namespace DsApp.Data.Proxies
                     var pSt = cmd.CreateParameter(); pSt.ParameterName = "@state"; pSt.Value = "Ažurirana"; cmd.Parameters.Add(pSt);
 
                     var affected = cmd.ExecuteNonQuery();
+                    _notifier.NotifyResChanged();
                     if (affected == 0)
                         throw new InvalidOperationException("Rezervacija nije pronađena ili nije ažurirana.");
                 }
