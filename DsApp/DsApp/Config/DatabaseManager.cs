@@ -12,7 +12,7 @@
         private static readonly object padlock = new object();
         private static IBroker dbBroker;
         private static string? _connectionString;
-
+        private static BackupManager bm;
         public static void Initialize(string configFile) // ../../../Config/
         {
             
@@ -32,12 +32,13 @@
         }
         public static void SetUp(string connectionString)
         {
-
+            string[] lines = System.IO.File.ReadAllLines(connectionString);
             _connectionString = connectionString;
-            if (_connectionString.ToLower().Contains("config1"))
+            bm = BackupManager.GetInstance(connectionString);
+            if (lines[1].Contains("Data Source="))
             {
                 dbBroker = SqliteBroker.GetInstance(_connectionString);
-                string[] lines = System.IO.File.ReadAllLines(connectionString);
+                
                 using (var connection = new SqliteConnection(lines[1]))
                 {
                     connection.Open();
@@ -99,10 +100,9 @@
                     connection.Close();
                 }
             }
-            else if (_connectionString.ToLower().Contains("config2"))
+            else if (lines[1].Contains("Server="))
             {
                 dbBroker = MySqlBroker.GetInstance(_connectionString);
-                string[] lines = System.IO.File.ReadAllLines(connectionString);
                 // Izdvoji ime baze iz connection stringa
                 var dbName = lines[1].Split(';')[1].Split('=')[1];
 
@@ -185,9 +185,10 @@
             return dbBroker.GetAgencyName();
         }
 
+        
         private DatabaseManager()
         {
-
+            
         }
 
         public static DatabaseManager GetInstance()

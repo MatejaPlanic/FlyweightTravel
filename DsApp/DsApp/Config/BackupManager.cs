@@ -19,14 +19,16 @@ namespace DsApp.Config
 
         private BackupManager(string connectionString)
         {
-            _connectionString = connectionString;
-            _isMySql = connectionString.Contains("Server=");
-            _timer = new System.Timers.Timer(24 * 60 * 60 * 1000); // 24 sata
+
+            string[] lines = System.IO.File.ReadAllLines(connectionString);
+            _connectionString = lines[1];
+            _isMySql = _connectionString.Contains("Server=");
+            _timer = new System.Timers.Timer(24 * 60 * 60 * 10000); // 24 sata
             _timer.Elapsed += OnTimedEvent;
 
             // Define backup folder path
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            _backupFolderPath = Path.Combine(baseDirectory, "Backups");
+
+            _backupFolderPath = "../../../Config/";
         }
 
         public static BackupManager GetInstance(string connectionString)
@@ -68,7 +70,17 @@ namespace DsApp.Config
                 Console.WriteLine($"Greška tokom backupa: {ex.Message}");
             }
         }
-
+        public void ExecuteBackup()
+        {
+            if (_isMySql)
+            {
+                BackupMySql();
+            }
+            else
+            {
+                BackupSqlite();
+            }
+        }
         private void BackupSqlite()
         {
             // SQLite backup je jednostavan: kopiranje fajla baze podataka
@@ -91,13 +103,13 @@ namespace DsApp.Config
 
         private void BackupMySql()
         {
-            // MySQL backup zahteva korišćenje mysqldump alata
+            // Ensure the backup directory exists
             if (!Directory.Exists(_backupFolderPath))
             {
                 Directory.CreateDirectory(_backupFolderPath);
             }
 
-            // Izvuci ime baze iz connection stringa
+            // Extract the database name from the connection string
             var dbName = "";
             var connectionParts = _connectionString.Split(';');
             foreach (var part in connectionParts)
@@ -114,30 +126,55 @@ namespace DsApp.Config
                 throw new ArgumentException("Ime baze podataka nije pronađeno u connection stringu.");
             }
 
+            // Create a unique backup file name with a timestamp
             var backupFileName = $"mysql_backup_{dbName}_{DateTime.Now:yyyyMMdd_HHmmss}.sql";
             var backupPath = Path.Combine(_backupFolderPath, backupFileName);
 
-            // PUTANJA do mysqldump.exe mora biti ispravna.
-            // Ovo je default lokacija za XAMPP, ali možda moraš da je prilagodiš.
-            string mysqldumpPath = @"C:\xampp\mysql\bin\mysqldump.exe";
+            // Path to mysqldump.exe, please verify this path
+            string mysqldumpPath = @"C:\wamp64\bin\mysql\mysql9.1.0\bin\mysqldump.exe";
             if (!File.Exists(mysqldumpPath))
             {
                 throw new FileNotFoundException($"'mysqldump.exe' nije pronađen na putanji: {mysqldumpPath}. Molimo prilagodite putanju.");
             }
 
-            // Kreiranje komande za mysqldump
-            string command = $"--user=root --password= {dbName} > \"{backupPath}\"";
+            try
+            {
+                // Set up the process to run mysqldump
+                Process process = new Process();
+                process.StartInfo.FileName = mysqldumpPath;
+                // Arguments now only contain the user and database name, no redirection
+                process.StartInfo.Arguments = $"-u root {dbName}";
 
-            Process process = new Process();
-            process.StartInfo.FileName = mysqldumpPath;
-            process.StartInfo.Arguments = command;
-            process.StartInfo.RedirectStandardInput = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
+                // This is the key change: redirecting standard output to a C# stream
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
 
-            process.Start();
-            process.WaitForExit();
+                process.Start();
+
+                // Read the output from mysqldump and write it to the backup file
+                using (StreamWriter sw = new StreamWriter(backupPath))
+                {
+                    sw.Write(process.StandardOutput.ReadToEnd());
+                }
+
+                process.WaitForExit();
+
+                if (process.ExitCode == 0)
+                {
+                    Console.WriteLine($"MySQL bekap uspešno kreiran: {backupPath}");
+                }
+                else
+                {
+                    string error = process.StandardError.ReadToEnd();
+                    Console.WriteLine($"MySQL bekap nije uspeo: {error}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Greška pri kreiranju MySQL bekapa: {ex.Message}");
+            }
         }
     }
 }

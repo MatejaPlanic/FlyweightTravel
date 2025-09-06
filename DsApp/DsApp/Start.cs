@@ -31,6 +31,7 @@ namespace Front
             Main main = new Main(this);
             string file = "../../../Config/" + comboBox_file.Text;
             DatabaseManager.Initialize(file);
+            BackupManager.GetInstance(file).StartBackupTimer();
             this.Hide();
             main.Show();
             

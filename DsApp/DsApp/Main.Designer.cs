@@ -84,6 +84,7 @@
             button_backup.Text = "Sačuvaj bazu";
             button_backup.TextAlign = ContentAlignment.MiddleLeft;
             button_backup.UseVisualStyleBackColor = true;
+            button_backup.Click += button_backup_Click;
             // 
             // button_izlaz
             // 
