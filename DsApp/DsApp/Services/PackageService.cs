@@ -1,4 +1,5 @@
 ﻿using DsApp.Builders;
+using DsApp.Config;
 using DsApp.Data.Proxies;
 
 namespace DsApp.Services
@@ -6,11 +7,26 @@ namespace DsApp.Services
     public class PackageService
     {
         private DatabaseProxy? proxy = null;
-
-        public PackageService()
+        private static PackageService? instance = null;
+        private static readonly object padlock = new object();
+        private PackageService()
         {
             proxy = DatabaseProxy.getProxy();
         }
+
+        public static PackageService GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new PackageService();
+                }
+                return instance;
+            }
+
+        }
+
         public void AddNewPackage(TravelPackageBuilder tr)
         {
             if (tr == null) throw new ArgumentNullException(nameof(tr));

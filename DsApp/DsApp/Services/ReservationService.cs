@@ -1,4 +1,5 @@
-﻿using DsApp.Data.Proxies;
+﻿using DsApp.Config;
+using DsApp.Data.Proxies;
 using DsApp.Models;
 
 namespace DsApp.Services
@@ -6,18 +7,31 @@ namespace DsApp.Services
     public class ReservationService
     {
         private DatabaseProxy? proxy = null;
-
-        public ReservationService()
+        private static ReservationService? instance = null;
+        private static readonly object padlock = new object();
+        private ReservationService()
         {
             proxy = DatabaseProxy.getProxy();
         }
+        public static ReservationService GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new ReservationService();
+                }
+                return instance;
+            }
 
+        }
         public List<Reservation> GetAllReservations(int id)
         {
             return proxy.GetAllReservations(id);
         }
         public void AddNewReservation(string destinacija, int tipId, int broj_osoba, int klijentId)
         {
+
             proxy.AddNewReservation(destinacija,tipId,broj_osoba,klijentId);
         }
 

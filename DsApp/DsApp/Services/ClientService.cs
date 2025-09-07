@@ -1,4 +1,5 @@
 ﻿using DsApp.Builders;
+using DsApp.Config;
 using DsApp.Data.Proxies;
 using DsApp.Models;
 using System.Text.RegularExpressions;
@@ -8,10 +9,25 @@ namespace DsApp.Services
     public class ClientService
     {
         private DatabaseProxy? proxy = null;
+        private static readonly object padlock = new object();
+        private static ClientService? instance = null;
 
-        public ClientService()
+        private ClientService()
         {
             proxy = DatabaseProxy.getProxy();
+        }
+
+        public static ClientService GetInstance()
+        {
+            lock (padlock)
+            {
+                if (instance == null)
+                {
+                    instance = new ClientService();
+                }
+                return instance;
+            }
+
         }
         public void AddClient(string ime, string prezime,
             string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)

@@ -14,9 +14,9 @@ namespace DsApp.Facade
         private static AgencyFacade? instance = null;
         private AgencyFacade()
         {
-            clientService = new ClientService();
-            packageService = new PackageService();
-            reservationService = new ReservationService();
+            clientService = ClientService.GetInstance();
+            packageService = PackageService.GetInstance();
+            reservationService = ReservationService.GetInstance();
         }
 
         public void AddNewClient(string ime, string prezime, 
