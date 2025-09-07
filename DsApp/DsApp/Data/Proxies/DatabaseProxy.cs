@@ -3,6 +3,7 @@ using DsApp.Config;
 using DsApp.Data.Proxies;
 using DsApp.Models;
 using DsApp.Services;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -224,12 +225,38 @@ namespace DsApp.Data.Proxies
 
         public void AddNewReservation(string destinacija, int tipId, int broj_osoba, int klijentId)
         {
-            realService.AddNewReservation(destinacija,tipId,broj_osoba,klijentId);
+        const string sql = @"
+        INSERT INTO reservations
+            (id_client, id_package, state, datum_rezervacije, broj_osoba, destinacija)
+        VALUES
+            (@client, @package, @state, @datum, @broj, @dest);";
+            string datum = DateTime.Now.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
+            var args = new Dictionary<string, object?>();
+
+            args["@client"] = klijentId;
+            args["@package"] = tipId;
+            args["@state"] = "Rezervisana";
+            args["@datum"] = datum;
+            args["@broj"] = broj_osoba;
+            args["@dest"] = destinacija;
+
+        realService.AddNewReservation(new SqlEnvelope { Query = sql, Parameters = args });
+
         }
 
         public void CancelReservation(int id)
         {
-            realService.CancelReservation(id);
+            const string sql = @"
+            UPDATE reservations
+            SET state = @state
+            WHERE id = @id;";
+
+            var args = new Dictionary<string, object?>();
+
+            args["@state"] = "Otkazana";
+            args["@id"] = id;
+
+            realService.CancelReservation(new SqlEnvelope { Query = sql, Parameters = args });
         }
         public List<Client> SearchClients(string srch)
         {
@@ -245,14 +272,37 @@ namespace DsApp.Data.Proxies
 
         public void DeleteReservation(int id)
         {
-            realService.DeleteReservation(id);
+            const string sql = @"
+            DELETE FROM reservations
+            WHERE id = @id;";
+
+            var args = new Dictionary<string, object?>();
+
+            args["@id"] = id;
+
+            realService.DeleteReservation(new SqlEnvelope { Query = sql, Parameters = args });
         }
 
         public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
         {
-            
+            const string sql = @"
+            UPDATE reservations
+            SET destinacija = @dest,
+                id_package  = @pkg,
+                broj_osoba  = @broj,
+                state       = @state
+            WHERE id = @id;";
 
-            realService.UpdateReservation(id,destinacija,tip_id,broj_osoba);
+            var args = new Dictionary<string, object?>();
+
+            args["@dest"] = destinacija;
+            args["@pkg"] = tip_id;
+            args["@broj"] = broj_osoba;
+            args["@state"] = "Ažurirana";
+            args["@id"] = id;
+
+
+            realService.UpdateReservation(new SqlEnvelope { Query = sql, Parameters = args });
         }
     }
 }

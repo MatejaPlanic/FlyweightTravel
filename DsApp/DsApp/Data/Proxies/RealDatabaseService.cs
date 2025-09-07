@@ -458,31 +458,29 @@ namespace DsApp.Data.Proxies
             return result;
         }
 
-        public void AddNewReservation(string destinacija, int tipId, int broj_osoba, int klijentId)
+        public void AddNewReservation(SqlEnvelope envelope)
         {
-            const string sql = @"
-        INSERT INTO reservations
-            (id_client, id_package, state, datum_rezervacije, broj_osoba, destinacija)
-        VALUES
-            (@client, @package, @state, @datum, @broj, @dest);";
+            if (envelope is null) throw new ArgumentNullException(nameof(envelope));
+            if (string.IsNullOrWhiteSpace(envelope.Query))
+                throw new ArgumentException("Query je prazan.", nameof(envelope));
 
             var conn = _databaseManager!.GetConnection();
             try
             {
                 conn.Open();
-                using (var cmd = _databaseManager.CreateCommand())
+
+                using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = sql;
+                    cmd.CommandText = envelope.Query;
                     cmd.Connection = conn;
 
-                    string datum = DateTime.Now.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
-
-                    var p1 = cmd.CreateParameter(); p1.ParameterName = "@client"; p1.Value = klijentId; cmd.Parameters.Add(p1);
-                    var p2 = cmd.CreateParameter(); p2.ParameterName = "@package"; p2.Value = tipId; cmd.Parameters.Add(p2);
-                    var p3 = cmd.CreateParameter(); p3.ParameterName = "@state"; p3.Value = "Rezervisana"; cmd.Parameters.Add(p3);
-                    var p4 = cmd.CreateParameter(); p4.ParameterName = "@datum"; p4.Value = datum; cmd.Parameters.Add(p4);
-                    var p5 = cmd.CreateParameter(); p5.ParameterName = "@broj"; p5.Value = broj_osoba; cmd.Parameters.Add(p5);
-                    var p6 = cmd.CreateParameter(); p6.ParameterName = "@dest"; p6.Value = destinacija; cmd.Parameters.Add(p6);
+                    foreach (var kv in envelope.Parameters)
+                    {
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = kv.Key;
+                        p.Value = kv.Value ?? DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
 
                     cmd.ExecuteNonQuery();
                     _notifier.NotifyResChanged();
@@ -490,29 +488,34 @@ namespace DsApp.Data.Proxies
             }
             finally
             {
-                if (conn.State != System.Data.ConnectionState.Closed)
+                if (conn.State != ConnectionState.Closed)
                     conn.Close();
             }
         }
 
-        public void CancelReservation(int id)
+        public void CancelReservation(SqlEnvelope envelope)
         {
-            const string sql = @"
-            UPDATE reservations
-            SET state = @state
-            WHERE id = @id;";
+            if (envelope is null) throw new ArgumentNullException(nameof(envelope));
+            if (string.IsNullOrWhiteSpace(envelope.Query))
+                throw new ArgumentException("Query je prazan.", nameof(envelope));
 
             var conn = _databaseManager!.GetConnection();
             try
             {
                 conn.Open();
-                using (var cmd = _databaseManager.CreateCommand())
+
+                using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = sql;
+                    cmd.CommandText = envelope.Query;
                     cmd.Connection = conn;
 
-                    var pState = cmd.CreateParameter(); pState.ParameterName = "@state"; pState.Value = "Otkazana"; cmd.Parameters.Add(pState);
-                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
+                    foreach (var kv in envelope.Parameters)
+                    {
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = kv.Key;
+                        p.Value = kv.Value ?? DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
 
                     cmd.ExecuteNonQuery();
                     _notifier.NotifyResChanged();
@@ -520,28 +523,34 @@ namespace DsApp.Data.Proxies
             }
             finally
             {
-                if (conn.State != System.Data.ConnectionState.Closed)
+                if (conn.State != ConnectionState.Closed)
                     conn.Close();
             }
         }
 
-        public void DeleteReservation(int id)
+        public void DeleteReservation(SqlEnvelope envelope)
         {
-            const string sql = @"
-            DELETE FROM reservations
-            WHERE id = @id;";
+            if (envelope is null) throw new ArgumentNullException(nameof(envelope));
+            if (string.IsNullOrWhiteSpace(envelope.Query))
+                throw new ArgumentException("Query je prazan.", nameof(envelope));
 
             var conn = _databaseManager!.GetConnection();
-
             try
             {
                 conn.Open();
-                using (var cmd = _databaseManager.CreateCommand())
+
+                using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = sql;
+                    cmd.CommandText = envelope.Query;
                     cmd.Connection = conn;
 
-                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
+                    foreach (var kv in envelope.Parameters)
+                    {
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = kv.Key;
+                        p.Value = kv.Value ?? DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
 
                     cmd.ExecuteNonQuery();
                     _notifier.NotifyResChanged();
@@ -549,42 +558,38 @@ namespace DsApp.Data.Proxies
             }
             finally
             {
-                if (conn.State != System.Data.ConnectionState.Closed)
+                if (conn.State != ConnectionState.Closed)
                     conn.Close();
             }
         }
 
-        public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
+        public void UpdateReservation(SqlEnvelope envelope)
         {
-            const string sql = @"
-            UPDATE reservations
-            SET destinacija = @dest,
-                id_package  = @pkg,
-                broj_osoba  = @broj,
-                state       = @state
-            WHERE id = @id;";
+            if (envelope is null) throw new ArgumentNullException(nameof(envelope));
+            if (string.IsNullOrWhiteSpace(envelope.Query))
+                throw new ArgumentException("Query je prazan.", nameof(envelope));
 
             var conn = _databaseManager!.GetConnection();
             try
             {
                 conn.Open();
-                using (var cmd = _databaseManager.CreateCommand())
+
+                using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = sql;
+                    cmd.CommandText = envelope.Query;
                     cmd.Connection = conn;
 
-                    var pId = cmd.CreateParameter(); pId.ParameterName = "@id"; pId.Value = id; cmd.Parameters.Add(pId);
-                    var pDest = cmd.CreateParameter(); pDest.ParameterName = "@dest"; pDest.Value = destinacija; cmd.Parameters.Add(pDest);
-                    var pPkg = cmd.CreateParameter(); pPkg.ParameterName = "@pkg"; pPkg.Value = tip_id; cmd.Parameters.Add(pPkg);
-                    var pBroj = cmd.CreateParameter(); pBroj.ParameterName = "@broj"; pBroj.Value = broj_osoba; cmd.Parameters.Add(pBroj);
-                    var pSt = cmd.CreateParameter(); pSt.ParameterName = "@state"; pSt.Value = "Ažurirana"; cmd.Parameters.Add(pSt);
+                    foreach (var kv in envelope.Parameters)
+                    {
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = kv.Key;
+                        p.Value = kv.Value ?? DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
 
-                    var affected = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                     _notifier.NotifyResChanged();
-                    if (affected == 0)
-                        throw new InvalidOperationException("Rezervacija nije pronađena ili nije ažurirana.");
                 }
-
             }
             finally
             {
