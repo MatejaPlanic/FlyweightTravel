@@ -17,10 +17,10 @@ namespace DsApp.Config
         private readonly bool _isMySql;
         private readonly string _backupFolderPath;
 
-        private BackupManager(string connectionString)
+        private BackupManager(string filePath)
         {
 
-            string[] lines = System.IO.File.ReadAllLines(connectionString);
+            string[] lines = System.IO.File.ReadAllLines(filePath);
             _connectionString = lines[1];
             _isMySql = _connectionString.Contains("Server=");
             _timer = new System.Timers.Timer(24 * 60 * 60 * 10000); // 24 sata
@@ -31,13 +31,13 @@ namespace DsApp.Config
             _backupFolderPath = "../../../Config/";
         }
 
-        public static BackupManager GetInstance(string connectionString)
+        public static BackupManager GetInstance(string filePath)
         {
             lock (padlock)
             {
                 if (instance == null)
                 {
-                    instance = new BackupManager(connectionString);
+                    instance = new BackupManager(filePath);
                 }
                 return instance;
             }
