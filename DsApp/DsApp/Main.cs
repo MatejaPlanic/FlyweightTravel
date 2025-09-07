@@ -140,6 +140,7 @@ namespace Front
         private void button_backup_Click(object sender, EventArgs e)
         {
             BackupManager.GetInstance("").ExecuteBackup();
+            MessageBox.Show("Uspešno kreiran backup baze");
         }
     }
 }
