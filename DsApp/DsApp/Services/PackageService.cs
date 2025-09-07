@@ -13,6 +13,7 @@ namespace DsApp.Services
         }
         public void AddNewPackage(TravelPackageBuilder tr)
         {
+            if (tr == null) throw new ArgumentNullException(nameof(tr));
             proxy.AddNewPackage(tr);
         }
         public List<TravelPackage> GetAllPackages()

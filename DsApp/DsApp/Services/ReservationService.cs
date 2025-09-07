@@ -33,6 +33,11 @@ namespace DsApp.Services
 
         public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
         {
+            if (id < 0) throw new ArgumentOutOfRangeException(nameof(id));
+            if (string.IsNullOrWhiteSpace(destinacija)) throw new ArgumentException("Destinacija je obavezna.", nameof(destinacija));
+            if (tip_id < 0) throw new ArgumentOutOfRangeException(nameof(tip_id));
+            if (broj_osoba <= 0) throw new ArgumentOutOfRangeException(nameof(broj_osoba));
+
             proxy.UpdateReservation(id,destinacija,tip_id,broj_osoba);
         }
     }

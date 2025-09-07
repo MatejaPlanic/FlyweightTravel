@@ -41,23 +41,23 @@ namespace DsApp.Data.Proxies
         public void AddClient(string ime, string prezime,
         string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         {
-            if (string.IsNullOrEmpty(ime) || string.IsNullOrEmpty(prezime) ||
-                string.IsNullOrEmpty(brojPasosa) || string.IsNullOrEmpty(datumRodjenja) ||
-                string.IsNullOrEmpty(emailAdresa) || string.IsNullOrEmpty(brojTelefona))
-            {
-                throw new ArgumentException("Sva polja su obavezna.");
-            }
+            string query = "INSERT INTO client (Ime, Prezime, BrojPasosa, DatumRodjenja, EmailAdresa, BrojTelefona) " +
+                              "VALUES (@ime, @prezime, @brojPasosa, @datumRodjenja, @emailAdresa, @brojTelefona);";
 
-            string emailRegexPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (!Regex.IsMatch(emailAdresa, emailRegexPattern))
-            {
-                throw new FormatException("Email adresa nije u ispravnom formatu.");
-            }
+            var args = new Dictionary<string, object?>();
 
             string encryptedPassportNumber = Encrypt(brojPasosa);
 
+            args["@ime"] = ime;
+            args["@prezime"] = prezime;
+            args["@brojPasosa"] = encryptedPassportNumber;
+            args["@datumRodjenja"] = datumRodjenja;
+            args["@emailAdresa"] = emailAdresa;
+            args["@brojTelefona"] = brojTelefona;
 
-            realService.AddClient(ime, prezime, encryptedPassportNumber, datumRodjenja, emailAdresa, brojTelefona);
+            
+
+            realService.AddClient(new SqlEnvelope { Query = query, Parameters = args });
 
         }
 
@@ -115,7 +115,6 @@ namespace DsApp.Data.Proxies
 
         public void AddNewPackage(TravelPackageBuilder tr)
         {
-            if (tr == null) throw new ArgumentNullException(nameof(tr));
             var p = tr.GetPackage();
 
             var args = new Dictionary<string, object?>();
@@ -251,10 +250,7 @@ namespace DsApp.Data.Proxies
 
         public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
         {
-            if (id < 0) throw new ArgumentOutOfRangeException(nameof(id));
-            if (string.IsNullOrWhiteSpace(destinacija)) throw new ArgumentException("Destinacija je obavezna.", nameof(destinacija));
-            if (tip_id < 0) throw new ArgumentOutOfRangeException(nameof(tip_id));
-            if (broj_osoba <= 0) throw new ArgumentOutOfRangeException(nameof(broj_osoba));
+            
 
             realService.UpdateReservation(id,destinacija,tip_id,broj_osoba);
         }
