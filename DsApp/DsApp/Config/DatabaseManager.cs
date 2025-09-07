@@ -23,9 +23,7 @@
 
                 if (!File.Exists(dbPath))
                 {
-
-                    var stream = File.Create(dbPath);
-                        
+                    using (File.Create(dbPath)) { }
                 }
             }
             DatabaseManager.SetUp(configFile);
@@ -38,9 +36,8 @@
             if (lines[1].Contains("Data Source="))
             {
                 dbBroker = SqliteBroker.GetInstance(_connectionString);
-                
-                using (var connection = new SqliteConnection(lines[1]))
-                {
+                var connection = new SqliteConnection(lines[1]);
+                if (connection.State != ConnectionState.Open)
                     connection.Open();
 
                     // SQL za kreiranje 'client' tabele
@@ -98,7 +95,7 @@
                         command.ExecuteNonQuery();
                     }
                     connection.Close();
-                }
+                
             }
             else if (lines[1].Contains("Server="))
             {
