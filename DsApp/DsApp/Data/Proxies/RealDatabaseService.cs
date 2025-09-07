@@ -46,6 +46,7 @@ namespace DsApp.Data.Proxies
                 {
                 command.CommandText = query;
                 command.Connection = _databaseManager.GetConnection();
+
                 IDbDataParameter paramIme = command.CreateParameter();
                 paramIme.ParameterName = "@ime";
                 paramIme.Value = ime;

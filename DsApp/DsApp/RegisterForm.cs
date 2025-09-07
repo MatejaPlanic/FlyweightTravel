@@ -109,11 +109,7 @@ namespace Front
                 return;
             }
             var row = guna2DataGridView1.CurrentRow?.DataBoundItem as ReservationRow;
-            if (row.state.Cancel(row) == false)
-            {
-                MessageBox.Show("Ne možete otkazati već otkazanu rezervaciju");
-                return;
-            }
+           
             var potvrdjeno = MessageBox.Show(
             "Otkazati izabranu rezervaciju?",
             "Potvrda",
@@ -124,7 +120,11 @@ namespace Front
 
             try
             {
-
+                if (row.state.Cancel(row) == false)
+                {
+                    MessageBox.Show("Ne možete otkazati već otkazanu rezervaciju");
+                    return;
+                }
                 _facade.CancelReservation(id.Value);
                 MessageBox.Show("Uspešno otkazana rezervacija");
                 return;

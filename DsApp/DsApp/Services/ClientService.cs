@@ -15,6 +15,7 @@ namespace DsApp.Services
         public void AddClient(string ime, string prezime,
             string brojPasosa, string datumRodjenja, string emailAdresa, string brojTelefona)
         { 
+
             proxy.AddClient(ime, prezime, brojPasosa, datumRodjenja, emailAdresa, brojTelefona);
         }
 

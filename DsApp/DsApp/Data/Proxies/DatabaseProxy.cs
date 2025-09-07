@@ -59,7 +59,6 @@ namespace DsApp.Data.Proxies
 
             realService.AddClient(ime, prezime, encryptedPassportNumber, datumRodjenja, emailAdresa, brojTelefona);
 
-            Console.WriteLine(GetDecryptedPassportNumber(encryptedPassportNumber));
         }
 
         public string GetDecryptedPassportNumber(string encryptedPassportNumber)
