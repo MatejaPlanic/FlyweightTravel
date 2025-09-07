@@ -11,31 +11,26 @@
         private static DatabaseManager? instance = null;
         private static readonly object padlock = new object();
         private static IBroker dbBroker;
-        private static string? _connectionString;
+        private static string? _filePath;
         private static BackupManager bm;
         public static void Initialize(string configFile) // ../../../Config/
         {
-            
-            if (configFile.ToLower().Contains("config1")) //Sqlite
+            DatabaseManager.SetUp(configFile);
+        }
+        private static void SetUp(string filePath)
+        {
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+            _filePath = filePath;
+            bm = BackupManager.GetInstance(filePath);
+            if (lines[1].Contains("Data Source="))
             {
-                string[] lines = System.IO.File.ReadAllLines(configFile);
                 var dbPath = lines[1].Split(';')[0].Split('=')[1];
 
                 if (!File.Exists(dbPath))
                 {
                     using (File.Create(dbPath)) { }
                 }
-            }
-            DatabaseManager.SetUp(configFile);
-        }
-        public static void SetUp(string connectionString)
-        {
-            string[] lines = System.IO.File.ReadAllLines(connectionString);
-            _connectionString = connectionString;
-            bm = BackupManager.GetInstance(connectionString);
-            if (lines[1].Contains("Data Source="))
-            {
-                dbBroker = SqliteBroker.GetInstance(_connectionString);
+                dbBroker = SqliteBroker.GetInstance(_filePath);
                 var connection = new SqliteConnection(lines[1]);
                 if (connection.State != ConnectionState.Open)
                     connection.Open();
@@ -99,7 +94,7 @@
             }
             else if (lines[1].Contains("Server="))
             {
-                dbBroker = MySqlBroker.GetInstance(_connectionString);
+                dbBroker = MySqlBroker.GetInstance(_filePath);
                 // Izdvoji ime baze iz connection stringa
                 var dbName = lines[1].Split(';')[1].Split('=')[1];
 
