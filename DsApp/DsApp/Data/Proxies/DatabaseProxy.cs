@@ -58,7 +58,7 @@ namespace DsApp.Data.Proxies
 
             
 
-            realService.AddClient(new SqlEnvelope { Query = query, Parameters = args });
+            realService.UnveilEnvelopeClients(new SqlEnvelope { Query = query, Parameters = args });
 
         }
 
@@ -190,7 +190,7 @@ namespace DsApp.Data.Proxies
                 throw new ArgumentException("Nepoznat tip paketa.");
             }
 
-            realService.AddNewPackage(new SqlEnvelope { Query = sql, Parameters = args });
+            realService.UnveilEnvelopePackages(new SqlEnvelope { Query = sql, Parameters = args });
         }
 
         public List<Client> GetAllClients()
@@ -240,7 +240,7 @@ namespace DsApp.Data.Proxies
             args["@broj"] = broj_osoba;
             args["@dest"] = destinacija;
 
-        realService.AddNewReservation(new SqlEnvelope { Query = sql, Parameters = args });
+        realService.UnveilEnvelopeReservations(new SqlEnvelope { Query = sql, Parameters = args });
 
         }
 
@@ -256,7 +256,7 @@ namespace DsApp.Data.Proxies
             args["@state"] = "Otkazana";
             args["@id"] = id;
 
-            realService.CancelReservation(new SqlEnvelope { Query = sql, Parameters = args });
+            realService.UnveilEnvelopeReservations(new SqlEnvelope { Query = sql, Parameters = args });
         }
         public List<Client> SearchClients(string srch)
         {
@@ -280,7 +280,7 @@ namespace DsApp.Data.Proxies
 
             args["@id"] = id;
 
-            realService.DeleteReservation(new SqlEnvelope { Query = sql, Parameters = args });
+            realService.UnveilEnvelopeReservations(new SqlEnvelope { Query = sql, Parameters = args });
         }
 
         public void UpdateReservation(int id, string destinacija, int tip_id, int broj_osoba)
@@ -302,7 +302,7 @@ namespace DsApp.Data.Proxies
             args["@id"] = id;
 
 
-            realService.UpdateReservation(new SqlEnvelope { Query = sql, Parameters = args });
+            realService.UnveilEnvelopeReservations(new SqlEnvelope { Query = sql, Parameters = args });
         }
     }
 }

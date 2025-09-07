@@ -36,7 +36,7 @@ namespace DsApp.Data.Proxies
             }
         }
 
-        public void AddClient(SqlEnvelope envelope)
+        public void UnveilEnvelopeClients(SqlEnvelope envelope)
         {
             if (envelope is null) throw new ArgumentNullException(nameof(envelope));
             if (string.IsNullOrWhiteSpace(envelope.Query))
@@ -244,7 +244,7 @@ namespace DsApp.Data.Proxies
             return packages;
         }
 
-        public void AddNewPackage(SqlEnvelope envelope)
+        public void UnveilEnvelopePackages(SqlEnvelope envelope)
         {
             if (envelope is null) throw new ArgumentNullException(nameof(envelope));
             if (string.IsNullOrWhiteSpace(envelope.Query))
@@ -458,7 +458,7 @@ namespace DsApp.Data.Proxies
             return result;
         }
 
-        public void AddNewReservation(SqlEnvelope envelope)
+        public void UnveilEnvelopeReservations(SqlEnvelope envelope)
         {
             if (envelope is null) throw new ArgumentNullException(nameof(envelope));
             if (string.IsNullOrWhiteSpace(envelope.Query))
