@@ -161,11 +161,6 @@ namespace DsApp.Data.Proxies
             return clients;
         }
 
-
-
-
-
-
         public List<TravelPackage> GetAllPackages()
         {
             List<TravelPackage> packages = new List<TravelPackage>();
