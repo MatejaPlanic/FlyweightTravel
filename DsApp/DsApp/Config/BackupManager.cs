@@ -23,7 +23,7 @@ namespace DsApp.Config
             string[] lines = System.IO.File.ReadAllLines(filePath);
             _connectionString = lines[1];
             _isMySql = _connectionString.Contains("Server=");
-            _timer = new System.Timers.Timer(24 * 60 * 60 * 10000); // 24 sata
+            _timer = new System.Timers.Timer(24 * 60 * 60 * 1000); // 24 sata
             _timer.Elapsed += OnTimedEvent;
 
 
