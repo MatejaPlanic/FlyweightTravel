@@ -1,2 +1,0 @@
-FlyweightTravel
-Server=localhost;Database=zito;Uid=root;Pwd=;Port=3306;
