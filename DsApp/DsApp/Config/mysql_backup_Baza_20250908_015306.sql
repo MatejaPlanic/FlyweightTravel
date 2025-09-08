@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 9.1.0, for Win64 (x86_64)
 --
--- Host: localhost    Database: ker4
+-- Host: localhost    Database: Baza
 -- ------------------------------------------------------
 -- Server version	9.1.0
 
@@ -31,7 +31,7 @@ CREATE TABLE `client` (
   `emailadresa` varchar(255) DEFAULT NULL,
   `brojtelefona` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `client` (
 
 LOCK TABLES `client` WRITE;
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
+INSERT INTO `client` VALUES (1,'Stefan','Grujicic','8jJ8cwXZsGfVIiHcfysMJg==','24. jun 2003.','stefan@gmail.com','0603252928'),(2,'Pera','Peric','YVdTjFPnt8IjYp3g3bVSKg==','05. februar 2020.','perap@gmail.com','0603293232'),(3,'Mateja','Planic','FxZmOnizLqrk+4444H4mGA==','27. avgust 2003.','mata@gmail.com','060323923'),(4,'Jovana','Sajkic','9WYvho26ipI0tA4FllyTzw==','20. jul 2003.','jovana@gmail.com','0603239882'),(5,'asdasd','asdads','amahv9WpeFz2+vXpWPdJlw==','29. avgust 2025.','ads@gmail.com','123323122'),(6,'rthhrt','rthhtrhrthrt','+4dwjYJCWm12//xOeYMkxA==','08. septembar 2025.','asdsa@gmail.com','23112321'),(7,'asdads','asdsad','vW8gleFmyp0iA6I7soKTvA==','08. septembar 2025.','asdas@gmail.com','7435645656'),(8,'kerrrr','inaa','VCuyp2C4eALEfWdOvey7dw==','08. septembar 2025.','asddas@gmail.com','129039123'),(9,'dasda','asdasdasd','vW8gleFmyp0iA6I7soKTvA==','08. septembar 2025.','asds@gmail.com','12312313'),(10,'asdasd','asdasdasd','wpBjCaU9IMOL2rVDP/dWsA==','08. septembar 2025.','asdasd@gmail.com','0723723923'),(11,'asdsda','asddsadas','pZ6YT+DgLDzJdAdcv+Wbyg==','08. septembar 2025.','stsd@gmail.com','12312323'),(12,'gsgggs','gdfggdfdgf','fIgh5mzItkoh1eXp+s8TCA==','08. septembar 2025.','asdas@gmail.com','12312322');
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +67,7 @@ CREATE TABLE `packages` (
   `tip_kabine` varchar(255) DEFAULT NULL,
   `tip_paketa` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,6 +76,7 @@ CREATE TABLE `packages` (
 
 LOCK TABLES `packages` WRITE;
 /*!40000 ALTER TABLE `packages` DISABLE KEYS */;
+INSERT INTO `packages` VALUES (1,'asddas','asdads',NULL,'asdasdas',123123.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'More'),(2,'dasdas','dsdasds',NULL,'asdsdadsa',123123.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'More');
 /*!40000 ALTER TABLE `packages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +96,7 @@ CREATE TABLE `reservations` (
   `broj_osoba` int DEFAULT NULL,
   `destinacija` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-06 23:13:06
+-- Dump completed on 2025-09-08  1:53:06

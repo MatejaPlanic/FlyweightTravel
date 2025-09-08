@@ -1,5 +1,6 @@
 ﻿using DsApp.Data.Proxies;
 using DsApp.Facade;
+using DsApp.Models;
 using DsApp.Observers;
 using Guna.UI2.WinForms;
 using System;

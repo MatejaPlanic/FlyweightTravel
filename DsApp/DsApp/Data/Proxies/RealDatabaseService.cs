@@ -61,13 +61,14 @@ namespace DsApp.Data.Proxies
                     }
 
                     cmd.ExecuteNonQuery();
-                    _notifier.NotifyClientsChanged();
+                    
                 }
             }
             finally
             {
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
+                _notifier.NotifyClientsChanged();
             }
 
         }
@@ -264,13 +265,14 @@ namespace DsApp.Data.Proxies
                     }
 
                     cmd.ExecuteNonQuery();
-                    _notifier.NotifyPackagesChanged();
+                    
                 }
             }
             finally
             {
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
+                _notifier.NotifyPackagesChanged();
             }
         }
 
@@ -478,13 +480,14 @@ namespace DsApp.Data.Proxies
                     }
 
                     cmd.ExecuteNonQuery();
-                    _notifier.NotifyResChanged();
+                    
                 }
             }
             finally
             {
                 if (conn.State != ConnectionState.Closed)
                     conn.Close();
+                _notifier.NotifyResChanged();
             }
         }
     }

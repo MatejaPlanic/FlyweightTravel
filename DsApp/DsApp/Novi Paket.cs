@@ -117,7 +117,7 @@ namespace Front
                             MessageBox.Show("Unesite tip prevoza.");
                             return;
                         }
-                        sea.BuildAccommodationType(moreForm.TransportText);
+                        sea.BuildTransportType(moreForm.TransportText);
                         af.AddNewPackage(sea);
                     }
                     break;

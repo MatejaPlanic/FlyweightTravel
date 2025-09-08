@@ -2,7 +2,6 @@
 
 namespace DsApp.Observers
 {
-    // Generička klasa za Subject (izdavača)
     public abstract class Subject<T>
     {
         private readonly List<IObserver<T>> observers = new List<IObserver<T>>();

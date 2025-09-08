@@ -35,7 +35,6 @@
                 if (connection.State != ConnectionState.Open)
                     connection.Open();
 
-                    // SQL za kreiranje 'client' tabele
                     var createClientTableQuery = "CREATE TABLE IF NOT EXISTS client (" +
                                                  "id INTEGER NOT NULL UNIQUE, " +
                                                  "ime TEXT NOT NULL, " +
@@ -51,7 +50,6 @@
                         command.ExecuteNonQuery();
                     }
 
-                    // SQL za kreiranje 'packages' tabele
                     var createPackageTableQuery = "CREATE TABLE IF NOT EXISTS packages (" +
                                                   "id INTEGER NOT NULL UNIQUE, " +
                                                   "ime TEXT, " +
@@ -74,7 +72,6 @@
                         command.ExecuteNonQuery();
                     }
 
-                    // SQL za kreiranje 'reservations' tabele
                     var createReservationsTableQuery = "CREATE TABLE IF NOT EXISTS reservations (" +
                                                          "id INTEGER NOT NULL UNIQUE, " +
                                                          "id_client INTEGER NOT NULL, " +
@@ -95,10 +92,8 @@
             else if (lines[1].Contains("Server="))
             {
                 dbBroker = MySqlBroker.GetInstance(_filePath);
-                // Izdvoji ime baze iz connection stringa
                 var dbName = lines[1].Split(';')[1].Split('=')[1];
 
-                // Kreiraj novi connection string bez imena baze, samo za konekciju na server
                 var serverConnectionString = $"Server=localhost;Uid=root;Pwd=;Port=3306;";
                     using (var connection = new MySqlConnection(serverConnectionString))
                     {

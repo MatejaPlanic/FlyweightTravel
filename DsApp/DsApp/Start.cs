@@ -18,7 +18,7 @@ namespace Front
             InitializeComponent();
             comboBox_file.Items.Add("config1.txt");
             comboBox_file.Items.Add("config2.txt");
-            comboBox_file.SelectedIndex = 0; // Postavljanje default selektovane stavke
+            comboBox_file.SelectedIndex = 0;
         }
 
         private void comboBox_file_SelectedIndexChanged(object sender, EventArgs e)

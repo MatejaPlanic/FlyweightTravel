@@ -1,2 +1,2 @@
 FlyweightTravel2
-Server=localhost;Database=ker10;Uid=root;Pwd=;Port=3306;
+Server=localhost;Database=Baza;Uid=root;Pwd=;Port=3306;

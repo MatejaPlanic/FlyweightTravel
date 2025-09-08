@@ -109,7 +109,7 @@ namespace Front
         protected override void WndProc(ref Message m)
         {
             const int WM_SYSCOMMAND = 0x0112;
-            const int SC_CLOSE = 0xF060;   // X (Close)
+            const int SC_CLOSE = 0xF060; 
 
             if (m.Msg == WM_SYSCOMMAND)
             {
@@ -117,14 +117,14 @@ namespace Front
 
                 if (command == SC_CLOSE)
                 {
-                    // Kliknuto na X
-                    Application.Exit(); // gasi celu aplikaciju
-                    return;             // prekida normalno ponašanje
+                    
+                    Application.Exit(); 
+                    return;             
                 }
 
             }
 
-            base.WndProc(ref m); // ako ništa ne menjaš, zovi original
+            base.WndProc(ref m);
         }
 
         private void label_naziv_Click(object sender, EventArgs e)

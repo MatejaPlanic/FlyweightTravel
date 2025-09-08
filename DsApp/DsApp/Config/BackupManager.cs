@@ -26,7 +26,6 @@ namespace DsApp.Config
             _timer = new System.Timers.Timer(24 * 60 * 60 * 10000); // 24 sata
             _timer.Elapsed += OnTimedEvent;
 
-            // Define backup folder path
 
             _backupFolderPath = "../../../Config/";
         }
@@ -83,7 +82,6 @@ namespace DsApp.Config
         }
         private void BackupSqlite()
         {
-            // SQLite backup je jednostavan: kopiranje fajla baze podataka
             var dbPath = _connectionString.Split(';')[0].Split('=')[1];
             if (!File.Exists(dbPath))
             {
@@ -103,13 +101,10 @@ namespace DsApp.Config
 
         private void BackupMySql()
         {
-            // Ensure the backup directory exists
             if (!Directory.Exists(_backupFolderPath))
             {
                 Directory.CreateDirectory(_backupFolderPath);
             }
-
-            // Extract the database name from the connection string
             var dbName = "";
             var connectionParts = _connectionString.Split(';');
             foreach (var part in connectionParts)
@@ -126,11 +121,9 @@ namespace DsApp.Config
                 throw new ArgumentException("Ime baze podataka nije pronađeno u connection stringu.");
             }
 
-            // Create a unique backup file name with a timestamp
             var backupFileName = $"mysql_backup_{dbName}_{DateTime.Now:yyyyMMdd_HHmmss}.sql";
             var backupPath = Path.Combine(_backupFolderPath, backupFileName);
 
-            // Path to mysqldump.exe, please verify this path
             string mysqldumpPath = @"C:\wamp64\bin\mysql\mysql9.1.0\bin\mysqldump.exe";
             if (!File.Exists(mysqldumpPath))
             {
@@ -139,13 +132,9 @@ namespace DsApp.Config
 
             try
             {
-                // Set up the process to run mysqldump
                 Process process = new Process();
                 process.StartInfo.FileName = mysqldumpPath;
-                // Arguments now only contain the user and database name, no redirection
                 process.StartInfo.Arguments = $"-u root {dbName}";
-
-                // This is the key change: redirecting standard output to a C# stream
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.UseShellExecute = false;
@@ -153,7 +142,6 @@ namespace DsApp.Config
 
                 process.Start();
 
-                // Read the output from mysqldump and write it to the backup file
                 using (StreamWriter sw = new StreamWriter(backupPath))
                 {
                     sw.Write(process.StandardOutput.ReadToEnd());

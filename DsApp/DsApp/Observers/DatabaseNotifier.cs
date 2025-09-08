@@ -8,7 +8,6 @@ namespace DsApp.Observers
         private static DatabaseNotifier? instance;
         private static readonly object padlock = new object();
 
-        // Podaci o promeni, npr. tip operacije
         private string _changeMessage;
 
         public static DatabaseNotifier GetInstance()
@@ -25,7 +24,6 @@ namespace DsApp.Observers
 
         private DatabaseNotifier() { }
 
-        // Metoda koja se poziva nakon svake promene
         public void NotifyClientsChanged()
         {
             this._changeMessage = "client_added";
